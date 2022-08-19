@@ -39,17 +39,30 @@ class App(ctk.CTk):
         self.grid_rowconfigure((1, 2, 3, 4, 5, 6, 7, 8), weight=1)
         self.grid_columnconfigure((0, 1, 2), weight=1)
 
+        # Create widgets
         self.upload_file_button = ctk.CTkButton(
             self, text="Cargar archivo",
             command=self.upload_files)
         self.upload_file_button.grid(
             row=0, column=0, sticky="nsew", padx=15, pady=15)
 
+        self.simulate_button = ctk.CTkButton(
+            master=self, text="Simular",
+            state="disabled",
+            command=self.simulate)
+        self.simulate_button.grid(
+            row=0, column=3, sticky="nsew", padx=15, pady=15)
+
+        self.frame_simulation = ctk.CTkFrame(self)
+
     def upload_files(self):
         fileRoute = filedialog.askopenfilename(
             initialdir="/Desktop", title="Select file",
             filetypes=(("XML", "*.xml"), ("all files", "*.*")))
-        print(fileRoute)
+        
+
+    def simulate(self):
+        pass
 
 
 if __name__ == "__main__":
