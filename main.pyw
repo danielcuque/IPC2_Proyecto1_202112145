@@ -6,6 +6,7 @@ import customtkinter as ctk
 
 # Helpers
 from model.helpers.WindowPosition import WindowPosition
+from model.tasks.UploadInformation import UploadInformation
 
 # # Modes: "System" (standard), "Dark", "Light"
 ctk.set_appearance_mode("dark")
@@ -53,13 +54,11 @@ class App(ctk.CTk):
         self.simulate_button.grid(
             row=0, column=3, sticky="nsew", padx=15, pady=15)
 
-        self.frame_simulation = ctk.CTkFrame(self)
-
     def upload_files(self):
         fileRoute = filedialog.askopenfilename(
             initialdir="/Desktop", title="Select file",
             filetypes=(("XML", "*.xml"), ("all files", "*.*")))
-        
+        UploadInformation().xPath(fileRoute)
 
     def simulate(self):
         pass
