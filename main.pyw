@@ -6,7 +6,7 @@ import customtkinter as ctk
 
 # Helpers
 from model.helpers.WindowPosition import WindowPosition
-from model.tasks.UploadInformation import UploadInformation
+from model.simulation.UploadInformation import UploadInformation
 
 # # Modes: "System" (standard), "Dark", "Light"
 ctk.set_appearance_mode("dark")
