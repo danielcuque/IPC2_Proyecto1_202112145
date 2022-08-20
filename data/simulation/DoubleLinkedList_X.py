@@ -1,12 +1,12 @@
-from NodeCell import NodeCell
+from .NodeCell import NodeCell
 
 
 class DoubleLinkedList_X:
     def __init__(self):
         self.head = None
 
-    def insertCell(self, pos_x, pos_y):
-        new_cell = NodeCell(pos_x, pos_y)
+    def insertCellAtEnd(self, pos_x, pos_y, isInfected):
+        new_cell = NodeCell(pos_x, pos_y, isInfected)
         if self.head is None:
             self.head = new_cell
         else:

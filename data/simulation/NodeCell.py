@@ -1,7 +1,8 @@
 class NodeCell:
-    def __init__(self, pos_x_cell, pos_y_cell):
+    def __init__(self, pos_x_cell, pos_y_cell, isInfected):
         self.pos_x_cell = pos_x_cell
         self.pos_y_cell = pos_y_cell
+        self.isInfected = isInfected
         self.next = None
         self.prev = None
 

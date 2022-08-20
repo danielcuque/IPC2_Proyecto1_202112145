@@ -1,10 +1,13 @@
 from xml.dom import minidom as MD
 
+from data.pacients.ListPacients import ListPacients
+
 
 class UploadInformation:
     @staticmethod
     def xPath(ruta):
-        file = MD.parse("prueba.xml")
+        file = MD.parse(ruta)
+        create_pacient = ListPacients()
         pacients = file.getElementsByTagName("paciente")
         for pacient in pacients:
             datos_personales = pacient.getElementsByTagName("datospersonales")
@@ -22,9 +25,14 @@ class UploadInformation:
                     info_matrix[0])
 
                 if verifyPersonalData and verifyMatrixData:
-                    return True
+                    
+                    create_pacient.insertAtEndPacient(
+                        name[0].firstChild.data, age[0].firstChild.data)
                 else:
                     return False
+
+        create_pacient.show_pacients()
+        return True
 
     @staticmethod
     def verifyNameAge(name, age):

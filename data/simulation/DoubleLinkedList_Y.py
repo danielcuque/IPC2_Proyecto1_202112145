@@ -1,4 +1,4 @@
-from IndexNode import IndexNode
+from .IndexNode import IndexNode
 
 
 class DoubleLinkedList_Y:

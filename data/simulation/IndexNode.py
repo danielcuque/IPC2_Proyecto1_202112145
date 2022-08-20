@@ -1,4 +1,4 @@
-from DoubleLinkedList_X import DoubleLinkedList_X
+from .DoubleLinkedList_X import DoubleLinkedList_X
 
 
 class IndexNode:
