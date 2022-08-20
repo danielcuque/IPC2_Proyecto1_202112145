@@ -1,4 +1,4 @@
-from tkinter import filedialog
+from tkinter import filedialog, messagebox
 import customtkinter as ctk
 
 # Views
@@ -58,7 +58,15 @@ class App(ctk.CTk):
         fileRoute = filedialog.askopenfilename(
             initialdir="/Desktop", title="Select file",
             filetypes=(("XML", "*.xml"), ("all files", "*.*")))
-        UploadInformation().xPath(fileRoute)
+        isCorrect = UploadInformation().xPath(fileRoute)
+        if isCorrect:
+            self.simulate_button.configure(state="normal")
+            messagebox.showinfo(
+                "Información", "Archivo cargado correctamente")
+        else:
+            self.simulate_button.configure(state="disabled")
+            messagebox.showerror(
+                "Error", "El archivo no es correcto, por favor revisar información")
 
     def simulate(self):
         pass
