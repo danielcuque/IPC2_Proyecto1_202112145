@@ -1,6 +1,4 @@
-from data.simulation.DoubleLinkedList_X import DoubleLinkedList_X
 from .IndexNode import IndexNode
-from .DoubleLinkedList_X import DoubleLinkedList_X
 
 
 class DoubleLinkedList_Y:
@@ -8,9 +6,9 @@ class DoubleLinkedList_Y:
         self.next = None
         self.size = size
 
-    def insertColumnAtEnd(self):
+    def insertColumn(self):
         for i in range(self.size):
-            new_index = IndexNode(i)
+            new_index = IndexNode(i, self.size)
             if self.next is None:
                 self.next = new_index
             else:
@@ -20,6 +18,14 @@ class DoubleLinkedList_Y:
                 tmp.set_next(new_index)
                 new_index.prev = tmp
 
-    def insertCell(self, pos_x_cell, pos_y_cell, isInfected):
+    def change_cell_state(self, pos_x, pos_y, isInfected):
         tmp = self.next
-        
+        while tmp is not None:
+            if tmp.get_index() == pos_y:
+                tmp.get_eje_x().change_cell_state(pos_x, isInfected)
+
+    def show_column(self):
+        tmp = self.next
+        while tmp is not None:
+            tmp.show_row()
+            tmp = tmp.get_next()

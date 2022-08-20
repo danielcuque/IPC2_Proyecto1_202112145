@@ -1,6 +1,7 @@
 from xml.dom import minidom as MD
 
 from data.pacients.ListPacients import ListPacients
+from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
 
 
 class UploadInformation:
@@ -8,6 +9,7 @@ class UploadInformation:
     def xPath(ruta):
         file = MD.parse(ruta)
         create_pacient = ListPacients()
+
         pacients = file.getElementsByTagName("paciente")
         for pacient in pacients:
             datos_personales = pacient.getElementsByTagName("datospersonales")
@@ -25,8 +27,9 @@ class UploadInformation:
                     info_matrix[0])
 
                 if verifyPersonalData and verifyMatrixData:
-                    create_pacient.inserPacientAtEnd(
-                        name[0].firstChild.data, age[0].firstChild.data)
+                    create_pacient.insertPacientAtEnd(
+                        name[0].firstChild.data, age[0].firstChild.data, int(size_matrix[0].firstChild.data), int(periods[0].firstChild.data))
+
                 else:
                     return False
 
