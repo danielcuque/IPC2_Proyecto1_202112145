@@ -25,8 +25,7 @@ class UploadInformation:
                     info_matrix[0])
 
                 if verifyPersonalData and verifyMatrixData:
-                    
-                    create_pacient.insertAtEndPacient(
+                    create_pacient.inserPacientAtEnd(
                         name[0].firstChild.data, age[0].firstChild.data)
                 else:
                     return False

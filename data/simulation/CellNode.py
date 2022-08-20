@@ -1,4 +1,4 @@
-class NodeCell:
+class CellNode:
     def __init__(self, pos_x_cell, pos_y_cell, isInfected):
         self.pos_x_cell = pos_x_cell
         self.pos_y_cell = pos_y_cell
@@ -17,3 +17,12 @@ class NodeCell:
 
     def get_prev(self):
         return self.prev
+
+    def set_next(self, next):
+        self.next = next
+
+    def set_prev(self, prev):
+        self.prev = prev
+
+    def get_isInfected(self):
+        return self.isInfected
