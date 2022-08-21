@@ -5,10 +5,10 @@ from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
 
 
 class UploadInformation:
-    @staticmethod
-    def xPath(ruta):
+    pacients_list = ListPacients()
+
+    def xPath(self, ruta):
         file = MD.parse(ruta)
-        create_pacient = ListPacients()
 
         pacients = file.getElementsByTagName("paciente")
         for pacient in pacients:
@@ -27,11 +27,10 @@ class UploadInformation:
                     info_matrix[0])
 
                 if verifyPersonalData and verifyMatrixData:
-                    create_pacient.insertPacientAtEnd(
+                    self.pacients_list.insertPacientAtEnd(
                         name[0].firstChild.data, age[0].firstChild.data, int(size_matrix[0].firstChild.data), int(periods[0].firstChild.data))
                 else:
                     return False
-        create_pacient.show_pacients()
         return True
 
     @staticmethod

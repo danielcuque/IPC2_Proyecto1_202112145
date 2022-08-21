@@ -14,14 +14,13 @@ class DoubleLinkedList_Y:
         new_index = IndexNode(i, size)
         if self.next is None:
             self.next = new_index
-            new_index.fill_row()
         else:
             tmp = self.next
             while tmp.get_next() is not None:
                 tmp = tmp.get_next()
             tmp.set_next(new_index)
             new_index.prev = tmp
-            new_index.fill_row()
+        new_index.fill_row()
 
     def change_cell_state(self, pos_x, pos_y, isInfected):
         tmp = self.next
