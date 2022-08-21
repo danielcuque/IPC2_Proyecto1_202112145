@@ -7,7 +7,6 @@ class IndexNode:
         self.eje_x = DoubleLinkedList_X(size, index)
         self.next = None
         self.prev = None
-        self.fill_row()
 
     def fill_row(self):
         self.eje_x.fill_row()

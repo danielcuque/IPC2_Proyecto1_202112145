@@ -29,10 +29,8 @@ class UploadInformation:
                 if verifyPersonalData and verifyMatrixData:
                     create_pacient.insertPacientAtEnd(
                         name[0].firstChild.data, age[0].firstChild.data, int(size_matrix[0].firstChild.data), int(periods[0].firstChild.data))
-
                 else:
                     return False
-
         create_pacient.show_pacients()
         return True
 

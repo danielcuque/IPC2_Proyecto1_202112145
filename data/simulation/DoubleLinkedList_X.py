@@ -9,7 +9,7 @@ class DoubleLinkedList_X:
 
     def fill_row(self):
         for i in range(self.size):
-            new_cell = CellNode(i, self.index, False)
+            new_cell = CellNode(self.index, i, False)
             if self.next is None:
                 self.next = new_cell
             else:
@@ -28,10 +28,13 @@ class DoubleLinkedList_X:
                 tmp = tmp.get_next()
 
     def show_row(self):
+        concatInfoCell = ""
         tmp = self.next
         while tmp is not None:
-            print(tmp.get_pos_x_cell(), tmp.get_pos_y_cell(), tmp.get_isInfected())
+            concatInfoCell += "(" + str(tmp.get_pos_x_cell()) + " " + str(
+                tmp.get_pos_y_cell()) + " " + str(tmp.get_isInfected()) + ") "
             tmp = tmp.get_next()
+        print(concatInfoCell)
 
     def get_next(self):
         return self.next

@@ -15,6 +15,9 @@ class PacientNode:
     def get_age(self):
         return self.age
 
+    def get_size(self):
+        return self.matrix.get_size()
+
     def get_next(self):
         return self.next
 
@@ -26,6 +29,3 @@ class PacientNode:
 
     def get_periods(self):
         return self.periods
-
-    def fill_column(self):
-        self.matrix.insertColumn()
