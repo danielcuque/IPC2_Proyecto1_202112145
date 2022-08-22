@@ -65,7 +65,7 @@ class App(ctk.CTk):
 
         ''' ====== Simulation frame ====== '''
         self.simulation_frame = ctk.CTkLabel(master=self,
-                                             text="No hay pacientes cargados",
+                                             text="No hay patientes cargados",
                                              height=50,
                                              corner_radius=6,
                                              text_font=("Roboto Medium", -25), text_color="white",
@@ -75,11 +75,11 @@ class App(ctk.CTk):
             row=0, column=1, sticky="nswe", padx=10, pady=10)
 
     def upload_files(self):
-        fileRoute = filedialog.askopenfilename(
+        file_route = filedialog.askopenfilename(
             initialdir="/Desktop", title="Select file",
             filetypes=(("XML", "*.xml"), ("all files", "*.*")))
-        isCorrect = UploadInformation().xPath(fileRoute)
-        if isCorrect:
+        is_correct = UploadInformation().xPath(file_route)
+        if is_correct:
             self.change_message()
             self.put_buttons_to_simulate()
             messagebox.showinfo(
@@ -88,28 +88,28 @@ class App(ctk.CTk):
             messagebox.showerror(
                 "Error", "El archivo o la ruta no es correcta, por favor revisa e intenta de nuevo")
 
-    def create_button_for_pacient(self, name, index):
-        button_for_pacient = ctk.CTkButton(
+    def create_button_for_patient(self, name, index):
+        button_for_patient = ctk.CTkButton(
             self.side_menu, text=name, command=lambda: self.display_frame_simulation(name))
-        button_for_pacient.grid(
+        button_for_patient.grid(
             row=index, column=0, sticky="nsew", padx=10, pady=10)
 
     def put_buttons_to_simulate(self):
-        pacient_data = UploadInformation().pacients_list
-        tmp = pacient_data.get_next()
+        patient_data = UploadInformation().patients_list
+        tmp = patient_data.get_next()
         count = 2
         while tmp is not None:
-            self.create_button_for_pacient(tmp.get_body().get_name(), count)
+            self.create_button_for_patient(tmp.get_body().get_name(), count)
             count += 1
             tmp = tmp.get_next()
 
     def change_message(self):
         self.simulation_frame.configure(
-            text="Escoger un paciente para simular")
+            text="Escoger un patiente para simular")
 
     def display_frame_simulation(self, name):
-        pacient_data = UploadInformation().pacients_list
-        tmp = pacient_data.get_next()
+        patient_data = UploadInformation().patients_list
+        tmp = patient_data.get_next()
         while tmp is not None:
             if tmp.get_body().get_name() == name:
                 self.simulation_frame = SimulationFrame(self, tmp)

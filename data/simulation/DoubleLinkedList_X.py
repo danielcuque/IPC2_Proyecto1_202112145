@@ -24,7 +24,7 @@ class DoubleLinkedList_X:
         for i in range(self.size):
             if tmp.get_body().get_pos_x() == pos_x:
                 tmp.get_body().get_pos_y() == pos_y
-                tmp.get_body().get_isInfected() == isInfected
+                tmp.get_body().get_is_infected() == isInfected
                 tmp = tmp.get_next()
 
     def show_row(self):
@@ -32,7 +32,7 @@ class DoubleLinkedList_X:
         tmp = self.next
         while tmp is not None:
             concatInfoCell += "(" + str(tmp.get_body().get_pos_x()) + " " + str(
-                tmp.get_body().get_pos_y()) + " " + str(tmp.get_body().get_isInfected()) + ") "
+                tmp.get_body().get_pos_y()) + " " + str(tmp.get_body().get_is_infected()) + ") "
             tmp = tmp.get_next()
         print(concatInfoCell)
 

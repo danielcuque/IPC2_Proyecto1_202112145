@@ -1,36 +1,36 @@
 from xml.dom import minidom as MD
 
-from data.pacients.ListPacients import ListPacients
+from data.pacients.ListPatients import ListPatients
 
 
 class UploadInformation:
-    pacients_list = ListPacients()
+    patients_list = ListPatients()
 
     def xPath(self, ruta):
         if ruta == "" or ruta == None:
             return False
         file = MD.parse(ruta)
-        pacients = file.getElementsByTagName("paciente")
+        patients = file.getElementsByTagName("paciente")
 
-        for pacient in pacients:
+        for patient in patients:
 
-            datos_personales = pacient.getElementsByTagName("datospersonales")
-            periods = pacient.getElementsByTagName("periodos")
-            size_matrix = pacient.getElementsByTagName("m")
-            info_matrix = pacient.getElementsByTagName("rejilla")
+            datos_personales = patient.getElementsByTagName("datospersonales")
+            periods = patient.getElementsByTagName("periodos")
+            size_matrix = patient.getElementsByTagName("m")
+            info_matrix = patient.getElementsByTagName("rejilla")
 
             if len(datos_personales) == 0 or len(periods) == 0 or len(info_matrix) == 0 or len(size_matrix) == 0:
                 return False
             else:
-                name = pacient.getElementsByTagName("nombre")
-                age = pacient.getElementsByTagName("edad")
+                name = patient.getElementsByTagName("nombre")
+                age = patient.getElementsByTagName("edad")
 
-                verifyPersonalData = UploadInformation().verifyNameAge(name, age)
-                verifyMatrixData = UploadInformation().verifyMatrix(
+                verify_personal_data = UploadInformation().verify_name_age(name, age)
+                verify_matrix_data = UploadInformation().verify_matrix(
                     info_matrix[0])
 
-                if verifyPersonalData and verifyMatrixData:
-                    self.pacients_list.insertPacientAtEnd(
+                if verify_personal_data and verify_matrix_data:
+                    self.patients_list.insert_patient_at_end(
                         name[0].firstChild.data, age[0].firstChild.data, int(size_matrix[0].firstChild.data), int(periods[0].firstChild.data))
 
                 else:
@@ -39,14 +39,14 @@ class UploadInformation:
         return True
 
     @staticmethod
-    def verifyNameAge(name, age):
+    def verify_name_age(name, age):
         if len(name) == 0 or len(age) == 0:
             return False
         else:
             return True
 
     @staticmethod
-    def verifyMatrix(matrix):
+    def verify_matrix(matrix):
         cells = matrix.getElementsByTagName("celda")
         for cell in cells:
             row_cell = cell.getAttribute("f")

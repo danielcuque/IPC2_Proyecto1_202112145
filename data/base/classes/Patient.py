@@ -1,7 +1,7 @@
 from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
 
 
-class Pacient:
+class Patient:
     def __init__(self, name, age, periods, size):
         self.name = name
         self.age = age
