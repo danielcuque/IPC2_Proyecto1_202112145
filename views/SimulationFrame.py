@@ -51,12 +51,11 @@ class SimulationFrame(ctk.CTkFrame):
 
         self.frame_matrix = ctk.CTkFrame(master=self)
         self.display_matrix()
-        #self.frame_matrix.grid(
-        #   column=0, row=3, columnspan=2, padx=15, pady=15)
+        self.frame_matrix.grid(
+            column=0, row=3, columnspan=2, padx=15, pady=15)
 
     def display_matrix(self):
         matrix = self.pacient.get_body().get_matrix()
-        print(matrix.size)
         for r in range(matrix.size):
             for c in range(matrix.size):
                 self.label_matrix = ctk.CTkLabel(master=self.frame_matrix,

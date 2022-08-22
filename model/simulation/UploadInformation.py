@@ -35,7 +35,6 @@ class UploadInformation:
 
                 else:
                     return False
-        # self.pacients_list.show_pacients()
         return True
 
     @staticmethod

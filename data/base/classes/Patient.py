@@ -2,7 +2,7 @@ from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
 
 
 class Patient:
-    def __init__(self, name, age, periods, size):
+    def __init__(self, name, age, size, periods):
         self.name = name
         self.age = age
         self.periods = periods
@@ -19,8 +19,9 @@ class Patient:
 
     def get_periods(self):
         return self.periods
-    
+
     def get_matrix(self):
         return self.matrix
 
-
+    def get_node(self):
+        return self.matrix.get_node()
