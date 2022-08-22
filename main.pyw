@@ -21,7 +21,7 @@ ctk.set_default_color_theme("blue")
 class App(ctk.CTk):
 
     # Size of the window
-    APP_WIDTH: int = 850
+    APP_WIDTH: int = 950
     APP_HEIGHT: int = 700
 
     def __init__(self):
@@ -71,7 +71,8 @@ class App(ctk.CTk):
                                              text_font=("Roboto Medium", -25), text_color="white",
                                              fg_color=("white", "gray38"),
                                              )
-        self.simulation_frame.grid(row=0, column=1, sticky="nswe")
+        self.simulation_frame.grid(
+            row=0, column=1, sticky="nswe", padx=10, pady=10)
 
     def upload_files(self):
         fileRoute = filedialog.askopenfilename(
@@ -98,7 +99,7 @@ class App(ctk.CTk):
         tmp = pacient_data.get_next()
         count = 2
         while tmp is not None:
-            self.create_button_for_pacient(tmp.get_name(), count)
+            self.create_button_for_pacient(tmp.get_body().get_name(), count)
             count += 1
             tmp = tmp.get_next()
 
@@ -110,9 +111,10 @@ class App(ctk.CTk):
         pacient_data = UploadInformation().pacients_list
         tmp = pacient_data.get_next()
         while tmp is not None:
-            if tmp.get_name() == name:
+            if tmp.get_body().get_name() == name:
                 self.simulation_frame = SimulationFrame(self, tmp)
-                self.simulation_frame.grid(row=0, column=1, sticky="nswe")
+                self.simulation_frame.grid(
+                    row=0, column=1, sticky="nswe", padx=10, pady=10)
                 break
             tmp = tmp.get_next()
 

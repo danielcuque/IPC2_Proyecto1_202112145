@@ -20,7 +20,7 @@ class DoubleLinkedList_Y:
                 tmp = tmp.get_next()
             tmp.set_next(new_index)
             new_index.prev = tmp
-        new_index.fill_row()
+        new_index.get_body().fill_row()
 
     def change_cell_state(self, pos_x, pos_y, isInfected):
         tmp = self.next
@@ -31,7 +31,7 @@ class DoubleLinkedList_Y:
     def show_matrix(self):
         tmp = self.next
         while tmp is not None:
-            tmp.show_row()
+            tmp.get_body().show_row()
             tmp = tmp.get_next()
 
     def get_size(self):

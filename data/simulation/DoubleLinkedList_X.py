@@ -22,17 +22,17 @@ class DoubleLinkedList_X:
     def change_cell_state(self, pos_x, pos_y, isInfected):
         tmp = self.next
         for i in range(self.size):
-            if tmp.get_pos_x_cell() == pos_x:
-                tmp.get_pos_y_cell() == pos_y
-                tmp.get_isInfected() == isInfected
+            if tmp.get_body().get_pos_x() == pos_x:
+                tmp.get_body().get_pos_y() == pos_y
+                tmp.get_body().get_isInfected() == isInfected
                 tmp = tmp.get_next()
 
     def show_row(self):
         concatInfoCell = ""
         tmp = self.next
         while tmp is not None:
-            concatInfoCell += "(" + str(tmp.get_pos_x_cell()) + " " + str(
-                tmp.get_pos_y_cell()) + " " + str(tmp.get_isInfected()) + ") "
+            concatInfoCell += "(" + str(tmp.get_body().get_pos_x()) + " " + str(
+                tmp.get_body().get_pos_y()) + " " + str(tmp.get_body().get_isInfected()) + ") "
             tmp = tmp.get_next()
         print(concatInfoCell)
 

@@ -1,11 +1,10 @@
 from data.pacients.PacientNode import PacientNode
+from data.base.lists.SimpleList import SimpleList
 
 
-class ListPacients:
+class ListPacients(SimpleList):
     def __init__(self):
-        self.next = None
-        self.prev = None
-        self.size = 0
+        super().__init__()
 
     def insertPacientAtEnd(self, name, age, size, periods):
         new_pacient = PacientNode(name, age, size, periods)
@@ -20,20 +19,11 @@ class ListPacients:
             while tmp.get_next() is not None:
                 tmp = tmp.get_next()
             tmp.set_next(new_pacient)
-        new_pacient.matrix.fill_column()
+        new_pacient.get_body().matrix.fill_column()
 
     def show_pacients(self):
         tmp = self.next
         while tmp is not None:
-            print("Matriz de: " + tmp.get_name())
-            tmp.get_matrix().show_matrix()
+            print("Matriz de: " + tmp.get_body().get_name())
+            tmp.get_body().get_matrix().show_matrix()
             tmp = tmp.next
-
-    def get_size(self):
-        return self.size
-
-    def get_next(self):
-        return self.next
-
-    def get_prev(self):
-        return self.prev
