@@ -8,6 +8,9 @@ from model.simulation.UploadInformation import UploadInformation
 from model.helpers.WindowPosition import WindowPosition
 from model.simulation.UploadInformation import UploadInformation
 
+# Views
+from views.SimulationFrame import SimulationFrame
+
 # # Modes: "System" (standard), "Dark", "Light"
 ctk.set_appearance_mode("dark")
 
@@ -49,16 +52,26 @@ class App(ctk.CTk):
         self.side_menu.grid_rowconfigure(5, weight=1)
         self.side_menu.grid_rowconfigure(8, minsize=20)
 
+        # Create widgets
+        self.upload_file_button = ctk.CTkButton(
+            self.side_menu, text="Cargar archivo",
+            command=self.upload_files)
+        self.upload_file_button.grid(
+            row=0, column=0, sticky="nsew", padx=15, pady=15)
+
         # Components
         self.side_title = ctk.CTkLabel(self.side_menu, text="Simulaciones de:")
         self.side_title.grid(row=1, column=0, pady=10, padx=10)
 
-        # Create widgets
-        self.upload_file_button = ctk.CTkButton(
-            self, text="Cargar archivo",
-            command=self.upload_files)
-        self.upload_file_button.grid(
-            row=0, column=1, sticky="nsew", padx=15, pady=15)
+        ''' ====== Simulation frame ====== '''
+        self.simulation_frame = ctk.CTkLabel(master=self,
+                                             text="No hay pacientes cargados",
+                                             height=50,
+                                             corner_radius=6,
+                                             text_font=("Roboto Medium", -25), text_color="white",
+                                             fg_color=("white", "gray38"),
+                                             )
+        self.simulation_frame.grid(row=0, column=1, sticky="nswe")
 
     def upload_files(self):
         fileRoute = filedialog.askopenfilename(
@@ -66,23 +79,19 @@ class App(ctk.CTk):
             filetypes=(("XML", "*.xml"), ("all files", "*.*")))
         isCorrect = UploadInformation().xPath(fileRoute)
         if isCorrect:
+            self.change_message()
             self.put_buttons_to_simulate()
             messagebox.showinfo(
                 "Información", "Archivo cargado correctamente")
         else:
             messagebox.showerror(
-                "Error", "El archivo no es correcto, por favor revisar información")
+                "Error", "El archivo o la ruta no es correcta, por favor revisa e intenta de nuevo")
 
-    def simulate(self, name):
-        pacient_data = UploadInformation().pacients_list
-        tmp = pacient_data.get_next()
-        while tmp is not None:
-            if tmp.get_name() == name:
-                tmp.get_matrix().show_matrix()
-            tmp = tmp.get_next()
-
-    def put_information_pacient(self):
-        pass
+    def create_button_for_pacient(self, name, index):
+        button_for_pacient = ctk.CTkButton(
+            self.side_menu, text=name, command=lambda: self.display_frame_simulation(name))
+        button_for_pacient.grid(
+            row=index, column=0, sticky="nsew", padx=10, pady=10)
 
     def put_buttons_to_simulate(self):
         pacient_data = UploadInformation().pacients_list
@@ -93,11 +102,19 @@ class App(ctk.CTk):
             count += 1
             tmp = tmp.get_next()
 
-    def create_button_for_pacient(self, name, index):
-        button_for_pacient = ctk.CTkButton(
-            self.side_menu, text=name, command=lambda: self.simulate(name))
-        button_for_pacient.grid(
-            row=index, column=0, sticky="nsew", padx=10, pady=10)
+    def change_message(self):
+        self.simulation_frame.configure(
+            text="Escoger un paciente para simular")
+
+    def display_frame_simulation(self, name):
+        pacient_data = UploadInformation().pacients_list
+        tmp = pacient_data.get_next()
+        while tmp is not None:
+            if tmp.get_name() == name:
+                self.simulation_frame = SimulationFrame(self, tmp)
+                self.simulation_frame.grid(row=0, column=1, sticky="nswe")
+                break
+            tmp = tmp.get_next()
 
 
 if __name__ == "__main__":

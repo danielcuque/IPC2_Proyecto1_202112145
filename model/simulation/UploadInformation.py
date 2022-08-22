@@ -1,21 +1,24 @@
 from xml.dom import minidom as MD
 
 from data.pacients.ListPacients import ListPacients
-from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
 
 
 class UploadInformation:
     pacients_list = ListPacients()
 
     def xPath(self, ruta):
+        if ruta == "" or ruta == None:
+            return False
         file = MD.parse(ruta)
-
         pacients = file.getElementsByTagName("paciente")
+
         for pacient in pacients:
+
             datos_personales = pacient.getElementsByTagName("datospersonales")
             periods = pacient.getElementsByTagName("periodos")
             size_matrix = pacient.getElementsByTagName("m")
             info_matrix = pacient.getElementsByTagName("rejilla")
+
             if len(datos_personales) == 0 or len(periods) == 0 or len(info_matrix) == 0 or len(size_matrix) == 0:
                 return False
             else:

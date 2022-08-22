@@ -9,7 +9,7 @@ class DoubleLinkedList_X:
 
     def fill_row(self):
         for i in range(self.size):
-            new_cell = CellNode(self.index, i, False)
+            new_cell = CellNode(self.index, i, 0)
             if self.next is None:
                 self.next = new_cell
             else:
