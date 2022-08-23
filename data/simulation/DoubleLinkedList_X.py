@@ -11,21 +11,19 @@ class DoubleLinkedList_X(DoublyList):
             new_cell = Cell(pos_x, pos_y, 0)
             self.insert_node_at_end(new_cell)
 
-    def change_cell_state(self, pos_x, pos_y, is_infected):
-        tmp = self.next
-        for i in range(self.size):
-            if tmp.get_body().get_pos_x() == pos_x:
-                tmp.get_body().get_is_infected() == is_infected
-                tmp = tmp.get_next()
+    def get_cell_by_column_position(self, pos_y):
+        tmp = self.head
+        while tmp is not None:
+            if tmp.get_body().get_pos_y() == pos_y:
+                return tmp.get_body()
+            tmp = tmp.get_next()
+        return None
 
     def show_row(self):
         concatInfoCell = ""
-        tmp = self.next
+        tmp = self.head
         while tmp is not None:
             concatInfoCell += "(" + str(tmp.get_body().get_pos_x()) + " " + str(
                 tmp.get_body().get_pos_y()) + " " + str(tmp.get_body().get_is_infected()) + ") "
             tmp = tmp.get_next()
         print(concatInfoCell)
-
-    def get_next(self):
-        return self.next

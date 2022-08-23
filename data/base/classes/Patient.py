@@ -12,9 +12,9 @@ class Patient:
         self.historial = ListPacientHistorial()
 
     def fill_columns(self, size):
-        for pos_y in range(self.size):
-            print("2 pos_y: " + str(pos_y))
-            self.matrix.insert_new_column(pos_y, size)
+        for pos_x in range(self.size):
+            self.matrix.insert_new_column(pos_x, size)
+
 
     def get_name(self):
         return self.name

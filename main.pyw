@@ -97,7 +97,7 @@ class App(ctk.CTk):
 
     def put_buttons_to_simulate(self):
         patient_data = UploadInformation().patients_list
-        tmp = patient_data.get_next()
+        tmp = patient_data.get_head()
         count = 2
         while tmp is not None:
             self.create_button_for_patient(tmp.get_body().get_name(), count)

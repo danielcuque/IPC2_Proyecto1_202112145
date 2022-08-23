@@ -2,18 +2,15 @@ from data.simulation.DoubleLinkedList_X import DoubleLinkedList_X
 
 
 class Index:
-    def __init__(self, index):  # index will be the row number
-        self.index = index
+    def __init__(self, pos_x):  # index will be the row number
+        self.pos_x = pos_x
         self.list_rows = DoubleLinkedList_X()
 
     def insert_new_row(self, size):
-        self.list_rows.fill_row(self.index, size)
+        self.list_rows.fill_row(self.pos_x, size)
 
-    def get_index_row(self):
-        return self.index
-
-    def get_index(self):
-        return self.index
+    def get_pos_x(self):
+        return self.pos_x
 
     def get_eje_x(self):
         return self.list_rows
@@ -24,5 +21,5 @@ class Index:
     def show_row(self):
         self.list_rows.show_row()
 
-    def change_cell_state(self, pos_x, pos_y, is_infected):
-        self.list_rows.change_cell_state(pos_x, pos_y, is_infected)
+    def get_cell_by_column_position(self, pos_x):
+        return self.list_rows.get_cell_by_column_position(pos_x)

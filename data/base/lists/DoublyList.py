@@ -3,15 +3,15 @@ from ..nodes.NodeForDoublyList import NodeForDoublyList
 
 class DoublyList:
     def __init__(self):
-        self.next = None
+        self.head = None
         self.size = 0
 
     def insert_node_at_end(self, body):
         new_node = NodeForDoublyList(body)
-        if self.next is None:
-            self.next = new_node
+        if self.head is None:
+            self.head = new_node
         else:
-            tmp = self.next
+            tmp = self.head
             while tmp.get_next() is not None:
                 tmp = tmp.get_next()
             tmp.set_next(new_node)

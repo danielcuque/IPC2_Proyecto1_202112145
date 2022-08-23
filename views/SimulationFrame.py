@@ -1,4 +1,7 @@
 import customtkinter as ctk
+from data.base.classes.Cell import Cell
+
+from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
 
 
 class SimulationFrame(ctk.CTkFrame):
@@ -9,7 +12,7 @@ class SimulationFrame(ctk.CTkFrame):
 
         self.grid_rowconfigure((0, 1, 2), weight=0)
         self.grid_rowconfigure(3, weight=1)
-        self.columnconfigure((0, 1), weight=1)
+        self.grid_columnconfigure((0, 1), weight=1)
         self.create_simulation_frame()
 
     def create_simulation_frame(self):
@@ -38,8 +41,7 @@ class SimulationFrame(ctk.CTkFrame):
                                          height=50,
                                          corner_radius=6,
                                          text_font=("Roboto Medium", -16), text_color="white",
-                                         fg_color=("white", "gray38"),
-                                         )
+                                         fg_color=("white", "gray38"))
         self.rest_periods.grid(
             column=0, row=2, sticky="nswe", padx=15, pady=15)
 
@@ -55,19 +57,28 @@ class SimulationFrame(ctk.CTkFrame):
             column=0, row=3, columnspan=2, padx=15, pady=15)
 
     def display_matrix(self):
-        matrix = self.pacient.get_matrix()
+        matrix: DoubleLinkedList_Y = self.pacient.get_matrix()
+        color = "gray38"
+        txt_color = "white"
         for r in range(matrix.size):
             for c in range(matrix.size):
+                cell: Cell = matrix.get_cell_by_row_number(r, c)
+                if cell.is_infected == 1:
+                    color = "#ebdbb0"
+                    txt_color = "black"
+                else:
+                    color = "gray38"
+                    txt_color = "white"
                 self.label_matrix = ctk.CTkLabel(master=self.frame_matrix,
-                                                 text="0",
+                                                 text=f'{cell.get_is_infected()}',
                                                  corner_radius=6,
                                                  width=10,
                                                  height=10,
-                                                 text_font=("Roboto Medium", -15), text_color="white",
-                                                 fg_color=(
-                                                     "white", "gray38"))
+                                                 text_font=("Roboto Medium", -15), text_color=txt_color,
+                                                 bg_color=color)
+                #  fg_color=("white", "gray38"))
                 self.label_matrix.grid(
-                    column=c, row=r, padx=1, pady=1)
+                    column=c, row=r, padx=2, pady=2)
 
     def simulate(self):
         print("a")

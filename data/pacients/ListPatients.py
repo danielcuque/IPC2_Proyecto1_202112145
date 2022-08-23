@@ -12,14 +12,14 @@ class ListPatients(SimpleList):
         new_patient.fill_columns(size)
 
     def show_patients(self):
-        tmp = self.next
+        tmp = self.head
         while tmp is not None:
             print("Matriz de: " + tmp.get_body().get_name())
             tmp.get_body().get_matrix().show_matrix()
             tmp = tmp.next
 
     def get_patient(self, name):
-        tmp = self.next
+        tmp = self.head
         while tmp is not None:
             if tmp.get_body().get_name() == name:
                 return tmp.get_body()
