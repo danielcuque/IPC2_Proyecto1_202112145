@@ -3,6 +3,7 @@ import customtkinter as ctk
 
 # Data
 from model.simulation.UploadInformation import UploadInformation
+from data.pacients.ListPatients import ListPatients
 
 # Helpers
 from model.helpers.WindowPosition import WindowPosition
@@ -108,15 +109,12 @@ class App(ctk.CTk):
             text="Escoger un patiente para simular")
 
     def display_frame_simulation(self, name):
-        patient_data = UploadInformation().patients_list
-        tmp = patient_data.get_next()
-        while tmp is not None:
-            if tmp.get_body().get_name() == name:
-                self.simulation_frame = SimulationFrame(self, tmp)
-                self.simulation_frame.grid(
-                    row=0, column=1, sticky="nswe", padx=10, pady=10)
-                break
-            tmp = tmp.get_next()
+        patient_data = UploadInformation().patients_list.get_patient(name)
+        if patient_data is not None:
+            self.simulation_frame = SimulationFrame(
+                self, patient_data)
+            self.simulation_frame.grid(
+                row=0, column=1, sticky="nswe", padx=10, pady=10)
 
 
 if __name__ == "__main__":

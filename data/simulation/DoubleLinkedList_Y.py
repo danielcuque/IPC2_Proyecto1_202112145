@@ -1,32 +1,22 @@
-from .IndexNode import IndexNode
+from data.base.lists.DoublyList import DoublyList
+from ..base.lists.DoublyList import DoublyList
+from ..base.classes.Index import Index
 
 
-class DoubleLinkedList_Y:
-    def __init__(self, size):
-        self.next = None
-        self.size = size
+class DoubleLinkedList_Y(DoublyList):
+    def __init__(self):
+        super().__init__()
 
-    def fill_column(self):
-        for i in range(self.size):
-            self.insert_node_at_end(i, self.size)
+    def insert_new_column(self, pos_y, size):
+        print("pos_y: " + str(pos_y))
+        new_index = Index(pos_y)
+        self.insert_node_at_end(new_index)
+        new_index.insert_new_row(size)
 
-    def insert_node_at_end(self, i, size):
-        new_index = IndexNode(i, size)
-        if self.next is None:
-            self.next = new_index
-        else:
-            tmp = self.next
-            while tmp.get_next() is not None:
-                tmp = tmp.get_next()
-            tmp.set_next(new_index)
-            new_index.prev = tmp
-        new_index.get_body().fill_row()
-
-    def change_cell_state(self, pos_x, pos_y, isInfected):
+    def change_cell_state(self, pos_x, pos_y, is_infected):
         tmp = self.next
         while tmp is not None:
-            if tmp.get_index() == pos_y:
-                tmp.get_eje_x().change_cell_state(pos_x, isInfected)
+            print("size: " + str(self.size))
 
     def show_matrix(self):
         tmp = self.next
@@ -36,3 +26,6 @@ class DoubleLinkedList_Y:
 
     def get_size(self):
         return self.size
+
+    def get_node(self):
+        return self.next

@@ -26,15 +26,15 @@ class UploadInformation:
                 age = patient.getElementsByTagName("edad")
 
                 verify_personal_data = UploadInformation().verify_name_age(name, age)
-                verify_matrix_data = UploadInformation().verify_matrix(
-                    info_matrix[0])
 
-                if verify_personal_data and verify_matrix_data:
+                if verify_personal_data:
                     self.patients_list.insert_patient_at_end(
                         name[0].firstChild.data, age[0].firstChild.data, int(size_matrix[0].firstChild.data), int(periods[0].firstChild.data))
-
+                    # UploadInformation().insert_cells_at_matrix(
+                    #     info_matrix[0], self.patients_list.get_patient(name[0].firstChild.data))
                 else:
                     return False
+        self.patients_list.show_patients()
         return True
 
     @staticmethod
@@ -45,13 +45,9 @@ class UploadInformation:
             return True
 
     @staticmethod
-    def verify_matrix(matrix):
-        cells = matrix.getElementsByTagName("celda")
+    def insert_cells_at_matrix(info_matrix, patient):
+        cells = info_matrix.getElementsByTagName("celda")
         for cell in cells:
             row_cell = cell.getAttribute("f")
             column_cell = cell.getAttribute("c")
-
-            if len(row_cell) == 0 or len(column_cell) == 0:
-                return False
-            else:
-                return True
+            patient.get_matrix().change_cell_state(row_cell, column_cell, 1)

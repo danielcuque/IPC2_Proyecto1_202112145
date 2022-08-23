@@ -1,4 +1,5 @@
 from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
+from ...historial.ListPacientHistorial import ListPacientHistorial
 
 
 class Patient:
@@ -6,7 +7,14 @@ class Patient:
         self.name = name
         self.age = age
         self.periods = periods
-        self.matrix = DoubleLinkedList_Y(size)
+        self.size = size
+        self.matrix = DoubleLinkedList_Y()
+        self.historial = ListPacientHistorial()
+
+    def fill_columns(self, size):
+        for pos_y in range(self.size):
+            print("2 pos_y: " + str(pos_y))
+            self.matrix.insert_new_column(pos_y, size)
 
     def get_name(self):
         return self.name
@@ -25,3 +33,6 @@ class Patient:
 
     def get_node(self):
         return self.matrix.get_node()
+
+    def get_historial(self):
+        return self.historial
