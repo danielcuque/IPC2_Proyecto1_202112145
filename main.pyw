@@ -3,7 +3,6 @@ import customtkinter as ctk
 
 # Data
 from model.simulation.UploadInformation import UploadInformation
-from data.pacients.ListPatients import ListPatients
 
 # Helpers
 from model.helpers.WindowPosition import WindowPosition
@@ -22,7 +21,7 @@ ctk.set_default_color_theme("blue")
 class App(ctk.CTk):
 
     # Size of the window
-    APP_WIDTH: int = 950
+    APP_WIDTH: int = 1050
     APP_HEIGHT: int = 700
 
     def __init__(self):

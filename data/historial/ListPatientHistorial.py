@@ -1,7 +1,7 @@
 from ..base.lists.SimpleList import SimpleList
 
 
-class ListPacientHistorial(SimpleList):
+class ListPatientHistorial(SimpleList):
     def __init__(self):
         super().__init__()
 

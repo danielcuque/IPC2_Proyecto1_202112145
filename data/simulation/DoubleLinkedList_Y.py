@@ -27,6 +27,19 @@ class DoubleLinkedList_Y(DoublyList):
             tmp = tmp.get_next()
         return None
 
+    def get_infected_cells(self):
+        infected_cells = 0
+        for row in range(self.size):
+            for col in range(self.size):
+                cell: Cell = self.get_cell_by_row_number(row, col)
+                if cell.get_is_infected() == 1:
+                    infected_cells += 1
+        return infected_cells
+
+    def get_healthy_cells(self):
+        total_cells = self.size * self.size
+        return total_cells - self.get_infected_cells()
+
     def show_matrix(self):
         tmp = self.head
         while tmp is not None:
