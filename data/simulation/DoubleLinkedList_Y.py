@@ -1,31 +1,40 @@
-from .IndexNode import IndexNode
+from data.base.classes.Cell import Cell
+from data.base.lists.DoublyList import DoublyList
+from data.base.nodes.NodeForDoublyList import NodeForDoublyList
+from ..base.lists.DoublyList import DoublyList
+from ..base.classes.Index import Index
 
 
-class DoubleLinkedList_Y:
-    def __init__(self, size):
-        self.next = None
-        self.size = size
+class DoubleLinkedList_Y(DoublyList):
+    def __init__(self):
+        super().__init__()
 
-    def insertColumn(self):
-        for i in range(self.size):
-            new_index = IndexNode(i, self.size)
-            if self.next is None:
-                self.next = new_index
-            else:
-                tmp = self.next
-                while tmp.get_next() is not None:
-                    tmp = tmp.get_next()
-                tmp.set_next(new_index)
-                new_index.prev = tmp
+    def insert_new_column(self, pos_x, size):
+        new_index = Index(pos_x)
+        self.insert_node_at_end(new_index)
+        new_index.insert_new_row(size)
 
-    def change_cell_state(self, pos_x, pos_y, isInfected):
-        tmp = self.next
+    def change_cell_state(self, pos_x, pos_y, is_infected):
+        cell: Cell = self.get_cell_by_row_number(pos_x, pos_y)
+        if cell is not None:
+            cell.set_is_infected(is_infected)
+
+    def get_cell_by_row_number(self, pos_x, pos_y):
+        tmp: NodeForDoublyList = self.head
         while tmp is not None:
-            if tmp.get_index() == pos_y:
-                tmp.get_eje_x().change_cell_state(pos_x, isInfected)
-
-    def show_column(self):
-        tmp = self.next
-        while tmp is not None:
-            tmp.show_row()
+            if tmp.get_body().get_pos_x() == pos_x:
+                return tmp.get_body().get_cell_by_column_position(pos_y)
             tmp = tmp.get_next()
+        return None
+
+    def show_matrix(self):
+        tmp = self.head
+        while tmp is not None:
+            tmp.get_body().show_row()
+            tmp = tmp.get_next()
+
+    def get_size(self):
+        return self.size
+
+    def get_node(self):
+        return self.next

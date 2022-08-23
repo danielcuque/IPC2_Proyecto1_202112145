@@ -1,12 +1,16 @@
 from tkinter import filedialog, messagebox
 import customtkinter as ctk
 
-# Views
-
+# Data
+from model.simulation.UploadInformation import UploadInformation
+from data.pacients.ListPatients import ListPatients
 
 # Helpers
 from model.helpers.WindowPosition import WindowPosition
 from model.simulation.UploadInformation import UploadInformation
+
+# Views
+from views.SimulationFrame import SimulationFrame
 
 # # Modes: "System" (standard), "Dark", "Light"
 ctk.set_appearance_mode("dark")
@@ -18,8 +22,8 @@ ctk.set_default_color_theme("blue")
 class App(ctk.CTk):
 
     # Size of the window
-    APP_WIDTH = 700
-    APP_HEIGHT = 500
+    APP_WIDTH: int = 950
+    APP_HEIGHT: int = 700
 
     def __init__(self):
         super().__init__()
@@ -34,42 +38,83 @@ class App(ctk.CTk):
 
         self.title("Simulación de enfermedades")
 
-        # Custom grid layout (2x2)
-        # create 2x2 grid system
-        self.grid_rowconfigure(0, weight=0)
-        self.grid_rowconfigure((1, 2, 3, 4, 5, 6, 7, 8), weight=1)
-        self.grid_columnconfigure((0, 1, 2), weight=1)
+        # Custom grid layout (2x1)
+        # create 2x1 grid system
+        self.grid_columnconfigure(1, weight=1)
+        self.grid_rowconfigure(0, weight=1)
+
+        # Create a side menu
+        self.side_menu = ctk.CTkFrame(self,
+                                      width=200, corner_radius=0)
+        self.side_menu.grid(row=0, column=0, sticky="nswe")
+
+        '''====== Side menu buttons ======'''
+        self.side_menu.grid_rowconfigure(0, minsize=10)
+        self.side_menu.grid_rowconfigure(5, weight=1)
+        self.side_menu.grid_rowconfigure(8, minsize=20)
 
         # Create widgets
         self.upload_file_button = ctk.CTkButton(
-            self, text="Cargar archivo",
+            self.side_menu, text="Cargar archivo",
             command=self.upload_files)
         self.upload_file_button.grid(
             row=0, column=0, sticky="nsew", padx=15, pady=15)
 
-        self.simulate_button = ctk.CTkButton(
-            master=self, text="Simular",
-            state="disabled",
-            command=self.simulate)
-        self.simulate_button.grid(
-            row=0, column=3, sticky="nsew", padx=15, pady=15)
+        # Components
+        self.side_title = ctk.CTkLabel(self.side_menu, text="Simulaciones de:")
+        self.side_title.grid(row=1, column=0, pady=10, padx=10)
+
+        ''' ====== Simulation frame ====== '''
+        self.simulation_frame = ctk.CTkLabel(master=self,
+                                             text="No hay patientes cargados",
+                                             height=50,
+                                             corner_radius=6,
+                                             text_font=("Roboto Medium", -25), text_color="white",
+                                             fg_color=("white", "gray38"),
+                                             )
+        self.simulation_frame.grid(
+            row=0, column=1, sticky="nswe", padx=10, pady=10)
 
     def upload_files(self):
-        fileRoute = filedialog.askopenfilename(
+        file_route = filedialog.askopenfilename(
             initialdir="/Desktop", title="Select file",
             filetypes=(("XML", "*.xml"), ("all files", "*.*")))
-        isCorrect = UploadInformation().xPath(fileRoute)
-        if isCorrect:
-            self.simulate_button.configure(state="normal")
+        is_correct = UploadInformation().xPath(file_route)
+        if is_correct:
+            self.change_message()
+            self.put_buttons_to_simulate()
             messagebox.showinfo(
                 "Información", "Archivo cargado correctamente")
         else:
-            self.simulate_button.configure(state="disabled")
             messagebox.showerror(
-                "Error", "El archivo no es correcto, por favor revisar información")
+                "Error", "El archivo o la ruta no es correcta, por favor revisa e intenta de nuevo")
 
-    def simulate(self):
-        pass
+    def create_button_for_patient(self, name, index):
+        button_for_patient = ctk.CTkButton(
+            self.side_menu, text=name, command=lambda: self.display_frame_simulation(name))
+        button_for_patient.grid(
+            row=index, column=0, sticky="nsew", padx=10, pady=10)
+
+    def put_buttons_to_simulate(self):
+        patient_data = UploadInformation().patients_list
+        tmp = patient_data.get_head()
+        count = 2
+        while tmp is not None:
+            self.create_button_for_patient(tmp.get_body().get_name(), count)
+            count += 1
+            tmp = tmp.get_next()
+
+    def change_message(self):
+        self.simulation_frame.configure(
+            text="Escoger un patiente para simular")
+
+    def display_frame_simulation(self, name):
+        patient_data = UploadInformation().patients_list.get_patient(name)
+        if patient_data is not None:
+            self.simulation_frame = SimulationFrame(
+                self, patient_data)
+            self.simulation_frame.grid(
+                row=0, column=1, sticky="nswe", padx=10, pady=10)
 
 
 if __name__ == "__main__":
