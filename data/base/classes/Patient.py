@@ -37,7 +37,7 @@ class Patient:
         return self.historial
 
     def get_infected_cells(self):
-        return self.matrix.get_infected_cells()
+        return self.matrix.get_cells_infected()
 
     def get_healthy_cells(self):
         return self.matrix.get_healthy_cells()
@@ -45,6 +45,5 @@ class Patient:
     def get_cell_by_row_number(self, pos_x, pos_y):
         return self.matrix.get_cell_by_row_number(pos_x, pos_y)
 
-    def get_neighbors_cell_state(self):
-        self.matrix.get_neighbors_cell_state()
-    
+    def set_periods(self, periods):
+        self.periods = periods

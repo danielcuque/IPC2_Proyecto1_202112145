@@ -21,4 +21,3 @@ class Cell:
 
     def set_pos_y(self, pos_y):
         self.pos_y = pos_y
-

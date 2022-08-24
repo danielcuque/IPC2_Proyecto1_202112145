@@ -1,6 +1,8 @@
 import customtkinter as ctk
+from tkinter import messagebox
 from data.base.classes.Cell import Cell
 from data.base.classes.Patient import Patient
+from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
 
 
 class SimulationFrame(ctk.CTkFrame):
@@ -85,18 +87,16 @@ class SimulationFrame(ctk.CTkFrame):
 
         # Frame to display matrix
         self.frame_matrix = ctk.CTkFrame(master=self)
-        self.display_matrix()
+        self.display_matrix(self.patient.get_matrix())
         self.frame_matrix.grid(
             column=0, row=5, columnspan=2, padx=15, pady=15)
 
-        self.patient.get_neighbors_cell_state()
-
-    def display_matrix(self):
+    def display_matrix(self, matrix: DoubleLinkedList_Y):
         color = "gray38"
         txt_color = "white"
-        for r in range(self.patient.get_size()):
-            for c in range(self.patient.get_size()):
-                cell: Cell = self.patient.get_cell_by_row_number(r, c)
+        for r in range(matrix.get_size()):
+            for c in range(matrix.get_size()):
+                cell: Cell = matrix.get_cell_by_row_number(r, c)
                 if cell.is_infected == 1:
                     color = "#ebdbb0"
                     txt_color = "black"
@@ -110,7 +110,6 @@ class SimulationFrame(ctk.CTkFrame):
                                                  height=10,
                                                  text_font=("Roboto Medium", -15), text_color=txt_color,
                                                  bg_color=color)
-                #  fg_color=("white", "gray38"))
                 self.label_matrix.grid(
                     column=c, row=r, padx=2, pady=2)
 
@@ -118,23 +117,19 @@ class SimulationFrame(ctk.CTkFrame):
         print("a")
 
     def simulate_next_period(self):
-        self.patient.simulate_next_period()
-        self.display_matrix()
-        self.label_rest_periods.config(
-            text=f'Periodos restantes: {self.patient.periods}')
-        self.healthy_cells.config(
-            text=f'Celdas sanas: {self.patient.get_healthy_cells()}')
-        if self.patient.periods == 0:
-            self.simulate_button.config(state="normal")
-            self.simulate_next_period.config(state="disabled")
+
+        if self.patient.get_periods() > 0:
+            new_matrix = DoubleLinkedList_Y()
+            for pos_x in range(self.patient.get_size()):
+                new_matrix.insert_new_column(pos_x, self.patient.get_size())
+            self.patient.get_historial().get_head().get_body().set_infected_cells(new_matrix)
+            self.patient.get_historial().insert_node_at_end(new_matrix)
+            self.patient.set_periods(self.patient.get_periods() - 1)
+            self.display_matrix(new_matrix)
+            self.label_rest_periods.config(
+                text=f'Periodos restantes: {self.patient.get_periods()}')
+        else:
+            messagebox.showerror("Error", "No hay períodos para simular")
 
     def simulate_prev_period(self):
-        self.patient.simulate_prev_period()
-        self.display_matrix()
-        self.label_rest_periods.config(
-            text=f'Periodos restantes: {self.patient.periods}')
-        self.healthy_cells.config(
-            text=f'Celdas sanas: {self.patient.get_healthy_cells()}')
-        if self.patient.periods == 0:
-            self.simulate_button.config(state="normal")
-            self.simulate_next_period.config(state="disabled")
+        pass

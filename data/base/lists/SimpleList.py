@@ -13,9 +13,7 @@ class SimpleList:
             self.head = new_node
         else:
             tmp = self.head
-            while tmp.get_next() is not None:
-                tmp = tmp.get_next()
-            tmp.set_next(new_node)
+            tmp.next = self.head = new_node
         self.size += 1
 
     def get_head(self):
