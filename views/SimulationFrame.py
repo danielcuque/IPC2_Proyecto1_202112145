@@ -2,6 +2,7 @@ import customtkinter as ctk
 from tkinter import messagebox
 from data.base.classes.Cell import Cell
 from data.base.classes.Patient import Patient
+from data.historial.ListPatientHistorial import ListPatientHistorial
 from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
 from model.helpers.VerifyMatrix import VerifyMatrix
 
@@ -93,7 +94,7 @@ class SimulationFrame(ctk.CTkFrame):
 
         self.simulate_next_period_button = ctk.CTkButton(master=self,
                                                          text="Siguiente período",
-                                                         command=lambda: self.simulate_next_period())
+                                                         command=self.simulate_next_period)
         self.simulate_next_period_button.grid(
             column=1, row=2, sticky="nswe", padx=15, pady=15)
 
@@ -130,62 +131,79 @@ class SimulationFrame(ctk.CTkFrame):
 
     def simulate_next_period(self):
         if self.patient.get_periods() > 0:
-
+            patient_historial = self.patient.get_historial()
             # Al principio el historial estará vacío
-            self.patient.get_historial().insert_in_emptylist(self.patient.get_matrix())
+            if patient_historial.get_historial_size() == 0:
+                patient_historial.insert_in_emptylist(
+                    self.patient.get_matrix())
 
-            # Creamos una nueva lista para el siguiente periodo y la llenamos
-            new_matrix = DoubleLinkedList_Y()
-            for pos_x in range(self.patient.get_size()):
-                new_matrix.insert_new_column(pos_x, self.patient.get_size())
+            # Si el periodo actual es menor que el tamaño del historial, entonces se crea una nueva matriz
+            historial_size = patient_historial.get_historial_size()
 
-            # Después comparamos la matriz que está a la cabeza del historial con la matriz que acabamos de crear
-            compare_matrix = VerifyMatrix()
-            compare_matrix.verify_matrix(self.patient.get_matrix(), new_matrix)
+            # Si el periodo actual es igual al tamaño de la matriz, significa que el siguiente periodo va a ser nuevo
+            if self.current_period == (historial_size - 1):
+                self.simulate_new_period(patient_historial)
 
-            # Actualizamos la matriz del paciente con la matriz que acabamos de crear
-            self.patient.set_matrix(new_matrix)
-            self.patient.get_historial().insert_node_at_end(new_matrix)
+            elif self.current_period < (historial_size - 1):
+                # Si el periodo actual es menor que el tamaño del historial, significa que la matriz existe
+                self.simulate_existing_period(patient_historial)
 
             # Restamos el número de períodos restantes
             self.patient.set_periods(self.patient.get_periods() - 1)
 
             # Mostramos la matriz actual
-            self.display_matrix(self.patient.get_matrix())
-            self.label_rest_periods.configure(
-                text=f'Periodos restantes: {self.patient.get_periods()}')
-            self.label_infected_cells.configure(
-                text=f'Celdas infectadas: {self.patient.get_infected_cells()}')
-            self.healthy_cells.configure(
-                text=f'Celdas sanas: {self.patient.get_healthy_cells()}')
             self.current_period += 1
-            self.label_current_period.configure(
-                text=f'Periodo actual: {self.current_period}')
+            self.display_information()
 
         else:
             messagebox.showerror("Error", "No hay períodos para simular")
 
     def simulate_prev_period(self):
         # Si el periodo actual es diferente de 0, significa que no es el estado inicial
-        if self.current_period > 0:
-
+        if self.current_period > -1:
+            patient_historial = self.patient.get_historial()
             # Obtememos la matriz dependiendo del periodo anterior
-            prev_matrix = self.patient.get_historial().get_node_by_index(
+            prev_matrix = patient_historial.get_node_by_index(
                 self.current_period-1).get_matrix()
 
             # Actualizamos el periodo actual
+            self.current_period -= 1
             self.patient.set_matrix(prev_matrix)
+            self.display_information()
 
             # Mostramos la matriz
             self.display_matrix(self.patient.get_matrix())
-            self.label_rest_periods.configure(
-                text=f'Periodos restantes: {self.patient.get_periods()}')
-            self.label_infected_cells.configure(
-                text=f'Celdas infectadas: {self.patient.get_infected_cells()}')
-            self.healthy_cells.configure(
-                text=f'Celdas sanas: {self.patient.get_healthy_cells()}')
-            self.current_period -= 1
-            self.label_current_period.configure(
-                text=f'Periodo actual: {self.current_period}')
+
         else:
             messagebox.showerror("Error", "No hay períodos para simular")
+
+    def display_information(self):
+        self.display_matrix(self.patient.get_matrix())
+        self.label_rest_periods.configure(
+            text=f'Periodos restantes: {self.patient.get_periods()}')
+        self.label_infected_cells.configure(
+            text=f'Celdas infectadas: {self.patient.get_infected_cells()}')
+        self.healthy_cells.configure(
+            text=f'Celdas sanas: {self.patient.get_healthy_cells()}')
+
+        self.label_current_period.configure(
+            text=f'Periodo actual: {self.current_period}')
+
+    def simulate_new_period(self, patient_historial: ListPatientHistorial):
+        compare_matrix = VerifyMatrix()
+        # Creamos una nueva lista para el siguiente periodo y la llenamos
+        new_matrix = DoubleLinkedList_Y()
+        for pos_x in range(self.patient.get_size()):
+            new_matrix.insert_new_column(pos_x, self.patient.get_size())
+        # Después comparamos la matriz que está a la cabeza del historial con la matriz que acabamos de crear
+        compare_matrix.verify_matrix(
+            self.patient.get_matrix(), new_matrix)
+        # Actualizamos la matriz del paciente con la matriz que acabamos de crear
+        self.patient.set_matrix(new_matrix)
+        patient_historial.insert_node_at_end(new_matrix)
+
+    def simulate_existing_period(self, patient_historial: ListPatientHistorial):
+        next_matrix = patient_historial.get_node_by_index(
+            self.current_period+1).get_matrix()
+        self.patient.set_matrix(next_matrix)
+
