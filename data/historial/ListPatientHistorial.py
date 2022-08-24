@@ -25,6 +25,35 @@ class ListPatientHistorial:
     def show_list(self):
         tmp = self.start_node
         while tmp is not None:
-            print(tmp.matrix.show_matrix())
-            print("\n")
+            print(tmp.matrix)
             tmp = tmp.next
+        print("\n")
+
+    def get_node(self):
+        return self.start_node
+
+    def get_historial_size(self):
+        tmp = self.start_node
+        count = 0
+        while tmp is not None:
+            count += 1
+            tmp = tmp.next
+        return count
+
+    def get_last_node(self):
+        tmp = self.start_node
+        while tmp.next is not None:
+            tmp = tmp.next
+        return tmp
+
+    def get_item_by_position(self, index):
+        tmp = self.start_node
+        for i in range(index):
+            tmp = tmp.next
+        return tmp
+
+    def get_node_by_index(self, index):
+        tmp = self.start_node
+        for i in range(index):
+            tmp = tmp.next
+        return tmp

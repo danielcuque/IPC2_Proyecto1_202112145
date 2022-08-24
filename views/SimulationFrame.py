@@ -7,13 +7,15 @@ from model.helpers.VerifyMatrix import VerifyMatrix
 
 
 class SimulationFrame(ctk.CTkFrame):
+    current_period = 0
+
     def __init__(self, master, patient):
         super().__init__()
         self.master = master
         self.patient: Patient = patient
 
-        self.grid_rowconfigure((0, 1, 2, 3, 4), weight=0)
-        self.grid_rowconfigure(5, weight=1)
+        self.grid_rowconfigure((0, 1, 2, 3, 4, 5), weight=0)
+        self.grid_rowconfigure(6, weight=1)
         self.grid_columnconfigure((0, 1), weight=1)
         self.create_simulation_frame()
 
@@ -49,6 +51,15 @@ class SimulationFrame(ctk.CTkFrame):
         self.label_rest_periods.grid(
             column=0, row=2, sticky="nswe", padx=15, pady=15)
 
+        self.label_current_period = ctk.CTkLabel(master=self,
+                                                 text=f'Periodo actual: {self.current_period}',
+                                                 height=30,
+                                                 corner_radius=6,
+                                                 text_font=("Roboto Medium", -16), text_color="white",
+                                                 fg_color=("white", "gray38"))
+        self.label_current_period.grid(
+            column=0, row=3, sticky="nswe", padx=15, pady=15)
+
         self.label_infected_cells = ctk.CTkLabel(master=self,
                                                  text=f'Celdas infectadas: {self.patient.get_infected_cells()}',
                                                  height=30,
@@ -56,7 +67,7 @@ class SimulationFrame(ctk.CTkFrame):
                                                  text_font=("Roboto Medium", -16), text_color="white",
                                                  fg_color=("white", "gray38"))
         self.label_infected_cells.grid(
-            column=0, row=3, sticky="nswe", padx=15, pady=15)
+            column=0, row=4, sticky="nswe", padx=15, pady=15)
 
         self.healthy_cells = ctk.CTkLabel(master=self,
                                           text=f'Celdas sanas: {self.patient.get_healthy_cells()}',
@@ -65,7 +76,7 @@ class SimulationFrame(ctk.CTkFrame):
                                           text_font=("Roboto Medium", -16), text_color="white",
                                           fg_color=("white", "gray38"))
         self.healthy_cells.grid(
-            column=0, row=4, sticky="nswe", padx=15, pady=15)
+            column=0, row=5, sticky="nswe", padx=15, pady=15)
 
         # Buttons
         self.simuate_prev_period_button = ctk.CTkButton(master=self,
@@ -82,7 +93,7 @@ class SimulationFrame(ctk.CTkFrame):
 
         self.simulate_next_period_button = ctk.CTkButton(master=self,
                                                          text="Siguiente período",
-                                                         command=self.simulate_next_period)
+                                                         command=lambda: self.simulate_next_period())
         self.simulate_next_period_button.grid(
             column=1, row=2, sticky="nswe", padx=15, pady=15)
 
@@ -90,7 +101,7 @@ class SimulationFrame(ctk.CTkFrame):
         self.frame_matrix = ctk.CTkFrame(master=self)
         self.display_matrix(self.patient.get_matrix())
         self.frame_matrix.grid(
-            column=0, row=5, columnspan=2, padx=15, pady=15)
+            column=0, row=6, columnspan=2, padx=15, pady=15)
 
     def display_matrix(self, matrix: DoubleLinkedList_Y):
         color = "gray38"
@@ -141,15 +152,40 @@ class SimulationFrame(ctk.CTkFrame):
 
             # Mostramos la matriz actual
             self.display_matrix(self.patient.get_matrix())
-            self.label_rest_periods.config(
+            self.label_rest_periods.configure(
                 text=f'Periodos restantes: {self.patient.get_periods()}')
-            self.label_infected_cells.config(
+            self.label_infected_cells.configure(
                 text=f'Celdas infectadas: {self.patient.get_infected_cells()}')
-            self.healthy_cells.config(
+            self.healthy_cells.configure(
                 text=f'Celdas sanas: {self.patient.get_healthy_cells()}')
-            self.patient.get_historial().show_list()
+            self.current_period += 1
+            self.label_current_period.configure(
+                text=f'Periodo actual: {self.current_period}')
+
         else:
             messagebox.showerror("Error", "No hay períodos para simular")
 
     def simulate_prev_period(self):
-        pass
+        # Si el periodo actual es diferente de 0, significa que no es el estado inicial
+        if self.current_period > 0:
+
+            # Obtememos la matriz dependiendo del periodo anterior
+            prev_matrix = self.patient.get_historial().get_node_by_index(
+                self.current_period-1).get_matrix()
+
+            # Actualizamos el periodo actual
+            self.patient.set_matrix(prev_matrix)
+
+            # Mostramos la matriz
+            self.display_matrix(self.patient.get_matrix())
+            self.label_rest_periods.configure(
+                text=f'Periodos restantes: {self.patient.get_periods()}')
+            self.label_infected_cells.configure(
+                text=f'Celdas infectadas: {self.patient.get_infected_cells()}')
+            self.healthy_cells.configure(
+                text=f'Celdas sanas: {self.patient.get_healthy_cells()}')
+            self.current_period -= 1
+            self.label_current_period.configure(
+                text=f'Periodo actual: {self.current_period}')
+        else:
+            messagebox.showerror("Error", "No hay períodos para simular")
