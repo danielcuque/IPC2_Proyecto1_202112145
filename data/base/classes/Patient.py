@@ -47,3 +47,6 @@ class Patient:
 
     def set_periods(self, periods):
         self.periods = periods
+
+    def set_matrix(self, matrix):
+        self.matrix = matrix

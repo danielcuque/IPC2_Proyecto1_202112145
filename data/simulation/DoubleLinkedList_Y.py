@@ -32,33 +32,33 @@ class DoubleLinkedList_Y(DoublyList):
             tmp = tmp.get_next()
         return None
 
-    def set_infected_cells(self, matrix):
-        for row in range(self.size):
-            for col in range(self.size):
-                cell: Cell = self.get_cell_by_row_number(row, col)
-                count = self.get_neighbors_cell_state(
-                    cell.get_pos_x(), cell.get_pos_y())
-                if cell.get_is_infected() == 0:
-                    if count == 3:
-                        cell: Cell = matrix.get_cell_by_row_number(row, col)
-                        cell.set_is_infected(1)
-                if cell.get_is_infected() == 1:
-                    if count == 2 or count == 3:
-                        cell: Cell = matrix.get_cell_by_row_number(row, col)
-                        cell.set_is_infected(1)
+    # def set_infected_cells(self, matrix):
+    #     for row in range(self.size):
+    #         for col in range(self.size):
+    #             cell: Cell = self.get_cell_by_row_number(row, col)
+    #             count = self.get_neighbors_cell_state(
+    #                 cell.get_pos_x(), cell.get_pos_y())
+    #             if cell.get_is_infected() == 0:
+    #                 if count == 3:
+    #                     cell: Cell = matrix.get_cell_by_row_number(row, col)
+    #                     cell.set_is_infected(1)
+    #             if cell.get_is_infected() == 1:
+    #                 if count == 2 or count == 3:
+    #                     cell: Cell = matrix.get_cell_by_row_number(row, col)
+    #                     cell.set_is_infected(1)
 
     def get_cells_infected(self):
-        cells_infected = SimpleList()
+        cells_infected = 0
         for row in range(self.size):
             for col in range(self.size):
                 cell: Cell = self.get_cell_by_row_number(row, col)
                 if cell.get_is_infected() == 1:
-                    cells_infected.insert_node_at_end(cell)
+                    cells_infected += 1
         return cells_infected
 
     def get_healthy_cells(self):
         total_cells = self.size * self.size
-        return total_cells - self.get_cells_infected().size
+        return total_cells - self.get_cells_infected()
 
     def get_neighbors_cell_state(self, pos_x, pos_y):
         count = 0

@@ -3,6 +3,7 @@ from tkinter import messagebox
 from data.base.classes.Cell import Cell
 from data.base.classes.Patient import Patient
 from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
+from model.helpers.VerifyMatrix import VerifyMatrix
 
 
 class SimulationFrame(ctk.CTkFrame):
@@ -48,13 +49,13 @@ class SimulationFrame(ctk.CTkFrame):
         self.label_rest_periods.grid(
             column=0, row=2, sticky="nswe", padx=15, pady=15)
 
-        self.infected_cells = ctk.CTkLabel(master=self,
-                                           text=f'Celdas infectadas: {self.patient.get_infected_cells().size}',
-                                           height=30,
-                                           corner_radius=6,
-                                           text_font=("Roboto Medium", -16), text_color="white",
-                                           fg_color=("white", "gray38"))
-        self.infected_cells.grid(
+        self.label_infected_cells = ctk.CTkLabel(master=self,
+                                                 text=f'Celdas infectadas: {self.patient.get_infected_cells()}',
+                                                 height=30,
+                                                 corner_radius=6,
+                                                 text_font=("Roboto Medium", -16), text_color="white",
+                                                 fg_color=("white", "gray38"))
+        self.label_infected_cells.grid(
             column=0, row=3, sticky="nswe", padx=15, pady=15)
 
         self.healthy_cells = ctk.CTkLabel(master=self,
@@ -117,17 +118,36 @@ class SimulationFrame(ctk.CTkFrame):
         print("a")
 
     def simulate_next_period(self):
-
         if self.patient.get_periods() > 0:
+
+            # Al principio el historial estará vacío
+            self.patient.get_historial().insert_in_emptylist(self.patient.get_matrix())
+
+            # Creamos una nueva lista para el siguiente periodo y la llenamos
             new_matrix = DoubleLinkedList_Y()
             for pos_x in range(self.patient.get_size()):
                 new_matrix.insert_new_column(pos_x, self.patient.get_size())
-            self.patient.get_historial().get_head().get_body().set_infected_cells(new_matrix)
+
+            # Después comparamos la matriz que está a la cabeza del historial con la matriz que acabamos de crear
+            compare_matrix = VerifyMatrix()
+            compare_matrix.verify_matrix(self.patient.get_matrix(), new_matrix)
+
+            # Actualizamos la matriz del paciente con la matriz que acabamos de crear
+            self.patient.set_matrix(new_matrix)
             self.patient.get_historial().insert_node_at_end(new_matrix)
+
+            # Restamos el número de períodos restantes
             self.patient.set_periods(self.patient.get_periods() - 1)
-            self.display_matrix(new_matrix)
+
+            # Mostramos la matriz actual
+            self.display_matrix(self.patient.get_matrix())
             self.label_rest_periods.config(
                 text=f'Periodos restantes: {self.patient.get_periods()}')
+            self.label_infected_cells.config(
+                text=f'Celdas infectadas: {self.patient.get_infected_cells()}')
+            self.healthy_cells.config(
+                text=f'Celdas sanas: {self.patient.get_healthy_cells()}')
+            self.patient.get_historial().show_list()
         else:
             messagebox.showerror("Error", "No hay períodos para simular")
 

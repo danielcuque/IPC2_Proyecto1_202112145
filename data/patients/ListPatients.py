@@ -1,3 +1,4 @@
+from curses.panel import new_panel
 from ..base.classes.Patient import Patient
 from data.base.lists.SimpleList import SimpleList
 
@@ -10,7 +11,6 @@ class ListPatients(SimpleList):
         new_patient = Patient(name, age, size, periods)
         self.insert_node_at_end(new_patient)
         new_patient.fill_columns(size)
-        new_patient.get_historial().insert_node_at_end(new_patient.get_matrix())
 
     def show_patients(self):
         tmp = self.head

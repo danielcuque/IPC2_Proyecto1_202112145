@@ -9,12 +9,15 @@ class SimpleList:
 
     def insert_node_at_end(self, body):
         new_node = NodeForSimpleList(body)
+        self.size = + 1
         if self.head is None:
             self.head = new_node
+            self.tail = new_node
         else:
             tmp = self.head
-            tmp.next = self.head = new_node
-        self.size += 1
+            while tmp.get_next() is not None:
+                tmp = tmp.get_next()
+            tmp.set_next(new_node)
 
     def get_head(self):
         return self.head
