@@ -1,8 +1,13 @@
+# Classes
 from data.base.classes.Cell import Cell
-from data.base.lists.DoublyList import DoublyList
-from data.base.nodes.NodeForDoublyList import NodeForDoublyList
-from ..base.lists.DoublyList import DoublyList
 from ..base.classes.Index import Index
+
+# Lists and Nodes
+from ..base.lists.DoublyList import DoublyList
+from ..base.lists.SimpleList import SimpleList
+
+from .. base.nodes.NodeForSimpleList import NodeForSimpleList
+from ..base.nodes.NodeForDoublyList import NodeForDoublyList
 
 
 class DoubleLinkedList_Y(DoublyList):
@@ -28,17 +33,36 @@ class DoubleLinkedList_Y(DoublyList):
         return None
 
     def get_infected_cells(self):
-        infected_cells = 0
+        infected_cell_list = SimpleList()
         for row in range(self.size):
             for col in range(self.size):
                 cell: Cell = self.get_cell_by_row_number(row, col)
                 if cell.get_is_infected() == 1:
-                    infected_cells += 1
-        return infected_cells
+                    infected_cell_list.insert_node_at_end(cell)
+        return infected_cell_list
 
     def get_healthy_cells(self):
         total_cells = self.size * self.size
-        return total_cells - self.get_infected_cells()
+        return total_cells - self.get_infected_cells().size
+
+    def get_neighbors_cell_state(self):
+        cells_infected = self.get_infected_cells()
+        tmp = cells_infected.head
+
+        while tmp is not None:
+            pos_x = tmp.get_body().get_pos_x()
+            pos_y = tmp.get_body().get_pos_y()
+
+            for i in range(pos_x - 1, pos_x + 2):
+                for j in range(pos_y - 1, pos_y + 2):
+                    if i == pos_x and j == pos_y:
+                        continue
+                    else:
+                        cell: Cell = self.get_cell_by_row_number(i, j)
+                        if cell is not None:
+                            print(cell.get_is_infected())
+            print("\n")
+            tmp = tmp.get_next()
 
     def show_matrix(self):
         tmp = self.head

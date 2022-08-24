@@ -47,7 +47,7 @@ class SimulationFrame(ctk.CTkFrame):
             column=0, row=2, sticky="nswe", padx=15, pady=15)
 
         self.infected_cells = ctk.CTkLabel(master=self,
-                                           text=f'Celdas infectadas: {self.patient.get_infected_cells()}',
+                                           text=f'Celdas infectadas: {self.patient.get_infected_cells().size}',
                                            height=30,
                                            corner_radius=6,
                                            text_font=("Roboto Medium", -16), text_color="white",
@@ -88,6 +88,8 @@ class SimulationFrame(ctk.CTkFrame):
         self.display_matrix()
         self.frame_matrix.grid(
             column=0, row=5, columnspan=2, padx=15, pady=15)
+
+        self.patient.get_neighbors_cell_state()
 
     def display_matrix(self):
         color = "gray38"

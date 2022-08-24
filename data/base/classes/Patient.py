@@ -44,3 +44,7 @@ class Patient:
 
     def get_cell_by_row_number(self, pos_x, pos_y):
         return self.matrix.get_cell_by_row_number(pos_x, pos_y)
+
+    def get_neighbors_cell_state(self):
+        self.matrix.get_neighbors_cell_state()
+    
