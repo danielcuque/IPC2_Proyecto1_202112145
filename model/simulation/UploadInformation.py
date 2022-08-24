@@ -1,6 +1,7 @@
-from xml.dom import minidom as MD
+from xml.dom import minidom as MD, xmlbuilder
+from data.base.classes.Patient import Patient
 
-from data.pacients.ListPatients import ListPatients
+from data.patients.ListPatients import ListPatients
 
 
 class UploadInformation:
@@ -45,7 +46,7 @@ class UploadInformation:
             return True
 
     @staticmethod
-    def insert_cells_at_matrix(info_matrix, patient):
+    def insert_cells_at_matrix(info_matrix, patient: Patient):
         cells = info_matrix.getElementsByTagName("celda")
         for cell in cells:
             row_cell = int(cell.getAttribute("f"))

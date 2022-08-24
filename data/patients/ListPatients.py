@@ -1,3 +1,4 @@
+from curses.panel import new_panel
 from ..base.classes.Patient import Patient
 from data.base.lists.SimpleList import SimpleList
 
