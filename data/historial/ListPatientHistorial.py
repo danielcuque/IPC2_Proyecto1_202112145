@@ -11,16 +11,16 @@ class ListPatientHistorial:
             return
 
     def insert_node_at_end(self, matrix):
+        new_node = MatrixNodeForHistorial(matrix)
         if self.start_node is None:
-            new_node = MatrixNodeForHistorial(matrix)
             self.start_node = new_node
             return
         tmp = self.start_node
         while tmp.next is not None:
             tmp = tmp.next
-        new_node = MatrixNodeForHistorial(matrix)
         tmp.next = new_node
         new_node.prev = tmp
+        return new_node
 
     def show_list(self):
         tmp = self.start_node

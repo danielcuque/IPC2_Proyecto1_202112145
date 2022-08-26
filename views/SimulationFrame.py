@@ -1,9 +1,17 @@
+# GUI Libraries
 import customtkinter as ctk
 from tkinter import messagebox
+
+# Classes
 from data.base.classes.Cell import Cell
 from data.base.classes.Patient import Patient
+
+# Lists and nodes
 from data.historial.ListPatientHistorial import ListPatientHistorial
+from data.historial.MatrixNodeForHistorial import MatrixNodeForHistorial
 from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
+
+# Helpers
 from model.helpers.VerifyMatrix import VerifyMatrix
 
 
@@ -82,12 +90,12 @@ class SimulationFrame(ctk.CTkFrame):
         # Buttons
         self.simuate_prev_period_button = ctk.CTkButton(master=self,
                                                         text="Período anterior",
-                                                        command=self.simulate_prev_period)
+                                                        command=self.display_prev_period)
         self.simuate_prev_period_button.grid(
             column=1, row=0, sticky="nswe", padx=15, pady=15)
 
         self.simulate_all_button = ctk.CTkButton(master=self,
-                                                 text="Simular todo",
+                                                 text="Ir al estado final",
                                                  command=self.simulate_all)
         self.simulate_all_button.grid(
             column=1, row=1, sticky="nswe", padx=15, pady=15)
@@ -100,16 +108,16 @@ class SimulationFrame(ctk.CTkFrame):
 
         # Frame to display matrix
         self.frame_matrix = ctk.CTkFrame(master=self)
-        self.display_matrix(self.patient.get_matrix())
+        self.display_matrix(self.patient.get_node())
         self.frame_matrix.grid(
             column=0, row=6, columnspan=2, padx=15, pady=15)
 
-    def display_matrix(self, matrix: DoubleLinkedList_Y):
+    def display_matrix(self, matrix: MatrixNodeForHistorial):
         color = "gray38"
         txt_color = "white"
         for r in range(matrix.get_size()):
             for c in range(matrix.get_size()):
-                cell: Cell = matrix.get_cell_by_row_number(r, c)
+                cell: Cell = matrix.get_matrix().get_cell_by_row_number(r, c)
                 if cell.is_infected == 1:
                     color = "#ebdbb0"
                     txt_color = "black"
@@ -127,9 +135,11 @@ class SimulationFrame(ctk.CTkFrame):
                     column=c, row=r, padx=2, pady=2)
 
     def simulate_all(self):
-        print("a")
+        while self.patient.periods > 0:
+            self.get_next_period()
+        self.display_information()
 
-    def simulate_next_period(self):
+    def get_next_period(self):
         if self.patient.get_periods() > 0:
             patient_historial = self.patient.get_historial()
             # Al principio el historial estará vacío
@@ -146,25 +156,30 @@ class SimulationFrame(ctk.CTkFrame):
 
             elif self.current_period < (historial_size - 1):
                 # Si el periodo actual es menor que el tamaño del historial, significa que la matriz existe
-                self.simulate_existing_period(patient_historial)
+                self.simulate_existing_period()
 
             # Restamos el número de períodos restantes
             self.patient.set_periods(self.patient.get_periods() - 1)
 
             # Mostramos la matriz actual
             self.current_period += 1
-            self.display_information()
-
         else:
             messagebox.showerror("Error", "No hay períodos para simular")
 
-    def simulate_prev_period(self):
+    def simulate_next_period(self):
+        self.get_next_period()
+        self.display_information()
+
+    def display_prev_period(self):
         # Si el periodo actual es diferente de 0, significa que no es el estado inicial
         if self.current_period > -1:
-            patient_historial = self.patient.get_historial()
+            # patient_historial = self.patient.get_historial()
+
             # Obtememos la matriz dependiendo del periodo anterior
-            prev_matrix = patient_historial.get_node_by_index(
-                self.current_period-1).get_matrix()
+            prev_matrix = self.patient.matrix.get_prev()
+
+            # prev_matrix = patient_historial.get_node_by_index(
+            #     self.current_period-1).get_matrix()
 
             # Actualizamos el periodo actual
             self.current_period -= 1
@@ -172,13 +187,13 @@ class SimulationFrame(ctk.CTkFrame):
             self.display_information()
 
             # Mostramos la matriz
-            self.display_matrix(self.patient.get_matrix())
+            self.display_matrix(self.patient.get_node())
 
         else:
             messagebox.showerror("Error", "No hay períodos para simular")
 
     def display_information(self):
-        self.display_matrix(self.patient.get_matrix())
+        self.display_matrix(self.patient.get_node())
         self.label_rest_periods.configure(
             text=f'Periodos restantes: {self.patient.get_periods()}')
         self.label_infected_cells.configure(
@@ -191,19 +206,21 @@ class SimulationFrame(ctk.CTkFrame):
 
     def simulate_new_period(self, patient_historial: ListPatientHistorial):
         compare_matrix = VerifyMatrix()
+
         # Creamos una nueva lista para el siguiente periodo y la llenamos
+
         new_matrix = DoubleLinkedList_Y()
         for pos_x in range(self.patient.get_size()):
             new_matrix.insert_new_column(pos_x, self.patient.get_size())
+
         # Después comparamos la matriz que está a la cabeza del historial con la matriz que acabamos de crear
         compare_matrix.verify_matrix(
             self.patient.get_matrix(), new_matrix)
+
         # Actualizamos la matriz del paciente con la matriz que acabamos de crear
-        self.patient.set_matrix(new_matrix)
-        patient_historial.insert_node_at_end(new_matrix)
+        new_node = patient_historial.insert_node_at_end(new_matrix)
+        self.patient.set_matrix(new_node)
 
-    def simulate_existing_period(self, patient_historial: ListPatientHistorial):
-        next_matrix = patient_historial.get_node_by_index(
-            self.current_period+1).get_matrix()
+    def simulate_existing_period(self):
+        next_matrix = self.patient.matrix.get_next()
         self.patient.set_matrix(next_matrix)
-
