@@ -99,6 +99,7 @@ class App(ctk.CTk):
         tmp = patient_data.get_head()
         count = 2
         while tmp is not None:
+            
             self.create_button_for_patient(tmp.get_body().get_name(), count)
             count += 1
             tmp = tmp.get_next()

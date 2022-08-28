@@ -1,9 +1,9 @@
 from curses.panel import new_panel
 from ..base.classes.Patient import Patient
-from data.base.lists.SimpleList import SimpleList
+from data.base.lists.SimplyList import SimplyList
 
 
-class ListPatients(SimpleList):
+class ListPatients(SimplyList):
     def __init__(self):
         super().__init__()
 

@@ -1,4 +1,4 @@
-class NodeForSimpleList:
+class NodeForSimplyList:
     def __init__(self, body):
         self.body = body
         self.next = None

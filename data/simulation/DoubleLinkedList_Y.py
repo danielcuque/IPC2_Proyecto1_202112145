@@ -4,7 +4,6 @@ from ..base.classes.Index import Index
 
 # Lists and Nodes
 from ..base.lists.DoublyList import DoublyList
-from ..base.lists.SimpleList import SimpleList
 
 
 from ..base.nodes.NodeForDoublyList import NodeForDoublyList
@@ -31,21 +30,6 @@ class DoubleLinkedList_Y(DoublyList):
                 return tmp.get_body().get_cell_by_column_position(pos_y)
             tmp = tmp.get_next()
         return None
-
-    # def set_infected_cells(self, matrix):
-    #     for row in range(self.size):
-    #         for col in range(self.size):
-    #             cell: Cell = self.get_cell_by_row_number(row, col)
-    #             count = self.get_neighbors_cell_state(
-    #                 cell.get_pos_x(), cell.get_pos_y())
-    #             if cell.get_is_infected() == 0:
-    #                 if count == 3:
-    #                     cell: Cell = matrix.get_cell_by_row_number(row, col)
-    #                     cell.set_is_infected(1)
-    #             if cell.get_is_infected() == 1:
-    #                 if count == 2 or count == 3:
-    #                     cell: Cell = matrix.get_cell_by_row_number(row, col)
-    #                     cell.set_is_infected(1)
 
     def get_cells_infected(self):
         cells_infected = 0
