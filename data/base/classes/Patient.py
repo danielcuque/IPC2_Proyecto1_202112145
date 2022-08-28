@@ -1,5 +1,4 @@
 from data.base.nodes.NodeForDoublyList import NodeForDoublyList
-from data.historial.MatrixNodeForHistorial import MatrixNodeForHistorial
 from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
 from ...historial.ListPatientHistorial import ListPatientHistorial
 
@@ -10,7 +9,9 @@ class Patient:
         self.age = age
         self.periods = periods
         self.size = size
-        self.disease_severity = None
+        self.disease_severity = "Leve"
+        self.period_number = 0
+        self.period_span = 0
         self.matrix = NodeForDoublyList(DoubleLinkedList_Y())
         self.historial = ListPatientHistorial()
 
@@ -56,3 +57,9 @@ class Patient:
 
     def set_disease_severity(self, disease_severity):
         self.disease_severity = disease_severity
+
+    def set_period_number(self, period_number):
+        self.period_number = period_number
+
+    def set_period_span(self, period_span):
+        self.period_span = period_span

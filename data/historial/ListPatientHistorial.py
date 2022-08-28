@@ -4,13 +4,6 @@ from data.base.lists.DoublyList import DoublyList
 class ListPatientHistorial(DoublyList):
     def __init__(self):
         super().__init__()
-        # self.start_node = None
-
-    def insert_in_emptylist(self, matrix):
-        if self.head is None:
-            # self.start_node = MatrixNodeForHistorial(matrix)
-            self.head = self.insert_node_at_end(matrix)
-            return
 
     def insert_new_period(self, matrix):
         return self.insert_node_at_end(matrix)
