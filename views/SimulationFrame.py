@@ -105,31 +105,31 @@ class SimulationFrame(ctk.CTkFrame):
         self.simulate_next_period_button.grid(
             column=1, row=2, sticky="nswe", padx=15, pady=15)
 
-        self.illness_label = ctk.CTkLabel(master=self,
+        self.label_illness = ctk.CTkLabel(master=self,
                                           text=f'Gravedad: {self.patient.disease_severity}',
                                           height=30,
                                           corner_radius=6,
                                           text_font=("Roboto Medium", -16), text_color="white",
                                           fg_color=("white", "gray38"))
-        self.illness_label.grid(
+        self.label_illness.grid(
             column=1, row=3, sticky="nswe", padx=15, pady=15)
 
-        self.period_number_label = ctk.CTkLabel(master=self,
+        self.label_period_number = ctk.CTkLabel(master=self,
                                                 text=f'N: {self.patient.period_number}',
                                                 height=30,
                                                 corner_radius=6,
                                                 text_font=("Roboto Medium", -16), text_color="white",
                                                 fg_color=("white", "gray38"))
-        self.period_number_label.grid(
+        self.label_period_number.grid(
             column=1, row=4, sticky="nswe", padx=15, pady=15)
 
-        self.period_number_label = ctk.CTkLabel(master=self,
-                                                text=f'N: {self.patient.period_span}',
-                                                height=30,
-                                                corner_radius=6,
-                                                text_font=("Roboto Medium", -16), text_color="white",
-                                                fg_color=("white", "gray38"))
-        self.period_number_label.grid(
+        self.label_period_span = ctk.CTkLabel(master=self,
+                                              text=f'N1: {self.patient.period_span}',
+                                              height=30,
+                                              corner_radius=6,
+                                              text_font=("Roboto Medium", -16), text_color="white",
+                                              fg_color=("white", "gray38"))
+        self.label_period_span.grid(
             column=1, row=5, sticky="nswe", padx=15, pady=15)
 
         # Frame to display matrix
@@ -168,7 +168,6 @@ class SimulationFrame(ctk.CTkFrame):
     def get_next_period(self):
 
         if self.patient.get_periods() > 0:
-
             patient_historial = self.patient.get_historial()
             # Si el periodo actual es igual al tamaño de la matriz, significa que el siguiente periodo va a ser nuevo
             if patient_historial.get_size() == 0:
@@ -220,6 +219,11 @@ class SimulationFrame(ctk.CTkFrame):
             text=f'Celdas infectadas: {self.patient.get_infected_cells()}')
         self.healthy_cells.configure(
             text=f'Celdas sanas: {self.patient.get_healthy_cells()}')
-
         self.label_current_period.configure(
             text=f'Periodo actual: {self.current_period}')
+        self.label_period_number.configure(
+            text=f'N: {self.patient.period_number}')
+        self.label_period_span.configure(
+            text=f'N1: {self.patient.period_span}')
+        self.label_illness.configure(
+            text=f'Enfermedad: {self.patient.disease_severity}')

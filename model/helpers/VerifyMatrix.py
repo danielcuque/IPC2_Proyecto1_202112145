@@ -40,13 +40,13 @@ class VerifyMatrix:
             else:
                 tmp = tmp.get_next()
 
-        if period_span == 1:
-            patient.set_disease_severity("Mortal")
-        elif period_span > 1:
-            patient.set_disease_severity("Grave")
-
-        patient.set_period_span(period_span)
-        patient.set_period_number(period_number)
+        if period_span != 0:
+            if period_span == 1:
+                patient.set_disease_severity("Mortal")
+            elif period_span > 1:
+                patient.set_disease_severity("Grave")
+            patient.set_period_span(period_span)
+            patient.set_period_number(period_number)
 
     @staticmethod
     def verify_equals_matrix(matrix1: DoubleLinkedList_Y, matrix2: DoubleLinkedList_Y):
@@ -71,5 +71,6 @@ class VerifyMatrix:
         # Actualizamos la matriz del paciente con la matriz que acabamos de crear
         new_node = patient.historial.insert_new_period(new_matrix)
         patient.set_matrix(new_node)
+        patient.set_periods(patient.get_periods() - 1)
         if patient.period_number == 0:
             self.found_illnes(patient, new_matrix)
