@@ -1,5 +1,7 @@
 from tkinter import filedialog, messagebox
 import customtkinter as ctk
+from model.helpers.VerifyMatrix import VerifyMatrix
+from model.simulation.GenerateReport import GenerateReport
 
 # Data
 from model.simulation.UploadInformation import UploadInformation
@@ -81,7 +83,7 @@ class App(ctk.CTk):
 
     def upload_files(self):
         file_route = filedialog.askopenfilename(
-            initialdir="/Desktop", title="Select file",
+            initialdir="/", title="Select file",
             filetypes=(("XML", "*.xml"), ("all files", "*.*")))
         is_correct = UploadInformation().xPath(file_route)
         if is_correct:
@@ -120,8 +122,21 @@ class App(ctk.CTk):
             self.simulation_frame.grid(
                 row=0, column=1, sticky="nswe", padx=10, pady=10)
 
+    @staticmethod
     def create_report():
-        pass
+        if UploadInformation().patients_list.get_head() is not None:
+            VerifyMatrix().create_simulation_to_all_patients()
+            generate_report = GenerateReport()
+            create_new_report = generate_report.generate_report()
+            if create_new_report:
+                messagebox.showinfo(
+                    "Información", "Reporte creado correctamente")
+            else:
+                messagebox.showerror(
+                    "Error", "No se pudo crear el reporte, por favor intenta de nuevo")
+        else:
+            messagebox.showerror(
+                "Error", "No hay patientes cargados, por favor carga uno")
 
 
 if __name__ == "__main__":

@@ -30,7 +30,7 @@ class UploadInformation:
 
                 if verify_personal_data:
                     self.patients_list.insert_patient_at_end(
-                        name[0].firstChild.data, age[0].firstChild.data, int(size_matrix[0].firstChild.data), int(periods[0].firstChild.data))
+                        name[0].firstChild.data, age[0].firstChild.data, int(size_matrix[0].firstChild.data), int(periods[0].firstChild.data), int(periods[0].firstChild.data))
                     self.insert_cells_at_matrix(
                         info_matrix[0], self.patients_list.get_patient(name[0].firstChild.data))
                 else:

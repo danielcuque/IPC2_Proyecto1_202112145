@@ -2,6 +2,7 @@ from data.base.classes.Patient import Patient
 from data.base.classes.Cell import Cell
 from data.base.nodes.NodeForDoublyList import NodeForDoublyList
 from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
+from model.simulation.UploadInformation import UploadInformation
 
 
 class VerifyMatrix:
@@ -68,9 +69,25 @@ class VerifyMatrix:
         # Después comparamos la matriz que está a la cabeza del historial con la matriz que acabamos de crear
         self.verify_matrix(patient.get_matrix(), new_matrix)
 
-        # Actualizamos la matriz del paciente con la matriz que acabamos de crear
+        # Creamos un nuevo nodo en el historial del paciente
         new_node = patient.historial.insert_new_period(new_matrix)
+
+        # Actualizamos la matriz del paciente con la matriz que acabamos de crear
         patient.set_matrix(new_node)
+
+        # Descontamos un periodo restante
         patient.set_periods(patient.get_periods() - 1)
+
+        # Verificamos si el diagnostico ya se realizó
         if patient.period_number == 0:
             self.found_illnes(patient, new_matrix)
+
+    def create_simulation_to_all_patients(self):
+        patient_list = UploadInformation().patients_list
+
+        tmp = patient_list.get_head()
+        while tmp is not None:
+            patient: Patient = tmp.get_body()
+            while patient.get_periods() > 0:
+                self.create_new_period(patient)
+            tmp = tmp.get_next()
