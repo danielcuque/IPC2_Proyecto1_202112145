@@ -21,19 +21,20 @@ class GenerateGraphvizDoc:
 
         tmp = patients_list.get_head()
         while tmp is not None:
-            GenerateGraphvizDoc().generate_graph_by_patient(tmp.get_body())
+            GenerateGraphvizDoc().generate_graph_by_patient(tmp.get_body(), path)
             tmp = tmp.get_next()
 
-    def generate_graph_by_patient(self, patient: Patient):
+    def generate_graph_by_patient(self, patient: Patient, path: str):
         # Count to know the number of periods
-        count = 0
+        # count = 0
 
         # With the historial, create a Digraph
         patient_historial = patient.get_historial()
+        print("Tamaño del historial: " + str(patient_historial.get_size()))
 
         # G1 is the main graph, filename is the name of the file to save the graph, format is the format of the graph
         g = gv.Digraph(
-            f'G_{patient.get_name()}', filename=f'{patient.get_name()}_simulation')
+            f'G_{patient.get_name()}', filename=f'{patient.get_name()}_simulation', directory=path)
         # Set the nodes attributes
         g.attr('node', shape='box', style='filled', color='#FFEDBB')
 
@@ -45,14 +46,10 @@ class GenerateGraphvizDoc:
 
         # Create the subgraphs for each period
         tmp = patient_historial.get_head()
-        while tmp is not None:
+        for number_period in range(patient_historial.get_size()):
             self.generate_subgraph_by_period(
-                g, tmp.get_body(), count)
-            count += 1
+                g, tmp.get_body(), number_period=number_period)
             tmp = tmp.get_next()
-
-        # Joint the subgraphs
-        # self.join_subgraphs(g, count)
         # Save the graph
         g.view()
 
@@ -116,28 +113,3 @@ class GenerateGraphvizDoc:
                 if col < matrix_size-1 and col > 0:
                     s.edge(f'F{index}C{col}_{number_period}',
                            f'F{index}C{col+1}_{number_period}')
-
-    def generate_cell_node(self, graph: gv.Digraph.subgraph, cell: Cell, number_period: int, list_size: int):
-
-        with graph.subgraph() as s:
-            # s.attr(rank='same')
-            # Get the row and col of the cell
-            get_pos_x = cell.get_pos_x()
-            get_pos_y = cell.get_pos_y()
-
-            # Create a name to display in the graph
-            label_position_for_cell = f'({get_pos_x},{get_pos_y})'
-
-            # Create the name of the node with the position of the cell
-            position_in_matrix_of_cell = f'C{get_pos_y}F{get_pos_x}_{number_period}'
-            color = '#008af39' if cell.get_is_infected() == 1 else '#f39800'
-
-            # Create the node with the position of the cell
-            s.node(position_in_matrix_of_cell,
-                   label=label_position_for_cell, fillcolor=color)
-            # Create the edge with the root of the cell
-            s.edge(f'root_{number_period}', position_in_matrix_of_cell)
-            # Create the edge with the previous cell
-            if get_pos_x > 0:
-                previous_cell = f'C{get_pos_y}F{get_pos_x - 1}_{number_period}'
-                s.edge(position_in_matrix_of_cell, previous_cell)

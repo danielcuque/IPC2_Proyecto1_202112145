@@ -62,6 +62,7 @@ class VerifyMatrix:
         return True
 
     def create_new_period(self, patient: Patient):
+        # Creamos una nueva matriz para el nuevo estado
         new_matrix = DoubleLinkedList_Y()
         for pos_x in range(patient.get_size()):
             new_matrix.insert_new_column(pos_x, patient.get_size())
@@ -85,9 +86,11 @@ class VerifyMatrix:
     def create_simulation_to_all_patients(self):
         patient_list = UploadInformation().patients_list
 
-        tmp = patient_list.get_head()
-        while tmp is not None:
-            patient: Patient = tmp.get_body()
+        tmp_patient = patient_list.get_head()
+        while tmp_patient is not None:
+            patient: Patient = tmp_patient.get_body()
+            if patient.get_historial().get_size() == 0:
+                patient.get_historial().insert_new_period(patient.get_matrix())
             while patient.get_periods() > 0:
                 self.create_new_period(patient)
-            tmp = tmp.get_next()
+            tmp_patient = tmp_patient.get_next()

@@ -13,12 +13,16 @@ class GenerateReport:
         self.upload_information = UploadInformation()
         self.list_of_patients = self.upload_information.patients_list
 
+        # Choose the path to save the report
+        self.path_to_write = filedialog.askdirectory()
+
         # Create a document with date and time as name
         get_day = datetime.now().strftime("%Y-%m-%d")
         get_hour_minute_second = datetime.now().strftime("%H:%M:%S")
         self.report_name = f'reporte-de-pacientes-{get_day}-at-{get_hour_minute_second}.xml'
 
-        self.path_to_write = filedialog.askdirectory() + "/" + self.report_name
+        # Create the root element of the document
+        self.path_concat = self.path_to_write + "/" + self.report_name
 
         self.root_patients = ET.Element('pacientes')
         tmp = self.list_of_patients.head
@@ -27,7 +31,7 @@ class GenerateReport:
                 self.create_patient_xml(tmp.get_body()))
             tmp = tmp.get_next()
         self.tree = ET.ElementTree(self.root_patients)
-        self.tree.write(self.path_to_write, encoding='utf-8',
+        self.tree.write(self.path_concat, encoding='utf-8',
                         xml_declaration=True)
         GenerateGraphvizDoc().generate_graphviz_doc(self.path_to_write)
         return True
