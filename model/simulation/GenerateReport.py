@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 
 from datetime import datetime
 from tkinter import filedialog
+from model.simulation.GenerateGraphvizDoc import GenerateGraphvizDoc
 from model.simulation.UploadInformation import UploadInformation
 from data.base.classes.Patient import Patient
 
@@ -28,6 +29,7 @@ class GenerateReport:
         self.tree = ET.ElementTree(self.root_patients)
         self.tree.write(self.path_to_write, encoding='utf-8',
                         xml_declaration=True)
+        GenerateGraphvizDoc().generate_graphviz_doc(self.path_to_write)
         return True
 
     def create_patient_xml(self, patient: Patient):

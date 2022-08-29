@@ -156,10 +156,10 @@ class SimulationFrame(ctk.CTkFrame):
                                                  corner_radius=6,
                                                  width=10,
                                                  height=10,
-                                                 text_font=("Roboto Medium", -15), text_color=txt_color,
+                                                 text_font=("Roboto Medium", -14), text_color=txt_color,
                                                  bg_color=color)
                 self.label_matrix.grid(
-                    column=c, row=r, padx=2, pady=(15, 0))
+                    column=c, row=r, padx=2, pady=0.5)
 
     def simulate_all_periods(self):
         if self.patient.get_periods() > 0:
@@ -172,7 +172,7 @@ class SimulationFrame(ctk.CTkFrame):
 
     def get_next_period(self):
 
-        if self.patient.periods > 0 or self.current_period <= self.patient.get_historial().get_historial_size():
+        if self.patient.periods > 0 or self.current_period < self.patient.get_total_periods():
             patient_historial = self.patient.get_historial()
             # Si el periodo actual es igual al tamaño de la matriz, significa que el siguiente periodo va a ser nuevo
             if patient_historial.get_size() == 0:

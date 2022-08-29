@@ -1,0 +1,2446 @@
+digraph "G_$nombre" {
+	node [color="#FFEDBB" shape=box style=filled]
+	compound=true
+	edge [dir=both]
+	subgraph cluster_period0 {
+		color=lightgrey style=filled
+		root [label="0,0" group=1]
+		{
+			F0_0 [label=0 group=1]
+			F0_0 -> F1_0
+			F1_0 [label=1 group=1]
+			F1_0 -> F2_0
+			F2_0 [label=2 group=1]
+			F2_0 -> F3_0
+			F3_0 [label=3 group=1]
+			F3_0 -> F4_0
+			F4_0 [label=4 group=1]
+			F4_0 -> F5_0
+			F5_0 [label=5 group=1]
+			F5_0 -> F6_0
+			F6_0 [label=6 group=1]
+			F6_0 -> F7_0
+			F7_0 [label=7 group=1]
+			F7_0 -> F8_0
+			F8_0 [label=8 group=1]
+			F8_0 -> F9_0
+			F9_0 [label=9 group=1]
+		}
+		{
+			rank=same
+			root_0 [label="0,0" group=1]
+			C0_0 [label=0 group=1]
+			C0_0 -> C1_0
+			C1_0 [label=1 group=2]
+			C1_0 -> C2_0
+			C2_0 [label=2 group=3]
+			C2_0 -> C3_0
+			C3_0 [label=3 group=4]
+			C3_0 -> C4_0
+			C4_0 [label=4 group=5]
+			C4_0 -> C5_0
+			C5_0 [label=5 group=6]
+			C5_0 -> C6_0
+			C6_0 [label=6 group=7]
+			C6_0 -> C7_0
+			C7_0 [label=7 group=8]
+			C7_0 -> C8_0
+			C8_0 [label=8 group=9]
+			C8_0 -> C9_0
+			C9_0 [label=9 group=10]
+		}
+		{
+			rank=same
+			C0F0_0 [label="(0,0)" fillcolor="#f39800"]
+			F0_0
+			F0_0 -> C0F0_0
+		}
+		{
+			rank=same
+			C1F0_0 [label="(0,1)" fillcolor="#f39800"]
+			F0_0
+			F0_0 -> C1F0_0
+		}
+		{
+			rank=same
+			C2F0_0 [label="(0,2)" fillcolor="#f39800"]
+			F0_0
+			F0_0 -> C2F0_0
+		}
+		{
+			rank=same
+			C3F0_0 [label="(0,3)" fillcolor="#f39800"]
+			F0_0
+			F0_0 -> C3F0_0
+		}
+		{
+			rank=same
+			C4F0_0 [label="(0,4)" fillcolor="#f39800"]
+			F0_0
+			F0_0 -> C4F0_0
+		}
+		{
+			rank=same
+			C5F0_0 [label="(0,5)" fillcolor="#f39800"]
+			F0_0
+			F0_0 -> C5F0_0
+		}
+		{
+			rank=same
+			C6F0_0 [label="(0,6)" fillcolor="#f39800"]
+			F0_0
+			F0_0 -> C6F0_0
+		}
+		{
+			rank=same
+			C7F0_0 [label="(0,7)" fillcolor="#f39800"]
+			F0_0
+			F0_0 -> C7F0_0
+		}
+		{
+			rank=same
+			C8F0_0 [label="(0,8)" fillcolor="#f39800"]
+			F0_0
+			F0_0 -> C8F0_0
+		}
+		{
+			rank=same
+			C9F0_0 [label="(0,9)" fillcolor="#f39800"]
+			F0_0
+			F0_0 -> C9F0_0
+		}
+		{
+			rank=same
+			C0F1_0 [label="(1,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F1_0 [label="(1,1)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C2F1_0 [label="(1,2)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C3F1_0 [label="(1,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F1_0 [label="(1,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F1_0 [label="(1,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F1_0 [label="(1,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F1_0 [label="(1,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F1_0 [label="(1,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F1_0 [label="(1,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F2_0 [label="(2,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F2_0 [label="(2,1)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C2F2_0 [label="(2,2)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C3F2_0 [label="(2,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F2_0 [label="(2,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F2_0 [label="(2,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F2_0 [label="(2,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F2_0 [label="(2,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F2_0 [label="(2,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F2_0 [label="(2,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F3_0 [label="(3,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F3_0 [label="(3,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F3_0 [label="(3,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F3_0 [label="(3,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F3_0 [label="(3,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F3_0 [label="(3,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F3_0 [label="(3,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F3_0 [label="(3,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F3_0 [label="(3,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F3_0 [label="(3,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F4_0 [label="(4,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F4_0 [label="(4,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F4_0 [label="(4,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F4_0 [label="(4,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F4_0 [label="(4,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F4_0 [label="(4,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F4_0 [label="(4,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F4_0 [label="(4,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F4_0 [label="(4,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F4_0 [label="(4,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F5_0 [label="(5,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F5_0 [label="(5,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F5_0 [label="(5,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F5_0 [label="(5,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F5_0 [label="(5,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F5_0 [label="(5,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F5_0 [label="(5,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F5_0 [label="(5,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F5_0 [label="(5,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F5_0 [label="(5,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F6_0 [label="(6,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F6_0 [label="(6,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F6_0 [label="(6,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F6_0 [label="(6,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F6_0 [label="(6,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F6_0 [label="(6,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F6_0 [label="(6,6)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C7F6_0 [label="(6,7)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C8F6_0 [label="(6,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F6_0 [label="(6,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F7_0 [label="(7,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F7_0 [label="(7,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F7_0 [label="(7,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F7_0 [label="(7,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F7_0 [label="(7,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F7_0 [label="(7,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F7_0 [label="(7,6)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C7F7_0 [label="(7,7)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C8F7_0 [label="(7,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F7_0 [label="(7,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F8_0 [label="(8,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F8_0 [label="(8,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F8_0 [label="(8,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F8_0 [label="(8,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F8_0 [label="(8,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F8_0 [label="(8,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F8_0 [label="(8,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F8_0 [label="(8,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F8_0 [label="(8,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F8_0 [label="(8,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F9_0 [label="(9,0)" fillcolor="#f39800"]
+			C0F10_0
+			C0F9_0 -> C0F10_0
+		}
+		{
+			rank=same
+			C1F9_0 [label="(9,1)" fillcolor="#f39800"]
+			C1F10_0
+			C1F9_0 -> C1F10_0
+		}
+		{
+			rank=same
+			C2F9_0 [label="(9,2)" fillcolor="#f39800"]
+			C2F10_0
+			C2F9_0 -> C2F10_0
+		}
+		{
+			rank=same
+			C3F9_0 [label="(9,3)" fillcolor="#f39800"]
+			C3F10_0
+			C3F9_0 -> C3F10_0
+		}
+		{
+			rank=same
+			C4F9_0 [label="(9,4)" fillcolor="#f39800"]
+			C4F10_0
+			C4F9_0 -> C4F10_0
+		}
+		{
+			rank=same
+			C5F9_0 [label="(9,5)" fillcolor="#f39800"]
+			C5F10_0
+			C5F9_0 -> C5F10_0
+		}
+		{
+			rank=same
+			C6F9_0 [label="(9,6)" fillcolor="#f39800"]
+			C6F10_0
+			C6F9_0 -> C6F10_0
+		}
+		{
+			rank=same
+			C7F9_0 [label="(9,7)" fillcolor="#f39800"]
+			C7F10_0
+			C7F9_0 -> C7F10_0
+		}
+		{
+			rank=same
+			C8F9_0 [label="(9,8)" fillcolor="#f39800"]
+			C8F10_0
+			C8F9_0 -> C8F10_0
+		}
+		{
+			rank=same
+			C9F9_0 [label="(9,9)" fillcolor="#f39800"]
+			C9F10_0
+			C9F9_0 -> C9F10_0
+		}
+	}
+	subgraph cluster_period1 {
+		color=lightgrey style=filled
+		root [label="0,0" group=1]
+		{
+			F0_1 [label=0 group=1]
+			F0_1 -> F1_1
+			F1_1 [label=1 group=1]
+			F1_1 -> F2_1
+			F2_1 [label=2 group=1]
+			F2_1 -> F3_1
+			F3_1 [label=3 group=1]
+			F3_1 -> F4_1
+			F4_1 [label=4 group=1]
+			F4_1 -> F5_1
+			F5_1 [label=5 group=1]
+			F5_1 -> F6_1
+			F6_1 [label=6 group=1]
+			F6_1 -> F7_1
+			F7_1 [label=7 group=1]
+			F7_1 -> F8_1
+			F8_1 [label=8 group=1]
+			F8_1 -> F9_1
+			F9_1 [label=9 group=1]
+		}
+		{
+			rank=same
+			root_1 [label="0,0" group=1]
+			C0_1 [label=0 group=1]
+			C0_1 -> C1_1
+			C1_1 [label=1 group=2]
+			C1_1 -> C2_1
+			C2_1 [label=2 group=3]
+			C2_1 -> C3_1
+			C3_1 [label=3 group=4]
+			C3_1 -> C4_1
+			C4_1 [label=4 group=5]
+			C4_1 -> C5_1
+			C5_1 [label=5 group=6]
+			C5_1 -> C6_1
+			C6_1 [label=6 group=7]
+			C6_1 -> C7_1
+			C7_1 [label=7 group=8]
+			C7_1 -> C8_1
+			C8_1 [label=8 group=9]
+			C8_1 -> C9_1
+			C9_1 [label=9 group=10]
+		}
+		{
+			rank=same
+			C0F0_1 [label="(0,0)" fillcolor="#f39800"]
+			F0_1
+			F0_1 -> C0F0_1
+		}
+		{
+			rank=same
+			C1F0_1 [label="(0,1)" fillcolor="#f39800"]
+			F0_1
+			F0_1 -> C1F0_1
+		}
+		{
+			rank=same
+			C2F0_1 [label="(0,2)" fillcolor="#f39800"]
+			F0_1
+			F0_1 -> C2F0_1
+		}
+		{
+			rank=same
+			C3F0_1 [label="(0,3)" fillcolor="#f39800"]
+			F0_1
+			F0_1 -> C3F0_1
+		}
+		{
+			rank=same
+			C4F0_1 [label="(0,4)" fillcolor="#f39800"]
+			F0_1
+			F0_1 -> C4F0_1
+		}
+		{
+			rank=same
+			C5F0_1 [label="(0,5)" fillcolor="#f39800"]
+			F0_1
+			F0_1 -> C5F0_1
+		}
+		{
+			rank=same
+			C6F0_1 [label="(0,6)" fillcolor="#f39800"]
+			F0_1
+			F0_1 -> C6F0_1
+		}
+		{
+			rank=same
+			C7F0_1 [label="(0,7)" fillcolor="#f39800"]
+			F0_1
+			F0_1 -> C7F0_1
+		}
+		{
+			rank=same
+			C8F0_1 [label="(0,8)" fillcolor="#f39800"]
+			F0_1
+			F0_1 -> C8F0_1
+		}
+		{
+			rank=same
+			C9F0_1 [label="(0,9)" fillcolor="#f39800"]
+			F0_1
+			F0_1 -> C9F0_1
+		}
+		{
+			rank=same
+			C0F1_1 [label="(1,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F1_1 [label="(1,1)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C2F1_1 [label="(1,2)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C3F1_1 [label="(1,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F1_1 [label="(1,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F1_1 [label="(1,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F1_1 [label="(1,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F1_1 [label="(1,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F1_1 [label="(1,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F1_1 [label="(1,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F2_1 [label="(2,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F2_1 [label="(2,1)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C2F2_1 [label="(2,2)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C3F2_1 [label="(2,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F2_1 [label="(2,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F2_1 [label="(2,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F2_1 [label="(2,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F2_1 [label="(2,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F2_1 [label="(2,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F2_1 [label="(2,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F3_1 [label="(3,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F3_1 [label="(3,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F3_1 [label="(3,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F3_1 [label="(3,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F3_1 [label="(3,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F3_1 [label="(3,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F3_1 [label="(3,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F3_1 [label="(3,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F3_1 [label="(3,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F3_1 [label="(3,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F4_1 [label="(4,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F4_1 [label="(4,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F4_1 [label="(4,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F4_1 [label="(4,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F4_1 [label="(4,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F4_1 [label="(4,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F4_1 [label="(4,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F4_1 [label="(4,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F4_1 [label="(4,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F4_1 [label="(4,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F5_1 [label="(5,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F5_1 [label="(5,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F5_1 [label="(5,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F5_1 [label="(5,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F5_1 [label="(5,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F5_1 [label="(5,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F5_1 [label="(5,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F5_1 [label="(5,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F5_1 [label="(5,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F5_1 [label="(5,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F6_1 [label="(6,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F6_1 [label="(6,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F6_1 [label="(6,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F6_1 [label="(6,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F6_1 [label="(6,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F6_1 [label="(6,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F6_1 [label="(6,6)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C7F6_1 [label="(6,7)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C8F6_1 [label="(6,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F6_1 [label="(6,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F7_1 [label="(7,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F7_1 [label="(7,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F7_1 [label="(7,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F7_1 [label="(7,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F7_1 [label="(7,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F7_1 [label="(7,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F7_1 [label="(7,6)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C7F7_1 [label="(7,7)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C8F7_1 [label="(7,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F7_1 [label="(7,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F8_1 [label="(8,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F8_1 [label="(8,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F8_1 [label="(8,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F8_1 [label="(8,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F8_1 [label="(8,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F8_1 [label="(8,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F8_1 [label="(8,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F8_1 [label="(8,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F8_1 [label="(8,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F8_1 [label="(8,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F9_1 [label="(9,0)" fillcolor="#f39800"]
+			C0F10_1
+			C0F9_1 -> C0F10_1
+		}
+		{
+			rank=same
+			C1F9_1 [label="(9,1)" fillcolor="#f39800"]
+			C1F10_1
+			C1F9_1 -> C1F10_1
+		}
+		{
+			rank=same
+			C2F9_1 [label="(9,2)" fillcolor="#f39800"]
+			C2F10_1
+			C2F9_1 -> C2F10_1
+		}
+		{
+			rank=same
+			C3F9_1 [label="(9,3)" fillcolor="#f39800"]
+			C3F10_1
+			C3F9_1 -> C3F10_1
+		}
+		{
+			rank=same
+			C4F9_1 [label="(9,4)" fillcolor="#f39800"]
+			C4F10_1
+			C4F9_1 -> C4F10_1
+		}
+		{
+			rank=same
+			C5F9_1 [label="(9,5)" fillcolor="#f39800"]
+			C5F10_1
+			C5F9_1 -> C5F10_1
+		}
+		{
+			rank=same
+			C6F9_1 [label="(9,6)" fillcolor="#f39800"]
+			C6F10_1
+			C6F9_1 -> C6F10_1
+		}
+		{
+			rank=same
+			C7F9_1 [label="(9,7)" fillcolor="#f39800"]
+			C7F10_1
+			C7F9_1 -> C7F10_1
+		}
+		{
+			rank=same
+			C8F9_1 [label="(9,8)" fillcolor="#f39800"]
+			C8F10_1
+			C8F9_1 -> C8F10_1
+		}
+		{
+			rank=same
+			C9F9_1 [label="(9,9)" fillcolor="#f39800"]
+			C9F10_1
+			C9F9_1 -> C9F10_1
+		}
+	}
+	subgraph cluster_period2 {
+		color=lightgrey style=filled
+		root [label="0,0" group=1]
+		{
+			F0_2 [label=0 group=1]
+			F0_2 -> F1_2
+			F1_2 [label=1 group=1]
+			F1_2 -> F2_2
+			F2_2 [label=2 group=1]
+			F2_2 -> F3_2
+			F3_2 [label=3 group=1]
+			F3_2 -> F4_2
+			F4_2 [label=4 group=1]
+			F4_2 -> F5_2
+			F5_2 [label=5 group=1]
+			F5_2 -> F6_2
+			F6_2 [label=6 group=1]
+			F6_2 -> F7_2
+			F7_2 [label=7 group=1]
+			F7_2 -> F8_2
+			F8_2 [label=8 group=1]
+			F8_2 -> F9_2
+			F9_2 [label=9 group=1]
+		}
+		{
+			rank=same
+			root_2 [label="0,0" group=1]
+			C0_2 [label=0 group=1]
+			C0_2 -> C1_2
+			C1_2 [label=1 group=2]
+			C1_2 -> C2_2
+			C2_2 [label=2 group=3]
+			C2_2 -> C3_2
+			C3_2 [label=3 group=4]
+			C3_2 -> C4_2
+			C4_2 [label=4 group=5]
+			C4_2 -> C5_2
+			C5_2 [label=5 group=6]
+			C5_2 -> C6_2
+			C6_2 [label=6 group=7]
+			C6_2 -> C7_2
+			C7_2 [label=7 group=8]
+			C7_2 -> C8_2
+			C8_2 [label=8 group=9]
+			C8_2 -> C9_2
+			C9_2 [label=9 group=10]
+		}
+		{
+			rank=same
+			C0F0_2 [label="(0,0)" fillcolor="#f39800"]
+			F0_2
+			F0_2 -> C0F0_2
+		}
+		{
+			rank=same
+			C1F0_2 [label="(0,1)" fillcolor="#f39800"]
+			F0_2
+			F0_2 -> C1F0_2
+		}
+		{
+			rank=same
+			C2F0_2 [label="(0,2)" fillcolor="#f39800"]
+			F0_2
+			F0_2 -> C2F0_2
+		}
+		{
+			rank=same
+			C3F0_2 [label="(0,3)" fillcolor="#f39800"]
+			F0_2
+			F0_2 -> C3F0_2
+		}
+		{
+			rank=same
+			C4F0_2 [label="(0,4)" fillcolor="#f39800"]
+			F0_2
+			F0_2 -> C4F0_2
+		}
+		{
+			rank=same
+			C5F0_2 [label="(0,5)" fillcolor="#f39800"]
+			F0_2
+			F0_2 -> C5F0_2
+		}
+		{
+			rank=same
+			C6F0_2 [label="(0,6)" fillcolor="#f39800"]
+			F0_2
+			F0_2 -> C6F0_2
+		}
+		{
+			rank=same
+			C7F0_2 [label="(0,7)" fillcolor="#f39800"]
+			F0_2
+			F0_2 -> C7F0_2
+		}
+		{
+			rank=same
+			C8F0_2 [label="(0,8)" fillcolor="#f39800"]
+			F0_2
+			F0_2 -> C8F0_2
+		}
+		{
+			rank=same
+			C9F0_2 [label="(0,9)" fillcolor="#f39800"]
+			F0_2
+			F0_2 -> C9F0_2
+		}
+		{
+			rank=same
+			C0F1_2 [label="(1,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F1_2 [label="(1,1)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C2F1_2 [label="(1,2)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C3F1_2 [label="(1,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F1_2 [label="(1,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F1_2 [label="(1,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F1_2 [label="(1,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F1_2 [label="(1,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F1_2 [label="(1,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F1_2 [label="(1,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F2_2 [label="(2,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F2_2 [label="(2,1)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C2F2_2 [label="(2,2)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C3F2_2 [label="(2,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F2_2 [label="(2,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F2_2 [label="(2,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F2_2 [label="(2,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F2_2 [label="(2,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F2_2 [label="(2,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F2_2 [label="(2,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F3_2 [label="(3,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F3_2 [label="(3,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F3_2 [label="(3,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F3_2 [label="(3,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F3_2 [label="(3,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F3_2 [label="(3,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F3_2 [label="(3,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F3_2 [label="(3,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F3_2 [label="(3,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F3_2 [label="(3,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F4_2 [label="(4,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F4_2 [label="(4,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F4_2 [label="(4,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F4_2 [label="(4,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F4_2 [label="(4,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F4_2 [label="(4,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F4_2 [label="(4,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F4_2 [label="(4,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F4_2 [label="(4,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F4_2 [label="(4,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F5_2 [label="(5,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F5_2 [label="(5,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F5_2 [label="(5,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F5_2 [label="(5,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F5_2 [label="(5,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F5_2 [label="(5,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F5_2 [label="(5,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F5_2 [label="(5,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F5_2 [label="(5,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F5_2 [label="(5,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F6_2 [label="(6,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F6_2 [label="(6,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F6_2 [label="(6,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F6_2 [label="(6,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F6_2 [label="(6,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F6_2 [label="(6,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F6_2 [label="(6,6)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C7F6_2 [label="(6,7)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C8F6_2 [label="(6,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F6_2 [label="(6,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F7_2 [label="(7,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F7_2 [label="(7,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F7_2 [label="(7,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F7_2 [label="(7,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F7_2 [label="(7,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F7_2 [label="(7,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F7_2 [label="(7,6)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C7F7_2 [label="(7,7)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C8F7_2 [label="(7,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F7_2 [label="(7,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F8_2 [label="(8,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F8_2 [label="(8,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F8_2 [label="(8,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F8_2 [label="(8,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F8_2 [label="(8,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F8_2 [label="(8,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F8_2 [label="(8,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F8_2 [label="(8,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F8_2 [label="(8,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F8_2 [label="(8,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F9_2 [label="(9,0)" fillcolor="#f39800"]
+			C0F10_2
+			C0F9_2 -> C0F10_2
+		}
+		{
+			rank=same
+			C1F9_2 [label="(9,1)" fillcolor="#f39800"]
+			C1F10_2
+			C1F9_2 -> C1F10_2
+		}
+		{
+			rank=same
+			C2F9_2 [label="(9,2)" fillcolor="#f39800"]
+			C2F10_2
+			C2F9_2 -> C2F10_2
+		}
+		{
+			rank=same
+			C3F9_2 [label="(9,3)" fillcolor="#f39800"]
+			C3F10_2
+			C3F9_2 -> C3F10_2
+		}
+		{
+			rank=same
+			C4F9_2 [label="(9,4)" fillcolor="#f39800"]
+			C4F10_2
+			C4F9_2 -> C4F10_2
+		}
+		{
+			rank=same
+			C5F9_2 [label="(9,5)" fillcolor="#f39800"]
+			C5F10_2
+			C5F9_2 -> C5F10_2
+		}
+		{
+			rank=same
+			C6F9_2 [label="(9,6)" fillcolor="#f39800"]
+			C6F10_2
+			C6F9_2 -> C6F10_2
+		}
+		{
+			rank=same
+			C7F9_2 [label="(9,7)" fillcolor="#f39800"]
+			C7F10_2
+			C7F9_2 -> C7F10_2
+		}
+		{
+			rank=same
+			C8F9_2 [label="(9,8)" fillcolor="#f39800"]
+			C8F10_2
+			C8F9_2 -> C8F10_2
+		}
+		{
+			rank=same
+			C9F9_2 [label="(9,9)" fillcolor="#f39800"]
+			C9F10_2
+			C9F9_2 -> C9F10_2
+		}
+	}
+	subgraph cluster_period3 {
+		color=lightgrey style=filled
+		root [label="0,0" group=1]
+		{
+			F0_3 [label=0 group=1]
+			F0_3 -> F1_3
+			F1_3 [label=1 group=1]
+			F1_3 -> F2_3
+			F2_3 [label=2 group=1]
+			F2_3 -> F3_3
+			F3_3 [label=3 group=1]
+			F3_3 -> F4_3
+			F4_3 [label=4 group=1]
+			F4_3 -> F5_3
+			F5_3 [label=5 group=1]
+			F5_3 -> F6_3
+			F6_3 [label=6 group=1]
+			F6_3 -> F7_3
+			F7_3 [label=7 group=1]
+			F7_3 -> F8_3
+			F8_3 [label=8 group=1]
+			F8_3 -> F9_3
+			F9_3 [label=9 group=1]
+		}
+		{
+			rank=same
+			root_3 [label="0,0" group=1]
+			C0_3 [label=0 group=1]
+			C0_3 -> C1_3
+			C1_3 [label=1 group=2]
+			C1_3 -> C2_3
+			C2_3 [label=2 group=3]
+			C2_3 -> C3_3
+			C3_3 [label=3 group=4]
+			C3_3 -> C4_3
+			C4_3 [label=4 group=5]
+			C4_3 -> C5_3
+			C5_3 [label=5 group=6]
+			C5_3 -> C6_3
+			C6_3 [label=6 group=7]
+			C6_3 -> C7_3
+			C7_3 [label=7 group=8]
+			C7_3 -> C8_3
+			C8_3 [label=8 group=9]
+			C8_3 -> C9_3
+			C9_3 [label=9 group=10]
+		}
+		{
+			rank=same
+			C0F0_3 [label="(0,0)" fillcolor="#f39800"]
+			F0_3
+			F0_3 -> C0F0_3
+		}
+		{
+			rank=same
+			C1F0_3 [label="(0,1)" fillcolor="#f39800"]
+			F0_3
+			F0_3 -> C1F0_3
+		}
+		{
+			rank=same
+			C2F0_3 [label="(0,2)" fillcolor="#f39800"]
+			F0_3
+			F0_3 -> C2F0_3
+		}
+		{
+			rank=same
+			C3F0_3 [label="(0,3)" fillcolor="#f39800"]
+			F0_3
+			F0_3 -> C3F0_3
+		}
+		{
+			rank=same
+			C4F0_3 [label="(0,4)" fillcolor="#f39800"]
+			F0_3
+			F0_3 -> C4F0_3
+		}
+		{
+			rank=same
+			C5F0_3 [label="(0,5)" fillcolor="#f39800"]
+			F0_3
+			F0_3 -> C5F0_3
+		}
+		{
+			rank=same
+			C6F0_3 [label="(0,6)" fillcolor="#f39800"]
+			F0_3
+			F0_3 -> C6F0_3
+		}
+		{
+			rank=same
+			C7F0_3 [label="(0,7)" fillcolor="#f39800"]
+			F0_3
+			F0_3 -> C7F0_3
+		}
+		{
+			rank=same
+			C8F0_3 [label="(0,8)" fillcolor="#f39800"]
+			F0_3
+			F0_3 -> C8F0_3
+		}
+		{
+			rank=same
+			C9F0_3 [label="(0,9)" fillcolor="#f39800"]
+			F0_3
+			F0_3 -> C9F0_3
+		}
+		{
+			rank=same
+			C0F1_3 [label="(1,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F1_3 [label="(1,1)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C2F1_3 [label="(1,2)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C3F1_3 [label="(1,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F1_3 [label="(1,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F1_3 [label="(1,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F1_3 [label="(1,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F1_3 [label="(1,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F1_3 [label="(1,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F1_3 [label="(1,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F2_3 [label="(2,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F2_3 [label="(2,1)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C2F2_3 [label="(2,2)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C3F2_3 [label="(2,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F2_3 [label="(2,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F2_3 [label="(2,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F2_3 [label="(2,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F2_3 [label="(2,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F2_3 [label="(2,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F2_3 [label="(2,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F3_3 [label="(3,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F3_3 [label="(3,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F3_3 [label="(3,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F3_3 [label="(3,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F3_3 [label="(3,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F3_3 [label="(3,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F3_3 [label="(3,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F3_3 [label="(3,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F3_3 [label="(3,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F3_3 [label="(3,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F4_3 [label="(4,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F4_3 [label="(4,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F4_3 [label="(4,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F4_3 [label="(4,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F4_3 [label="(4,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F4_3 [label="(4,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F4_3 [label="(4,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F4_3 [label="(4,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F4_3 [label="(4,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F4_3 [label="(4,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F5_3 [label="(5,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F5_3 [label="(5,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F5_3 [label="(5,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F5_3 [label="(5,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F5_3 [label="(5,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F5_3 [label="(5,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F5_3 [label="(5,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F5_3 [label="(5,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F5_3 [label="(5,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F5_3 [label="(5,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F6_3 [label="(6,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F6_3 [label="(6,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F6_3 [label="(6,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F6_3 [label="(6,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F6_3 [label="(6,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F6_3 [label="(6,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F6_3 [label="(6,6)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C7F6_3 [label="(6,7)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C8F6_3 [label="(6,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F6_3 [label="(6,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F7_3 [label="(7,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F7_3 [label="(7,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F7_3 [label="(7,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F7_3 [label="(7,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F7_3 [label="(7,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F7_3 [label="(7,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F7_3 [label="(7,6)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C7F7_3 [label="(7,7)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C8F7_3 [label="(7,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F7_3 [label="(7,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F8_3 [label="(8,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F8_3 [label="(8,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F8_3 [label="(8,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F8_3 [label="(8,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F8_3 [label="(8,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F8_3 [label="(8,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F8_3 [label="(8,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F8_3 [label="(8,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F8_3 [label="(8,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F8_3 [label="(8,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F9_3 [label="(9,0)" fillcolor="#f39800"]
+			C0F10_3
+			C0F9_3 -> C0F10_3
+		}
+		{
+			rank=same
+			C1F9_3 [label="(9,1)" fillcolor="#f39800"]
+			C1F10_3
+			C1F9_3 -> C1F10_3
+		}
+		{
+			rank=same
+			C2F9_3 [label="(9,2)" fillcolor="#f39800"]
+			C2F10_3
+			C2F9_3 -> C2F10_3
+		}
+		{
+			rank=same
+			C3F9_3 [label="(9,3)" fillcolor="#f39800"]
+			C3F10_3
+			C3F9_3 -> C3F10_3
+		}
+		{
+			rank=same
+			C4F9_3 [label="(9,4)" fillcolor="#f39800"]
+			C4F10_3
+			C4F9_3 -> C4F10_3
+		}
+		{
+			rank=same
+			C5F9_3 [label="(9,5)" fillcolor="#f39800"]
+			C5F10_3
+			C5F9_3 -> C5F10_3
+		}
+		{
+			rank=same
+			C6F9_3 [label="(9,6)" fillcolor="#f39800"]
+			C6F10_3
+			C6F9_3 -> C6F10_3
+		}
+		{
+			rank=same
+			C7F9_3 [label="(9,7)" fillcolor="#f39800"]
+			C7F10_3
+			C7F9_3 -> C7F10_3
+		}
+		{
+			rank=same
+			C8F9_3 [label="(9,8)" fillcolor="#f39800"]
+			C8F10_3
+			C8F9_3 -> C8F10_3
+		}
+		{
+			rank=same
+			C9F9_3 [label="(9,9)" fillcolor="#f39800"]
+			C9F10_3
+			C9F9_3 -> C9F10_3
+		}
+	}
+	subgraph cluster_period4 {
+		color=lightgrey style=filled
+		root [label="0,0" group=1]
+		{
+			F0_4 [label=0 group=1]
+			F0_4 -> F1_4
+			F1_4 [label=1 group=1]
+			F1_4 -> F2_4
+			F2_4 [label=2 group=1]
+			F2_4 -> F3_4
+			F3_4 [label=3 group=1]
+			F3_4 -> F4_4
+			F4_4 [label=4 group=1]
+			F4_4 -> F5_4
+			F5_4 [label=5 group=1]
+			F5_4 -> F6_4
+			F6_4 [label=6 group=1]
+			F6_4 -> F7_4
+			F7_4 [label=7 group=1]
+			F7_4 -> F8_4
+			F8_4 [label=8 group=1]
+			F8_4 -> F9_4
+			F9_4 [label=9 group=1]
+		}
+		{
+			rank=same
+			root_4 [label="0,0" group=1]
+			C0_4 [label=0 group=1]
+			C0_4 -> C1_4
+			C1_4 [label=1 group=2]
+			C1_4 -> C2_4
+			C2_4 [label=2 group=3]
+			C2_4 -> C3_4
+			C3_4 [label=3 group=4]
+			C3_4 -> C4_4
+			C4_4 [label=4 group=5]
+			C4_4 -> C5_4
+			C5_4 [label=5 group=6]
+			C5_4 -> C6_4
+			C6_4 [label=6 group=7]
+			C6_4 -> C7_4
+			C7_4 [label=7 group=8]
+			C7_4 -> C8_4
+			C8_4 [label=8 group=9]
+			C8_4 -> C9_4
+			C9_4 [label=9 group=10]
+		}
+		{
+			rank=same
+			C0F0_4 [label="(0,0)" fillcolor="#f39800"]
+			F0_4
+			F0_4 -> C0F0_4
+		}
+		{
+			rank=same
+			C1F0_4 [label="(0,1)" fillcolor="#f39800"]
+			F0_4
+			F0_4 -> C1F0_4
+		}
+		{
+			rank=same
+			C2F0_4 [label="(0,2)" fillcolor="#f39800"]
+			F0_4
+			F0_4 -> C2F0_4
+		}
+		{
+			rank=same
+			C3F0_4 [label="(0,3)" fillcolor="#f39800"]
+			F0_4
+			F0_4 -> C3F0_4
+		}
+		{
+			rank=same
+			C4F0_4 [label="(0,4)" fillcolor="#f39800"]
+			F0_4
+			F0_4 -> C4F0_4
+		}
+		{
+			rank=same
+			C5F0_4 [label="(0,5)" fillcolor="#f39800"]
+			F0_4
+			F0_4 -> C5F0_4
+		}
+		{
+			rank=same
+			C6F0_4 [label="(0,6)" fillcolor="#f39800"]
+			F0_4
+			F0_4 -> C6F0_4
+		}
+		{
+			rank=same
+			C7F0_4 [label="(0,7)" fillcolor="#f39800"]
+			F0_4
+			F0_4 -> C7F0_4
+		}
+		{
+			rank=same
+			C8F0_4 [label="(0,8)" fillcolor="#f39800"]
+			F0_4
+			F0_4 -> C8F0_4
+		}
+		{
+			rank=same
+			C9F0_4 [label="(0,9)" fillcolor="#f39800"]
+			F0_4
+			F0_4 -> C9F0_4
+		}
+		{
+			rank=same
+			C0F1_4 [label="(1,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F1_4 [label="(1,1)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C2F1_4 [label="(1,2)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C3F1_4 [label="(1,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F1_4 [label="(1,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F1_4 [label="(1,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F1_4 [label="(1,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F1_4 [label="(1,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F1_4 [label="(1,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F1_4 [label="(1,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F2_4 [label="(2,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F2_4 [label="(2,1)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C2F2_4 [label="(2,2)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C3F2_4 [label="(2,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F2_4 [label="(2,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F2_4 [label="(2,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F2_4 [label="(2,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F2_4 [label="(2,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F2_4 [label="(2,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F2_4 [label="(2,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F3_4 [label="(3,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F3_4 [label="(3,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F3_4 [label="(3,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F3_4 [label="(3,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F3_4 [label="(3,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F3_4 [label="(3,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F3_4 [label="(3,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F3_4 [label="(3,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F3_4 [label="(3,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F3_4 [label="(3,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F4_4 [label="(4,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F4_4 [label="(4,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F4_4 [label="(4,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F4_4 [label="(4,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F4_4 [label="(4,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F4_4 [label="(4,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F4_4 [label="(4,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F4_4 [label="(4,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F4_4 [label="(4,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F4_4 [label="(4,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F5_4 [label="(5,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F5_4 [label="(5,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F5_4 [label="(5,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F5_4 [label="(5,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F5_4 [label="(5,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F5_4 [label="(5,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F5_4 [label="(5,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F5_4 [label="(5,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F5_4 [label="(5,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F5_4 [label="(5,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F6_4 [label="(6,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F6_4 [label="(6,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F6_4 [label="(6,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F6_4 [label="(6,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F6_4 [label="(6,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F6_4 [label="(6,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F6_4 [label="(6,6)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C7F6_4 [label="(6,7)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C8F6_4 [label="(6,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F6_4 [label="(6,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F7_4 [label="(7,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F7_4 [label="(7,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F7_4 [label="(7,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F7_4 [label="(7,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F7_4 [label="(7,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F7_4 [label="(7,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F7_4 [label="(7,6)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C7F7_4 [label="(7,7)" fillcolor="#008af39"]
+		}
+		{
+			rank=same
+			C8F7_4 [label="(7,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F7_4 [label="(7,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F8_4 [label="(8,0)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C1F8_4 [label="(8,1)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C2F8_4 [label="(8,2)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C3F8_4 [label="(8,3)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C4F8_4 [label="(8,4)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C5F8_4 [label="(8,5)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C6F8_4 [label="(8,6)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C7F8_4 [label="(8,7)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C8F8_4 [label="(8,8)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C9F8_4 [label="(8,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			C0F9_4 [label="(9,0)" fillcolor="#f39800"]
+			C0F10_4
+			C0F9_4 -> C0F10_4
+		}
+		{
+			rank=same
+			C1F9_4 [label="(9,1)" fillcolor="#f39800"]
+			C1F10_4
+			C1F9_4 -> C1F10_4
+		}
+		{
+			rank=same
+			C2F9_4 [label="(9,2)" fillcolor="#f39800"]
+			C2F10_4
+			C2F9_4 -> C2F10_4
+		}
+		{
+			rank=same
+			C3F9_4 [label="(9,3)" fillcolor="#f39800"]
+			C3F10_4
+			C3F9_4 -> C3F10_4
+		}
+		{
+			rank=same
+			C4F9_4 [label="(9,4)" fillcolor="#f39800"]
+			C4F10_4
+			C4F9_4 -> C4F10_4
+		}
+		{
+			rank=same
+			C5F9_4 [label="(9,5)" fillcolor="#f39800"]
+			C5F10_4
+			C5F9_4 -> C5F10_4
+		}
+		{
+			rank=same
+			C6F9_4 [label="(9,6)" fillcolor="#f39800"]
+			C6F10_4
+			C6F9_4 -> C6F10_4
+		}
+		{
+			rank=same
+			C7F9_4 [label="(9,7)" fillcolor="#f39800"]
+			C7F10_4
+			C7F9_4 -> C7F10_4
+		}
+		{
+			rank=same
+			C8F9_4 [label="(9,8)" fillcolor="#f39800"]
+			C8F10_4
+			C8F9_4 -> C8F10_4
+		}
+		{
+			rank=same
+			C9F9_4 [label="(9,9)" fillcolor="#f39800"]
+			C9F10_4
+			C9F9_4 -> C9F10_4
+		}
+	}
+	root_0 -> C0F0_0 [constraint=false lhead=cluster_period1 ltail=cluster_period0]
+}
