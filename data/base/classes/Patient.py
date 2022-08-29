@@ -63,3 +63,6 @@ class Patient:
 
     def set_period_span(self, period_span):
         self.period_span = period_span
+
+    def get_last_period(self):
+        return self.historial.get_last_period()

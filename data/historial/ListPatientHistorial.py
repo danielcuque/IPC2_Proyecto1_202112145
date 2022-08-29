@@ -18,8 +18,11 @@ class ListPatientHistorial(DoublyList):
     def get_historial_size(self):
         return self.get_size()
 
-    def get_last_node(self):
-        return self.tail
+    def get_last_period(self):
+        tmp = self.head
+        while tmp.next is not None:
+            tmp = tmp.next
+        return tmp
 
     def get_head(self):
         return self.head
