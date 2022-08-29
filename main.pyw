@@ -24,7 +24,7 @@ class App(ctk.CTk):
 
     # Size of the window
     APP_WIDTH: int = 1096
-    APP_HEIGHT: int = 750
+    APP_HEIGHT: int = 700
 
     def __init__(self):
         super().__init__()
