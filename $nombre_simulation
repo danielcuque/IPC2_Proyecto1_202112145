@@ -1,0 +1,1400 @@
+digraph "G_$nombre" {
+	node [color="#FFEDBB" shape=box style=filled]
+	compound=true
+	edge [dir=both]
+	subgraph cluster_period0 {
+		color=lightgrey fontsize=14 label="Periodo 0" style=filled
+		{
+			F0_0 [label=0]
+			F0_0 -> F1_0
+			F1_0 [label=1]
+			F1_0 -> F2_0
+			F2_0 [label=2]
+			F2_0 -> F3_0
+			F3_0 [label=3]
+			F3_0 -> F4_0
+			F4_0 [label=4]
+			F4_0 -> F5_0
+			F5_0 [label=5]
+			F5_0 -> F6_0
+			F6_0 [label=6]
+			F6_0 -> F7_0
+			F7_0 [label=7]
+			F7_0 -> F8_0
+			F8_0 [label=8]
+			F8_0 -> F9_0
+			F9_0 [label=9]
+		}
+		{
+			rank=same
+			root_0 [label="0,0" group=1]
+			C0_0 [label=0 group=1]
+			C0_0 -> C1_0
+			C1_0 [label=1 group=2]
+			C1_0 -> C2_0
+			C2_0 [label=2 group=3]
+			C2_0 -> C3_0
+			C3_0 [label=3 group=4]
+			C3_0 -> C4_0
+			C4_0 [label=4 group=5]
+			C4_0 -> C5_0
+			C5_0 [label=5 group=6]
+			C5_0 -> C6_0
+			C6_0 [label=6 group=7]
+			C6_0 -> C7_0
+			C7_0 [label=7 group=8]
+			C7_0 -> C8_0
+			C8_0 [label=8 group=9]
+			C8_0 -> C9_0
+			C9_0 [label=9 group=10]
+		}
+		{
+			rank=same
+			F0C0_0 [label="(0,0)" fillcolor="#f39800"]
+			F0_0 -> F0C0_0
+			F0C0_0 -> F0C1_0
+			F0C1_0 [label="(0,1)" fillcolor="#f39800"]
+			F0C1_0 -> F0C2_0
+			F0C2_0 [label="(0,2)" fillcolor="#f39800"]
+			F0C2_0 -> F0C3_0
+			F0C3_0 [label="(0,3)" fillcolor="#f39800"]
+			F0C3_0 -> F0C4_0
+			F0C4_0 [label="(0,4)" fillcolor="#f39800"]
+			F0C4_0 -> F0C5_0
+			F0C5_0 [label="(0,5)" fillcolor="#f39800"]
+			F0C5_0 -> F0C6_0
+			F0C6_0 [label="(0,6)" fillcolor="#f39800"]
+			F0C6_0 -> F0C7_0
+			F0C7_0 [label="(0,7)" fillcolor="#f39800"]
+			F0C7_0 -> F0C8_0
+			F0C8_0 [label="(0,8)" fillcolor="#f39800"]
+			F0C8_0 -> F0C9_0
+			F0C9_0 [label="(0,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F1C0_0 [label="(1,0)" fillcolor="#f39800"]
+			F1_0 -> F1C0_0
+			F1C0_0 -> F1C1_0
+			F1C1_0 [label="(1,1)" fillcolor="#008af39"]
+			F1C1_0 -> F1C2_0
+			F1C2_0 [label="(1,2)" fillcolor="#008af39"]
+			F1C2_0 -> F1C3_0
+			F1C3_0 [label="(1,3)" fillcolor="#f39800"]
+			F1C3_0 -> F1C4_0
+			F1C4_0 [label="(1,4)" fillcolor="#f39800"]
+			F1C4_0 -> F1C5_0
+			F1C5_0 [label="(1,5)" fillcolor="#f39800"]
+			F1C5_0 -> F1C6_0
+			F1C6_0 [label="(1,6)" fillcolor="#f39800"]
+			F1C6_0 -> F1C7_0
+			F1C7_0 [label="(1,7)" fillcolor="#f39800"]
+			F1C7_0 -> F1C8_0
+			F1C8_0 [label="(1,8)" fillcolor="#f39800"]
+			F1C8_0 -> F1C9_0
+			F1C9_0 [label="(1,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F2C0_0 [label="(2,0)" fillcolor="#f39800"]
+			F2_0 -> F2C0_0
+			F2C0_0 -> F2C1_0
+			F2C1_0 [label="(2,1)" fillcolor="#008af39"]
+			F2C1_0 -> F2C2_0
+			F2C2_0 [label="(2,2)" fillcolor="#008af39"]
+			F2C2_0 -> F2C3_0
+			F2C3_0 [label="(2,3)" fillcolor="#f39800"]
+			F2C3_0 -> F2C4_0
+			F2C4_0 [label="(2,4)" fillcolor="#f39800"]
+			F2C4_0 -> F2C5_0
+			F2C5_0 [label="(2,5)" fillcolor="#f39800"]
+			F2C5_0 -> F2C6_0
+			F2C6_0 [label="(2,6)" fillcolor="#f39800"]
+			F2C6_0 -> F2C7_0
+			F2C7_0 [label="(2,7)" fillcolor="#f39800"]
+			F2C7_0 -> F2C8_0
+			F2C8_0 [label="(2,8)" fillcolor="#f39800"]
+			F2C8_0 -> F2C9_0
+			F2C9_0 [label="(2,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F3C0_0 [label="(3,0)" fillcolor="#f39800"]
+			F3_0 -> F3C0_0
+			F3C0_0 -> F3C1_0
+			F3C1_0 [label="(3,1)" fillcolor="#f39800"]
+			F3C1_0 -> F3C2_0
+			F3C2_0 [label="(3,2)" fillcolor="#f39800"]
+			F3C2_0 -> F3C3_0
+			F3C3_0 [label="(3,3)" fillcolor="#f39800"]
+			F3C3_0 -> F3C4_0
+			F3C4_0 [label="(3,4)" fillcolor="#f39800"]
+			F3C4_0 -> F3C5_0
+			F3C5_0 [label="(3,5)" fillcolor="#f39800"]
+			F3C5_0 -> F3C6_0
+			F3C6_0 [label="(3,6)" fillcolor="#f39800"]
+			F3C6_0 -> F3C7_0
+			F3C7_0 [label="(3,7)" fillcolor="#f39800"]
+			F3C7_0 -> F3C8_0
+			F3C8_0 [label="(3,8)" fillcolor="#f39800"]
+			F3C8_0 -> F3C9_0
+			F3C9_0 [label="(3,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F4C0_0 [label="(4,0)" fillcolor="#f39800"]
+			F4_0 -> F4C0_0
+			F4C0_0 -> F4C1_0
+			F4C1_0 [label="(4,1)" fillcolor="#f39800"]
+			F4C1_0 -> F4C2_0
+			F4C2_0 [label="(4,2)" fillcolor="#f39800"]
+			F4C2_0 -> F4C3_0
+			F4C3_0 [label="(4,3)" fillcolor="#f39800"]
+			F4C3_0 -> F4C4_0
+			F4C4_0 [label="(4,4)" fillcolor="#f39800"]
+			F4C4_0 -> F4C5_0
+			F4C5_0 [label="(4,5)" fillcolor="#f39800"]
+			F4C5_0 -> F4C6_0
+			F4C6_0 [label="(4,6)" fillcolor="#f39800"]
+			F4C6_0 -> F4C7_0
+			F4C7_0 [label="(4,7)" fillcolor="#f39800"]
+			F4C7_0 -> F4C8_0
+			F4C8_0 [label="(4,8)" fillcolor="#f39800"]
+			F4C8_0 -> F4C9_0
+			F4C9_0 [label="(4,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F5C0_0 [label="(5,0)" fillcolor="#f39800"]
+			F5_0 -> F5C0_0
+			F5C0_0 -> F5C1_0
+			F5C1_0 [label="(5,1)" fillcolor="#f39800"]
+			F5C1_0 -> F5C2_0
+			F5C2_0 [label="(5,2)" fillcolor="#f39800"]
+			F5C2_0 -> F5C3_0
+			F5C3_0 [label="(5,3)" fillcolor="#f39800"]
+			F5C3_0 -> F5C4_0
+			F5C4_0 [label="(5,4)" fillcolor="#f39800"]
+			F5C4_0 -> F5C5_0
+			F5C5_0 [label="(5,5)" fillcolor="#f39800"]
+			F5C5_0 -> F5C6_0
+			F5C6_0 [label="(5,6)" fillcolor="#f39800"]
+			F5C6_0 -> F5C7_0
+			F5C7_0 [label="(5,7)" fillcolor="#f39800"]
+			F5C7_0 -> F5C8_0
+			F5C8_0 [label="(5,8)" fillcolor="#f39800"]
+			F5C8_0 -> F5C9_0
+			F5C9_0 [label="(5,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F6C0_0 [label="(6,0)" fillcolor="#f39800"]
+			F6_0 -> F6C0_0
+			F6C0_0 -> F6C1_0
+			F6C1_0 [label="(6,1)" fillcolor="#f39800"]
+			F6C1_0 -> F6C2_0
+			F6C2_0 [label="(6,2)" fillcolor="#f39800"]
+			F6C2_0 -> F6C3_0
+			F6C3_0 [label="(6,3)" fillcolor="#f39800"]
+			F6C3_0 -> F6C4_0
+			F6C4_0 [label="(6,4)" fillcolor="#f39800"]
+			F6C4_0 -> F6C5_0
+			F6C5_0 [label="(6,5)" fillcolor="#f39800"]
+			F6C5_0 -> F6C6_0
+			F6C6_0 [label="(6,6)" fillcolor="#008af39"]
+			F6C6_0 -> F6C7_0
+			F6C7_0 [label="(6,7)" fillcolor="#008af39"]
+			F6C7_0 -> F6C8_0
+			F6C8_0 [label="(6,8)" fillcolor="#f39800"]
+			F6C8_0 -> F6C9_0
+			F6C9_0 [label="(6,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F7C0_0 [label="(7,0)" fillcolor="#f39800"]
+			F7_0 -> F7C0_0
+			F7C0_0 -> F7C1_0
+			F7C1_0 [label="(7,1)" fillcolor="#f39800"]
+			F7C1_0 -> F7C2_0
+			F7C2_0 [label="(7,2)" fillcolor="#f39800"]
+			F7C2_0 -> F7C3_0
+			F7C3_0 [label="(7,3)" fillcolor="#f39800"]
+			F7C3_0 -> F7C4_0
+			F7C4_0 [label="(7,4)" fillcolor="#f39800"]
+			F7C4_0 -> F7C5_0
+			F7C5_0 [label="(7,5)" fillcolor="#f39800"]
+			F7C5_0 -> F7C6_0
+			F7C6_0 [label="(7,6)" fillcolor="#008af39"]
+			F7C6_0 -> F7C7_0
+			F7C7_0 [label="(7,7)" fillcolor="#008af39"]
+			F7C7_0 -> F7C8_0
+			F7C8_0 [label="(7,8)" fillcolor="#f39800"]
+			F7C8_0 -> F7C9_0
+			F7C9_0 [label="(7,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F8C0_0 [label="(8,0)" fillcolor="#f39800"]
+			F8_0 -> F8C0_0
+			F8C0_0 -> F8C1_0
+			F8C1_0 [label="(8,1)" fillcolor="#f39800"]
+			F8C1_0 -> F8C2_0
+			F8C2_0 [label="(8,2)" fillcolor="#f39800"]
+			F8C2_0 -> F8C3_0
+			F8C3_0 [label="(8,3)" fillcolor="#f39800"]
+			F8C3_0 -> F8C4_0
+			F8C4_0 [label="(8,4)" fillcolor="#f39800"]
+			F8C4_0 -> F8C5_0
+			F8C5_0 [label="(8,5)" fillcolor="#f39800"]
+			F8C5_0 -> F8C6_0
+			F8C6_0 [label="(8,6)" fillcolor="#f39800"]
+			F8C6_0 -> F8C7_0
+			F8C7_0 [label="(8,7)" fillcolor="#f39800"]
+			F8C7_0 -> F8C8_0
+			F8C8_0 [label="(8,8)" fillcolor="#f39800"]
+			F8C8_0 -> F8C9_0
+			F8C9_0 [label="(8,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F9C0_0 [label="(9,0)" fillcolor="#f39800"]
+			F9_0 -> F9C0_0
+			F9C0_0 -> F9C1_0
+			F9C1_0 [label="(9,1)" fillcolor="#f39800"]
+			F9C1_0 -> F9C2_0
+			F9C2_0 [label="(9,2)" fillcolor="#f39800"]
+			F9C2_0 -> F9C3_0
+			F9C3_0 [label="(9,3)" fillcolor="#f39800"]
+			F9C3_0 -> F9C4_0
+			F9C4_0 [label="(9,4)" fillcolor="#f39800"]
+			F9C4_0 -> F9C5_0
+			F9C5_0 [label="(9,5)" fillcolor="#f39800"]
+			F9C5_0 -> F9C6_0
+			F9C6_0 [label="(9,6)" fillcolor="#f39800"]
+			F9C6_0 -> F9C7_0
+			F9C7_0 [label="(9,7)" fillcolor="#f39800"]
+			F9C7_0 -> F9C8_0
+			F9C8_0 [label="(9,8)" fillcolor="#f39800"]
+			F9C8_0 -> F9C9_0
+			F9C9_0 [label="(9,9)" fillcolor="#f39800"]
+		}
+		root_0 -> F0_0
+		root_0 -> C0_0
+	}
+	subgraph cluster_period1 {
+		color=lightgrey fontsize=14 label="Periodo 1" style=filled
+		{
+			F0_1 [label=0]
+			F0_1 -> F1_1
+			F1_1 [label=1]
+			F1_1 -> F2_1
+			F2_1 [label=2]
+			F2_1 -> F3_1
+			F3_1 [label=3]
+			F3_1 -> F4_1
+			F4_1 [label=4]
+			F4_1 -> F5_1
+			F5_1 [label=5]
+			F5_1 -> F6_1
+			F6_1 [label=6]
+			F6_1 -> F7_1
+			F7_1 [label=7]
+			F7_1 -> F8_1
+			F8_1 [label=8]
+			F8_1 -> F9_1
+			F9_1 [label=9]
+		}
+		{
+			rank=same
+			root_1 [label="0,0" group=1]
+			C0_1 [label=0 group=1]
+			C0_1 -> C1_1
+			C1_1 [label=1 group=2]
+			C1_1 -> C2_1
+			C2_1 [label=2 group=3]
+			C2_1 -> C3_1
+			C3_1 [label=3 group=4]
+			C3_1 -> C4_1
+			C4_1 [label=4 group=5]
+			C4_1 -> C5_1
+			C5_1 [label=5 group=6]
+			C5_1 -> C6_1
+			C6_1 [label=6 group=7]
+			C6_1 -> C7_1
+			C7_1 [label=7 group=8]
+			C7_1 -> C8_1
+			C8_1 [label=8 group=9]
+			C8_1 -> C9_1
+			C9_1 [label=9 group=10]
+		}
+		{
+			rank=same
+			F0C0_1 [label="(0,0)" fillcolor="#f39800"]
+			F0_1 -> F0C0_1
+			F0C0_1 -> F0C1_1
+			F0C1_1 [label="(0,1)" fillcolor="#f39800"]
+			F0C1_1 -> F0C2_1
+			F0C2_1 [label="(0,2)" fillcolor="#f39800"]
+			F0C2_1 -> F0C3_1
+			F0C3_1 [label="(0,3)" fillcolor="#f39800"]
+			F0C3_1 -> F0C4_1
+			F0C4_1 [label="(0,4)" fillcolor="#f39800"]
+			F0C4_1 -> F0C5_1
+			F0C5_1 [label="(0,5)" fillcolor="#f39800"]
+			F0C5_1 -> F0C6_1
+			F0C6_1 [label="(0,6)" fillcolor="#f39800"]
+			F0C6_1 -> F0C7_1
+			F0C7_1 [label="(0,7)" fillcolor="#f39800"]
+			F0C7_1 -> F0C8_1
+			F0C8_1 [label="(0,8)" fillcolor="#f39800"]
+			F0C8_1 -> F0C9_1
+			F0C9_1 [label="(0,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F1C0_1 [label="(1,0)" fillcolor="#f39800"]
+			F1_1 -> F1C0_1
+			F1C0_1 -> F1C1_1
+			F1C1_1 [label="(1,1)" fillcolor="#008af39"]
+			F1C1_1 -> F1C2_1
+			F1C2_1 [label="(1,2)" fillcolor="#008af39"]
+			F1C2_1 -> F1C3_1
+			F1C3_1 [label="(1,3)" fillcolor="#f39800"]
+			F1C3_1 -> F1C4_1
+			F1C4_1 [label="(1,4)" fillcolor="#f39800"]
+			F1C4_1 -> F1C5_1
+			F1C5_1 [label="(1,5)" fillcolor="#f39800"]
+			F1C5_1 -> F1C6_1
+			F1C6_1 [label="(1,6)" fillcolor="#f39800"]
+			F1C6_1 -> F1C7_1
+			F1C7_1 [label="(1,7)" fillcolor="#f39800"]
+			F1C7_1 -> F1C8_1
+			F1C8_1 [label="(1,8)" fillcolor="#f39800"]
+			F1C8_1 -> F1C9_1
+			F1C9_1 [label="(1,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F2C0_1 [label="(2,0)" fillcolor="#f39800"]
+			F2_1 -> F2C0_1
+			F2C0_1 -> F2C1_1
+			F2C1_1 [label="(2,1)" fillcolor="#008af39"]
+			F2C1_1 -> F2C2_1
+			F2C2_1 [label="(2,2)" fillcolor="#008af39"]
+			F2C2_1 -> F2C3_1
+			F2C3_1 [label="(2,3)" fillcolor="#f39800"]
+			F2C3_1 -> F2C4_1
+			F2C4_1 [label="(2,4)" fillcolor="#f39800"]
+			F2C4_1 -> F2C5_1
+			F2C5_1 [label="(2,5)" fillcolor="#f39800"]
+			F2C5_1 -> F2C6_1
+			F2C6_1 [label="(2,6)" fillcolor="#f39800"]
+			F2C6_1 -> F2C7_1
+			F2C7_1 [label="(2,7)" fillcolor="#f39800"]
+			F2C7_1 -> F2C8_1
+			F2C8_1 [label="(2,8)" fillcolor="#f39800"]
+			F2C8_1 -> F2C9_1
+			F2C9_1 [label="(2,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F3C0_1 [label="(3,0)" fillcolor="#f39800"]
+			F3_1 -> F3C0_1
+			F3C0_1 -> F3C1_1
+			F3C1_1 [label="(3,1)" fillcolor="#f39800"]
+			F3C1_1 -> F3C2_1
+			F3C2_1 [label="(3,2)" fillcolor="#f39800"]
+			F3C2_1 -> F3C3_1
+			F3C3_1 [label="(3,3)" fillcolor="#f39800"]
+			F3C3_1 -> F3C4_1
+			F3C4_1 [label="(3,4)" fillcolor="#f39800"]
+			F3C4_1 -> F3C5_1
+			F3C5_1 [label="(3,5)" fillcolor="#f39800"]
+			F3C5_1 -> F3C6_1
+			F3C6_1 [label="(3,6)" fillcolor="#f39800"]
+			F3C6_1 -> F3C7_1
+			F3C7_1 [label="(3,7)" fillcolor="#f39800"]
+			F3C7_1 -> F3C8_1
+			F3C8_1 [label="(3,8)" fillcolor="#f39800"]
+			F3C8_1 -> F3C9_1
+			F3C9_1 [label="(3,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F4C0_1 [label="(4,0)" fillcolor="#f39800"]
+			F4_1 -> F4C0_1
+			F4C0_1 -> F4C1_1
+			F4C1_1 [label="(4,1)" fillcolor="#f39800"]
+			F4C1_1 -> F4C2_1
+			F4C2_1 [label="(4,2)" fillcolor="#f39800"]
+			F4C2_1 -> F4C3_1
+			F4C3_1 [label="(4,3)" fillcolor="#f39800"]
+			F4C3_1 -> F4C4_1
+			F4C4_1 [label="(4,4)" fillcolor="#f39800"]
+			F4C4_1 -> F4C5_1
+			F4C5_1 [label="(4,5)" fillcolor="#f39800"]
+			F4C5_1 -> F4C6_1
+			F4C6_1 [label="(4,6)" fillcolor="#f39800"]
+			F4C6_1 -> F4C7_1
+			F4C7_1 [label="(4,7)" fillcolor="#f39800"]
+			F4C7_1 -> F4C8_1
+			F4C8_1 [label="(4,8)" fillcolor="#f39800"]
+			F4C8_1 -> F4C9_1
+			F4C9_1 [label="(4,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F5C0_1 [label="(5,0)" fillcolor="#f39800"]
+			F5_1 -> F5C0_1
+			F5C0_1 -> F5C1_1
+			F5C1_1 [label="(5,1)" fillcolor="#f39800"]
+			F5C1_1 -> F5C2_1
+			F5C2_1 [label="(5,2)" fillcolor="#f39800"]
+			F5C2_1 -> F5C3_1
+			F5C3_1 [label="(5,3)" fillcolor="#f39800"]
+			F5C3_1 -> F5C4_1
+			F5C4_1 [label="(5,4)" fillcolor="#f39800"]
+			F5C4_1 -> F5C5_1
+			F5C5_1 [label="(5,5)" fillcolor="#f39800"]
+			F5C5_1 -> F5C6_1
+			F5C6_1 [label="(5,6)" fillcolor="#f39800"]
+			F5C6_1 -> F5C7_1
+			F5C7_1 [label="(5,7)" fillcolor="#f39800"]
+			F5C7_1 -> F5C8_1
+			F5C8_1 [label="(5,8)" fillcolor="#f39800"]
+			F5C8_1 -> F5C9_1
+			F5C9_1 [label="(5,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F6C0_1 [label="(6,0)" fillcolor="#f39800"]
+			F6_1 -> F6C0_1
+			F6C0_1 -> F6C1_1
+			F6C1_1 [label="(6,1)" fillcolor="#f39800"]
+			F6C1_1 -> F6C2_1
+			F6C2_1 [label="(6,2)" fillcolor="#f39800"]
+			F6C2_1 -> F6C3_1
+			F6C3_1 [label="(6,3)" fillcolor="#f39800"]
+			F6C3_1 -> F6C4_1
+			F6C4_1 [label="(6,4)" fillcolor="#f39800"]
+			F6C4_1 -> F6C5_1
+			F6C5_1 [label="(6,5)" fillcolor="#f39800"]
+			F6C5_1 -> F6C6_1
+			F6C6_1 [label="(6,6)" fillcolor="#008af39"]
+			F6C6_1 -> F6C7_1
+			F6C7_1 [label="(6,7)" fillcolor="#008af39"]
+			F6C7_1 -> F6C8_1
+			F6C8_1 [label="(6,8)" fillcolor="#f39800"]
+			F6C8_1 -> F6C9_1
+			F6C9_1 [label="(6,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F7C0_1 [label="(7,0)" fillcolor="#f39800"]
+			F7_1 -> F7C0_1
+			F7C0_1 -> F7C1_1
+			F7C1_1 [label="(7,1)" fillcolor="#f39800"]
+			F7C1_1 -> F7C2_1
+			F7C2_1 [label="(7,2)" fillcolor="#f39800"]
+			F7C2_1 -> F7C3_1
+			F7C3_1 [label="(7,3)" fillcolor="#f39800"]
+			F7C3_1 -> F7C4_1
+			F7C4_1 [label="(7,4)" fillcolor="#f39800"]
+			F7C4_1 -> F7C5_1
+			F7C5_1 [label="(7,5)" fillcolor="#f39800"]
+			F7C5_1 -> F7C6_1
+			F7C6_1 [label="(7,6)" fillcolor="#008af39"]
+			F7C6_1 -> F7C7_1
+			F7C7_1 [label="(7,7)" fillcolor="#008af39"]
+			F7C7_1 -> F7C8_1
+			F7C8_1 [label="(7,8)" fillcolor="#f39800"]
+			F7C8_1 -> F7C9_1
+			F7C9_1 [label="(7,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F8C0_1 [label="(8,0)" fillcolor="#f39800"]
+			F8_1 -> F8C0_1
+			F8C0_1 -> F8C1_1
+			F8C1_1 [label="(8,1)" fillcolor="#f39800"]
+			F8C1_1 -> F8C2_1
+			F8C2_1 [label="(8,2)" fillcolor="#f39800"]
+			F8C2_1 -> F8C3_1
+			F8C3_1 [label="(8,3)" fillcolor="#f39800"]
+			F8C3_1 -> F8C4_1
+			F8C4_1 [label="(8,4)" fillcolor="#f39800"]
+			F8C4_1 -> F8C5_1
+			F8C5_1 [label="(8,5)" fillcolor="#f39800"]
+			F8C5_1 -> F8C6_1
+			F8C6_1 [label="(8,6)" fillcolor="#f39800"]
+			F8C6_1 -> F8C7_1
+			F8C7_1 [label="(8,7)" fillcolor="#f39800"]
+			F8C7_1 -> F8C8_1
+			F8C8_1 [label="(8,8)" fillcolor="#f39800"]
+			F8C8_1 -> F8C9_1
+			F8C9_1 [label="(8,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F9C0_1 [label="(9,0)" fillcolor="#f39800"]
+			F9_1 -> F9C0_1
+			F9C0_1 -> F9C1_1
+			F9C1_1 [label="(9,1)" fillcolor="#f39800"]
+			F9C1_1 -> F9C2_1
+			F9C2_1 [label="(9,2)" fillcolor="#f39800"]
+			F9C2_1 -> F9C3_1
+			F9C3_1 [label="(9,3)" fillcolor="#f39800"]
+			F9C3_1 -> F9C4_1
+			F9C4_1 [label="(9,4)" fillcolor="#f39800"]
+			F9C4_1 -> F9C5_1
+			F9C5_1 [label="(9,5)" fillcolor="#f39800"]
+			F9C5_1 -> F9C6_1
+			F9C6_1 [label="(9,6)" fillcolor="#f39800"]
+			F9C6_1 -> F9C7_1
+			F9C7_1 [label="(9,7)" fillcolor="#f39800"]
+			F9C7_1 -> F9C8_1
+			F9C8_1 [label="(9,8)" fillcolor="#f39800"]
+			F9C8_1 -> F9C9_1
+			F9C9_1 [label="(9,9)" fillcolor="#f39800"]
+		}
+		root_1 -> F0_1
+		root_1 -> C0_1
+	}
+	subgraph cluster_period2 {
+		color=lightgrey fontsize=14 label="Periodo 2" style=filled
+		{
+			F0_2 [label=0]
+			F0_2 -> F1_2
+			F1_2 [label=1]
+			F1_2 -> F2_2
+			F2_2 [label=2]
+			F2_2 -> F3_2
+			F3_2 [label=3]
+			F3_2 -> F4_2
+			F4_2 [label=4]
+			F4_2 -> F5_2
+			F5_2 [label=5]
+			F5_2 -> F6_2
+			F6_2 [label=6]
+			F6_2 -> F7_2
+			F7_2 [label=7]
+			F7_2 -> F8_2
+			F8_2 [label=8]
+			F8_2 -> F9_2
+			F9_2 [label=9]
+		}
+		{
+			rank=same
+			root_2 [label="0,0" group=1]
+			C0_2 [label=0 group=1]
+			C0_2 -> C1_2
+			C1_2 [label=1 group=2]
+			C1_2 -> C2_2
+			C2_2 [label=2 group=3]
+			C2_2 -> C3_2
+			C3_2 [label=3 group=4]
+			C3_2 -> C4_2
+			C4_2 [label=4 group=5]
+			C4_2 -> C5_2
+			C5_2 [label=5 group=6]
+			C5_2 -> C6_2
+			C6_2 [label=6 group=7]
+			C6_2 -> C7_2
+			C7_2 [label=7 group=8]
+			C7_2 -> C8_2
+			C8_2 [label=8 group=9]
+			C8_2 -> C9_2
+			C9_2 [label=9 group=10]
+		}
+		{
+			rank=same
+			F0C0_2 [label="(0,0)" fillcolor="#f39800"]
+			F0_2 -> F0C0_2
+			F0C0_2 -> F0C1_2
+			F0C1_2 [label="(0,1)" fillcolor="#f39800"]
+			F0C1_2 -> F0C2_2
+			F0C2_2 [label="(0,2)" fillcolor="#f39800"]
+			F0C2_2 -> F0C3_2
+			F0C3_2 [label="(0,3)" fillcolor="#f39800"]
+			F0C3_2 -> F0C4_2
+			F0C4_2 [label="(0,4)" fillcolor="#f39800"]
+			F0C4_2 -> F0C5_2
+			F0C5_2 [label="(0,5)" fillcolor="#f39800"]
+			F0C5_2 -> F0C6_2
+			F0C6_2 [label="(0,6)" fillcolor="#f39800"]
+			F0C6_2 -> F0C7_2
+			F0C7_2 [label="(0,7)" fillcolor="#f39800"]
+			F0C7_2 -> F0C8_2
+			F0C8_2 [label="(0,8)" fillcolor="#f39800"]
+			F0C8_2 -> F0C9_2
+			F0C9_2 [label="(0,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F1C0_2 [label="(1,0)" fillcolor="#f39800"]
+			F1_2 -> F1C0_2
+			F1C0_2 -> F1C1_2
+			F1C1_2 [label="(1,1)" fillcolor="#008af39"]
+			F1C1_2 -> F1C2_2
+			F1C2_2 [label="(1,2)" fillcolor="#008af39"]
+			F1C2_2 -> F1C3_2
+			F1C3_2 [label="(1,3)" fillcolor="#f39800"]
+			F1C3_2 -> F1C4_2
+			F1C4_2 [label="(1,4)" fillcolor="#f39800"]
+			F1C4_2 -> F1C5_2
+			F1C5_2 [label="(1,5)" fillcolor="#f39800"]
+			F1C5_2 -> F1C6_2
+			F1C6_2 [label="(1,6)" fillcolor="#f39800"]
+			F1C6_2 -> F1C7_2
+			F1C7_2 [label="(1,7)" fillcolor="#f39800"]
+			F1C7_2 -> F1C8_2
+			F1C8_2 [label="(1,8)" fillcolor="#f39800"]
+			F1C8_2 -> F1C9_2
+			F1C9_2 [label="(1,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F2C0_2 [label="(2,0)" fillcolor="#f39800"]
+			F2_2 -> F2C0_2
+			F2C0_2 -> F2C1_2
+			F2C1_2 [label="(2,1)" fillcolor="#008af39"]
+			F2C1_2 -> F2C2_2
+			F2C2_2 [label="(2,2)" fillcolor="#008af39"]
+			F2C2_2 -> F2C3_2
+			F2C3_2 [label="(2,3)" fillcolor="#f39800"]
+			F2C3_2 -> F2C4_2
+			F2C4_2 [label="(2,4)" fillcolor="#f39800"]
+			F2C4_2 -> F2C5_2
+			F2C5_2 [label="(2,5)" fillcolor="#f39800"]
+			F2C5_2 -> F2C6_2
+			F2C6_2 [label="(2,6)" fillcolor="#f39800"]
+			F2C6_2 -> F2C7_2
+			F2C7_2 [label="(2,7)" fillcolor="#f39800"]
+			F2C7_2 -> F2C8_2
+			F2C8_2 [label="(2,8)" fillcolor="#f39800"]
+			F2C8_2 -> F2C9_2
+			F2C9_2 [label="(2,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F3C0_2 [label="(3,0)" fillcolor="#f39800"]
+			F3_2 -> F3C0_2
+			F3C0_2 -> F3C1_2
+			F3C1_2 [label="(3,1)" fillcolor="#f39800"]
+			F3C1_2 -> F3C2_2
+			F3C2_2 [label="(3,2)" fillcolor="#f39800"]
+			F3C2_2 -> F3C3_2
+			F3C3_2 [label="(3,3)" fillcolor="#f39800"]
+			F3C3_2 -> F3C4_2
+			F3C4_2 [label="(3,4)" fillcolor="#f39800"]
+			F3C4_2 -> F3C5_2
+			F3C5_2 [label="(3,5)" fillcolor="#f39800"]
+			F3C5_2 -> F3C6_2
+			F3C6_2 [label="(3,6)" fillcolor="#f39800"]
+			F3C6_2 -> F3C7_2
+			F3C7_2 [label="(3,7)" fillcolor="#f39800"]
+			F3C7_2 -> F3C8_2
+			F3C8_2 [label="(3,8)" fillcolor="#f39800"]
+			F3C8_2 -> F3C9_2
+			F3C9_2 [label="(3,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F4C0_2 [label="(4,0)" fillcolor="#f39800"]
+			F4_2 -> F4C0_2
+			F4C0_2 -> F4C1_2
+			F4C1_2 [label="(4,1)" fillcolor="#f39800"]
+			F4C1_2 -> F4C2_2
+			F4C2_2 [label="(4,2)" fillcolor="#f39800"]
+			F4C2_2 -> F4C3_2
+			F4C3_2 [label="(4,3)" fillcolor="#f39800"]
+			F4C3_2 -> F4C4_2
+			F4C4_2 [label="(4,4)" fillcolor="#f39800"]
+			F4C4_2 -> F4C5_2
+			F4C5_2 [label="(4,5)" fillcolor="#f39800"]
+			F4C5_2 -> F4C6_2
+			F4C6_2 [label="(4,6)" fillcolor="#f39800"]
+			F4C6_2 -> F4C7_2
+			F4C7_2 [label="(4,7)" fillcolor="#f39800"]
+			F4C7_2 -> F4C8_2
+			F4C8_2 [label="(4,8)" fillcolor="#f39800"]
+			F4C8_2 -> F4C9_2
+			F4C9_2 [label="(4,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F5C0_2 [label="(5,0)" fillcolor="#f39800"]
+			F5_2 -> F5C0_2
+			F5C0_2 -> F5C1_2
+			F5C1_2 [label="(5,1)" fillcolor="#f39800"]
+			F5C1_2 -> F5C2_2
+			F5C2_2 [label="(5,2)" fillcolor="#f39800"]
+			F5C2_2 -> F5C3_2
+			F5C3_2 [label="(5,3)" fillcolor="#f39800"]
+			F5C3_2 -> F5C4_2
+			F5C4_2 [label="(5,4)" fillcolor="#f39800"]
+			F5C4_2 -> F5C5_2
+			F5C5_2 [label="(5,5)" fillcolor="#f39800"]
+			F5C5_2 -> F5C6_2
+			F5C6_2 [label="(5,6)" fillcolor="#f39800"]
+			F5C6_2 -> F5C7_2
+			F5C7_2 [label="(5,7)" fillcolor="#f39800"]
+			F5C7_2 -> F5C8_2
+			F5C8_2 [label="(5,8)" fillcolor="#f39800"]
+			F5C8_2 -> F5C9_2
+			F5C9_2 [label="(5,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F6C0_2 [label="(6,0)" fillcolor="#f39800"]
+			F6_2 -> F6C0_2
+			F6C0_2 -> F6C1_2
+			F6C1_2 [label="(6,1)" fillcolor="#f39800"]
+			F6C1_2 -> F6C2_2
+			F6C2_2 [label="(6,2)" fillcolor="#f39800"]
+			F6C2_2 -> F6C3_2
+			F6C3_2 [label="(6,3)" fillcolor="#f39800"]
+			F6C3_2 -> F6C4_2
+			F6C4_2 [label="(6,4)" fillcolor="#f39800"]
+			F6C4_2 -> F6C5_2
+			F6C5_2 [label="(6,5)" fillcolor="#f39800"]
+			F6C5_2 -> F6C6_2
+			F6C6_2 [label="(6,6)" fillcolor="#008af39"]
+			F6C6_2 -> F6C7_2
+			F6C7_2 [label="(6,7)" fillcolor="#008af39"]
+			F6C7_2 -> F6C8_2
+			F6C8_2 [label="(6,8)" fillcolor="#f39800"]
+			F6C8_2 -> F6C9_2
+			F6C9_2 [label="(6,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F7C0_2 [label="(7,0)" fillcolor="#f39800"]
+			F7_2 -> F7C0_2
+			F7C0_2 -> F7C1_2
+			F7C1_2 [label="(7,1)" fillcolor="#f39800"]
+			F7C1_2 -> F7C2_2
+			F7C2_2 [label="(7,2)" fillcolor="#f39800"]
+			F7C2_2 -> F7C3_2
+			F7C3_2 [label="(7,3)" fillcolor="#f39800"]
+			F7C3_2 -> F7C4_2
+			F7C4_2 [label="(7,4)" fillcolor="#f39800"]
+			F7C4_2 -> F7C5_2
+			F7C5_2 [label="(7,5)" fillcolor="#f39800"]
+			F7C5_2 -> F7C6_2
+			F7C6_2 [label="(7,6)" fillcolor="#008af39"]
+			F7C6_2 -> F7C7_2
+			F7C7_2 [label="(7,7)" fillcolor="#008af39"]
+			F7C7_2 -> F7C8_2
+			F7C8_2 [label="(7,8)" fillcolor="#f39800"]
+			F7C8_2 -> F7C9_2
+			F7C9_2 [label="(7,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F8C0_2 [label="(8,0)" fillcolor="#f39800"]
+			F8_2 -> F8C0_2
+			F8C0_2 -> F8C1_2
+			F8C1_2 [label="(8,1)" fillcolor="#f39800"]
+			F8C1_2 -> F8C2_2
+			F8C2_2 [label="(8,2)" fillcolor="#f39800"]
+			F8C2_2 -> F8C3_2
+			F8C3_2 [label="(8,3)" fillcolor="#f39800"]
+			F8C3_2 -> F8C4_2
+			F8C4_2 [label="(8,4)" fillcolor="#f39800"]
+			F8C4_2 -> F8C5_2
+			F8C5_2 [label="(8,5)" fillcolor="#f39800"]
+			F8C5_2 -> F8C6_2
+			F8C6_2 [label="(8,6)" fillcolor="#f39800"]
+			F8C6_2 -> F8C7_2
+			F8C7_2 [label="(8,7)" fillcolor="#f39800"]
+			F8C7_2 -> F8C8_2
+			F8C8_2 [label="(8,8)" fillcolor="#f39800"]
+			F8C8_2 -> F8C9_2
+			F8C9_2 [label="(8,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F9C0_2 [label="(9,0)" fillcolor="#f39800"]
+			F9_2 -> F9C0_2
+			F9C0_2 -> F9C1_2
+			F9C1_2 [label="(9,1)" fillcolor="#f39800"]
+			F9C1_2 -> F9C2_2
+			F9C2_2 [label="(9,2)" fillcolor="#f39800"]
+			F9C2_2 -> F9C3_2
+			F9C3_2 [label="(9,3)" fillcolor="#f39800"]
+			F9C3_2 -> F9C4_2
+			F9C4_2 [label="(9,4)" fillcolor="#f39800"]
+			F9C4_2 -> F9C5_2
+			F9C5_2 [label="(9,5)" fillcolor="#f39800"]
+			F9C5_2 -> F9C6_2
+			F9C6_2 [label="(9,6)" fillcolor="#f39800"]
+			F9C6_2 -> F9C7_2
+			F9C7_2 [label="(9,7)" fillcolor="#f39800"]
+			F9C7_2 -> F9C8_2
+			F9C8_2 [label="(9,8)" fillcolor="#f39800"]
+			F9C8_2 -> F9C9_2
+			F9C9_2 [label="(9,9)" fillcolor="#f39800"]
+		}
+		root_2 -> F0_2
+		root_2 -> C0_2
+	}
+	subgraph cluster_period3 {
+		color=lightgrey fontsize=14 label="Periodo 3" style=filled
+		{
+			F0_3 [label=0]
+			F0_3 -> F1_3
+			F1_3 [label=1]
+			F1_3 -> F2_3
+			F2_3 [label=2]
+			F2_3 -> F3_3
+			F3_3 [label=3]
+			F3_3 -> F4_3
+			F4_3 [label=4]
+			F4_3 -> F5_3
+			F5_3 [label=5]
+			F5_3 -> F6_3
+			F6_3 [label=6]
+			F6_3 -> F7_3
+			F7_3 [label=7]
+			F7_3 -> F8_3
+			F8_3 [label=8]
+			F8_3 -> F9_3
+			F9_3 [label=9]
+		}
+		{
+			rank=same
+			root_3 [label="0,0" group=1]
+			C0_3 [label=0 group=1]
+			C0_3 -> C1_3
+			C1_3 [label=1 group=2]
+			C1_3 -> C2_3
+			C2_3 [label=2 group=3]
+			C2_3 -> C3_3
+			C3_3 [label=3 group=4]
+			C3_3 -> C4_3
+			C4_3 [label=4 group=5]
+			C4_3 -> C5_3
+			C5_3 [label=5 group=6]
+			C5_3 -> C6_3
+			C6_3 [label=6 group=7]
+			C6_3 -> C7_3
+			C7_3 [label=7 group=8]
+			C7_3 -> C8_3
+			C8_3 [label=8 group=9]
+			C8_3 -> C9_3
+			C9_3 [label=9 group=10]
+		}
+		{
+			rank=same
+			F0C0_3 [label="(0,0)" fillcolor="#f39800"]
+			F0_3 -> F0C0_3
+			F0C0_3 -> F0C1_3
+			F0C1_3 [label="(0,1)" fillcolor="#f39800"]
+			F0C1_3 -> F0C2_3
+			F0C2_3 [label="(0,2)" fillcolor="#f39800"]
+			F0C2_3 -> F0C3_3
+			F0C3_3 [label="(0,3)" fillcolor="#f39800"]
+			F0C3_3 -> F0C4_3
+			F0C4_3 [label="(0,4)" fillcolor="#f39800"]
+			F0C4_3 -> F0C5_3
+			F0C5_3 [label="(0,5)" fillcolor="#f39800"]
+			F0C5_3 -> F0C6_3
+			F0C6_3 [label="(0,6)" fillcolor="#f39800"]
+			F0C6_3 -> F0C7_3
+			F0C7_3 [label="(0,7)" fillcolor="#f39800"]
+			F0C7_3 -> F0C8_3
+			F0C8_3 [label="(0,8)" fillcolor="#f39800"]
+			F0C8_3 -> F0C9_3
+			F0C9_3 [label="(0,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F1C0_3 [label="(1,0)" fillcolor="#f39800"]
+			F1_3 -> F1C0_3
+			F1C0_3 -> F1C1_3
+			F1C1_3 [label="(1,1)" fillcolor="#008af39"]
+			F1C1_3 -> F1C2_3
+			F1C2_3 [label="(1,2)" fillcolor="#008af39"]
+			F1C2_3 -> F1C3_3
+			F1C3_3 [label="(1,3)" fillcolor="#f39800"]
+			F1C3_3 -> F1C4_3
+			F1C4_3 [label="(1,4)" fillcolor="#f39800"]
+			F1C4_3 -> F1C5_3
+			F1C5_3 [label="(1,5)" fillcolor="#f39800"]
+			F1C5_3 -> F1C6_3
+			F1C6_3 [label="(1,6)" fillcolor="#f39800"]
+			F1C6_3 -> F1C7_3
+			F1C7_3 [label="(1,7)" fillcolor="#f39800"]
+			F1C7_3 -> F1C8_3
+			F1C8_3 [label="(1,8)" fillcolor="#f39800"]
+			F1C8_3 -> F1C9_3
+			F1C9_3 [label="(1,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F2C0_3 [label="(2,0)" fillcolor="#f39800"]
+			F2_3 -> F2C0_3
+			F2C0_3 -> F2C1_3
+			F2C1_3 [label="(2,1)" fillcolor="#008af39"]
+			F2C1_3 -> F2C2_3
+			F2C2_3 [label="(2,2)" fillcolor="#008af39"]
+			F2C2_3 -> F2C3_3
+			F2C3_3 [label="(2,3)" fillcolor="#f39800"]
+			F2C3_3 -> F2C4_3
+			F2C4_3 [label="(2,4)" fillcolor="#f39800"]
+			F2C4_3 -> F2C5_3
+			F2C5_3 [label="(2,5)" fillcolor="#f39800"]
+			F2C5_3 -> F2C6_3
+			F2C6_3 [label="(2,6)" fillcolor="#f39800"]
+			F2C6_3 -> F2C7_3
+			F2C7_3 [label="(2,7)" fillcolor="#f39800"]
+			F2C7_3 -> F2C8_3
+			F2C8_3 [label="(2,8)" fillcolor="#f39800"]
+			F2C8_3 -> F2C9_3
+			F2C9_3 [label="(2,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F3C0_3 [label="(3,0)" fillcolor="#f39800"]
+			F3_3 -> F3C0_3
+			F3C0_3 -> F3C1_3
+			F3C1_3 [label="(3,1)" fillcolor="#f39800"]
+			F3C1_3 -> F3C2_3
+			F3C2_3 [label="(3,2)" fillcolor="#f39800"]
+			F3C2_3 -> F3C3_3
+			F3C3_3 [label="(3,3)" fillcolor="#f39800"]
+			F3C3_3 -> F3C4_3
+			F3C4_3 [label="(3,4)" fillcolor="#f39800"]
+			F3C4_3 -> F3C5_3
+			F3C5_3 [label="(3,5)" fillcolor="#f39800"]
+			F3C5_3 -> F3C6_3
+			F3C6_3 [label="(3,6)" fillcolor="#f39800"]
+			F3C6_3 -> F3C7_3
+			F3C7_3 [label="(3,7)" fillcolor="#f39800"]
+			F3C7_3 -> F3C8_3
+			F3C8_3 [label="(3,8)" fillcolor="#f39800"]
+			F3C8_3 -> F3C9_3
+			F3C9_3 [label="(3,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F4C0_3 [label="(4,0)" fillcolor="#f39800"]
+			F4_3 -> F4C0_3
+			F4C0_3 -> F4C1_3
+			F4C1_3 [label="(4,1)" fillcolor="#f39800"]
+			F4C1_3 -> F4C2_3
+			F4C2_3 [label="(4,2)" fillcolor="#f39800"]
+			F4C2_3 -> F4C3_3
+			F4C3_3 [label="(4,3)" fillcolor="#f39800"]
+			F4C3_3 -> F4C4_3
+			F4C4_3 [label="(4,4)" fillcolor="#f39800"]
+			F4C4_3 -> F4C5_3
+			F4C5_3 [label="(4,5)" fillcolor="#f39800"]
+			F4C5_3 -> F4C6_3
+			F4C6_3 [label="(4,6)" fillcolor="#f39800"]
+			F4C6_3 -> F4C7_3
+			F4C7_3 [label="(4,7)" fillcolor="#f39800"]
+			F4C7_3 -> F4C8_3
+			F4C8_3 [label="(4,8)" fillcolor="#f39800"]
+			F4C8_3 -> F4C9_3
+			F4C9_3 [label="(4,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F5C0_3 [label="(5,0)" fillcolor="#f39800"]
+			F5_3 -> F5C0_3
+			F5C0_3 -> F5C1_3
+			F5C1_3 [label="(5,1)" fillcolor="#f39800"]
+			F5C1_3 -> F5C2_3
+			F5C2_3 [label="(5,2)" fillcolor="#f39800"]
+			F5C2_3 -> F5C3_3
+			F5C3_3 [label="(5,3)" fillcolor="#f39800"]
+			F5C3_3 -> F5C4_3
+			F5C4_3 [label="(5,4)" fillcolor="#f39800"]
+			F5C4_3 -> F5C5_3
+			F5C5_3 [label="(5,5)" fillcolor="#f39800"]
+			F5C5_3 -> F5C6_3
+			F5C6_3 [label="(5,6)" fillcolor="#f39800"]
+			F5C6_3 -> F5C7_3
+			F5C7_3 [label="(5,7)" fillcolor="#f39800"]
+			F5C7_3 -> F5C8_3
+			F5C8_3 [label="(5,8)" fillcolor="#f39800"]
+			F5C8_3 -> F5C9_3
+			F5C9_3 [label="(5,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F6C0_3 [label="(6,0)" fillcolor="#f39800"]
+			F6_3 -> F6C0_3
+			F6C0_3 -> F6C1_3
+			F6C1_3 [label="(6,1)" fillcolor="#f39800"]
+			F6C1_3 -> F6C2_3
+			F6C2_3 [label="(6,2)" fillcolor="#f39800"]
+			F6C2_3 -> F6C3_3
+			F6C3_3 [label="(6,3)" fillcolor="#f39800"]
+			F6C3_3 -> F6C4_3
+			F6C4_3 [label="(6,4)" fillcolor="#f39800"]
+			F6C4_3 -> F6C5_3
+			F6C5_3 [label="(6,5)" fillcolor="#f39800"]
+			F6C5_3 -> F6C6_3
+			F6C6_3 [label="(6,6)" fillcolor="#008af39"]
+			F6C6_3 -> F6C7_3
+			F6C7_3 [label="(6,7)" fillcolor="#008af39"]
+			F6C7_3 -> F6C8_3
+			F6C8_3 [label="(6,8)" fillcolor="#f39800"]
+			F6C8_3 -> F6C9_3
+			F6C9_3 [label="(6,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F7C0_3 [label="(7,0)" fillcolor="#f39800"]
+			F7_3 -> F7C0_3
+			F7C0_3 -> F7C1_3
+			F7C1_3 [label="(7,1)" fillcolor="#f39800"]
+			F7C1_3 -> F7C2_3
+			F7C2_3 [label="(7,2)" fillcolor="#f39800"]
+			F7C2_3 -> F7C3_3
+			F7C3_3 [label="(7,3)" fillcolor="#f39800"]
+			F7C3_3 -> F7C4_3
+			F7C4_3 [label="(7,4)" fillcolor="#f39800"]
+			F7C4_3 -> F7C5_3
+			F7C5_3 [label="(7,5)" fillcolor="#f39800"]
+			F7C5_3 -> F7C6_3
+			F7C6_3 [label="(7,6)" fillcolor="#008af39"]
+			F7C6_3 -> F7C7_3
+			F7C7_3 [label="(7,7)" fillcolor="#008af39"]
+			F7C7_3 -> F7C8_3
+			F7C8_3 [label="(7,8)" fillcolor="#f39800"]
+			F7C8_3 -> F7C9_3
+			F7C9_3 [label="(7,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F8C0_3 [label="(8,0)" fillcolor="#f39800"]
+			F8_3 -> F8C0_3
+			F8C0_3 -> F8C1_3
+			F8C1_3 [label="(8,1)" fillcolor="#f39800"]
+			F8C1_3 -> F8C2_3
+			F8C2_3 [label="(8,2)" fillcolor="#f39800"]
+			F8C2_3 -> F8C3_3
+			F8C3_3 [label="(8,3)" fillcolor="#f39800"]
+			F8C3_3 -> F8C4_3
+			F8C4_3 [label="(8,4)" fillcolor="#f39800"]
+			F8C4_3 -> F8C5_3
+			F8C5_3 [label="(8,5)" fillcolor="#f39800"]
+			F8C5_3 -> F8C6_3
+			F8C6_3 [label="(8,6)" fillcolor="#f39800"]
+			F8C6_3 -> F8C7_3
+			F8C7_3 [label="(8,7)" fillcolor="#f39800"]
+			F8C7_3 -> F8C8_3
+			F8C8_3 [label="(8,8)" fillcolor="#f39800"]
+			F8C8_3 -> F8C9_3
+			F8C9_3 [label="(8,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F9C0_3 [label="(9,0)" fillcolor="#f39800"]
+			F9_3 -> F9C0_3
+			F9C0_3 -> F9C1_3
+			F9C1_3 [label="(9,1)" fillcolor="#f39800"]
+			F9C1_3 -> F9C2_3
+			F9C2_3 [label="(9,2)" fillcolor="#f39800"]
+			F9C2_3 -> F9C3_3
+			F9C3_3 [label="(9,3)" fillcolor="#f39800"]
+			F9C3_3 -> F9C4_3
+			F9C4_3 [label="(9,4)" fillcolor="#f39800"]
+			F9C4_3 -> F9C5_3
+			F9C5_3 [label="(9,5)" fillcolor="#f39800"]
+			F9C5_3 -> F9C6_3
+			F9C6_3 [label="(9,6)" fillcolor="#f39800"]
+			F9C6_3 -> F9C7_3
+			F9C7_3 [label="(9,7)" fillcolor="#f39800"]
+			F9C7_3 -> F9C8_3
+			F9C8_3 [label="(9,8)" fillcolor="#f39800"]
+			F9C8_3 -> F9C9_3
+			F9C9_3 [label="(9,9)" fillcolor="#f39800"]
+		}
+		root_3 -> F0_3
+		root_3 -> C0_3
+	}
+	subgraph cluster_period4 {
+		color=lightgrey fontsize=14 label="Periodo 4" style=filled
+		{
+			F0_4 [label=0]
+			F0_4 -> F1_4
+			F1_4 [label=1]
+			F1_4 -> F2_4
+			F2_4 [label=2]
+			F2_4 -> F3_4
+			F3_4 [label=3]
+			F3_4 -> F4_4
+			F4_4 [label=4]
+			F4_4 -> F5_4
+			F5_4 [label=5]
+			F5_4 -> F6_4
+			F6_4 [label=6]
+			F6_4 -> F7_4
+			F7_4 [label=7]
+			F7_4 -> F8_4
+			F8_4 [label=8]
+			F8_4 -> F9_4
+			F9_4 [label=9]
+		}
+		{
+			rank=same
+			root_4 [label="0,0" group=1]
+			C0_4 [label=0 group=1]
+			C0_4 -> C1_4
+			C1_4 [label=1 group=2]
+			C1_4 -> C2_4
+			C2_4 [label=2 group=3]
+			C2_4 -> C3_4
+			C3_4 [label=3 group=4]
+			C3_4 -> C4_4
+			C4_4 [label=4 group=5]
+			C4_4 -> C5_4
+			C5_4 [label=5 group=6]
+			C5_4 -> C6_4
+			C6_4 [label=6 group=7]
+			C6_4 -> C7_4
+			C7_4 [label=7 group=8]
+			C7_4 -> C8_4
+			C8_4 [label=8 group=9]
+			C8_4 -> C9_4
+			C9_4 [label=9 group=10]
+		}
+		{
+			rank=same
+			F0C0_4 [label="(0,0)" fillcolor="#f39800"]
+			F0_4 -> F0C0_4
+			F0C0_4 -> F0C1_4
+			F0C1_4 [label="(0,1)" fillcolor="#f39800"]
+			F0C1_4 -> F0C2_4
+			F0C2_4 [label="(0,2)" fillcolor="#f39800"]
+			F0C2_4 -> F0C3_4
+			F0C3_4 [label="(0,3)" fillcolor="#f39800"]
+			F0C3_4 -> F0C4_4
+			F0C4_4 [label="(0,4)" fillcolor="#f39800"]
+			F0C4_4 -> F0C5_4
+			F0C5_4 [label="(0,5)" fillcolor="#f39800"]
+			F0C5_4 -> F0C6_4
+			F0C6_4 [label="(0,6)" fillcolor="#f39800"]
+			F0C6_4 -> F0C7_4
+			F0C7_4 [label="(0,7)" fillcolor="#f39800"]
+			F0C7_4 -> F0C8_4
+			F0C8_4 [label="(0,8)" fillcolor="#f39800"]
+			F0C8_4 -> F0C9_4
+			F0C9_4 [label="(0,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F1C0_4 [label="(1,0)" fillcolor="#f39800"]
+			F1_4 -> F1C0_4
+			F1C0_4 -> F1C1_4
+			F1C1_4 [label="(1,1)" fillcolor="#008af39"]
+			F1C1_4 -> F1C2_4
+			F1C2_4 [label="(1,2)" fillcolor="#008af39"]
+			F1C2_4 -> F1C3_4
+			F1C3_4 [label="(1,3)" fillcolor="#f39800"]
+			F1C3_4 -> F1C4_4
+			F1C4_4 [label="(1,4)" fillcolor="#f39800"]
+			F1C4_4 -> F1C5_4
+			F1C5_4 [label="(1,5)" fillcolor="#f39800"]
+			F1C5_4 -> F1C6_4
+			F1C6_4 [label="(1,6)" fillcolor="#f39800"]
+			F1C6_4 -> F1C7_4
+			F1C7_4 [label="(1,7)" fillcolor="#f39800"]
+			F1C7_4 -> F1C8_4
+			F1C8_4 [label="(1,8)" fillcolor="#f39800"]
+			F1C8_4 -> F1C9_4
+			F1C9_4 [label="(1,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F2C0_4 [label="(2,0)" fillcolor="#f39800"]
+			F2_4 -> F2C0_4
+			F2C0_4 -> F2C1_4
+			F2C1_4 [label="(2,1)" fillcolor="#008af39"]
+			F2C1_4 -> F2C2_4
+			F2C2_4 [label="(2,2)" fillcolor="#008af39"]
+			F2C2_4 -> F2C3_4
+			F2C3_4 [label="(2,3)" fillcolor="#f39800"]
+			F2C3_4 -> F2C4_4
+			F2C4_4 [label="(2,4)" fillcolor="#f39800"]
+			F2C4_4 -> F2C5_4
+			F2C5_4 [label="(2,5)" fillcolor="#f39800"]
+			F2C5_4 -> F2C6_4
+			F2C6_4 [label="(2,6)" fillcolor="#f39800"]
+			F2C6_4 -> F2C7_4
+			F2C7_4 [label="(2,7)" fillcolor="#f39800"]
+			F2C7_4 -> F2C8_4
+			F2C8_4 [label="(2,8)" fillcolor="#f39800"]
+			F2C8_4 -> F2C9_4
+			F2C9_4 [label="(2,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F3C0_4 [label="(3,0)" fillcolor="#f39800"]
+			F3_4 -> F3C0_4
+			F3C0_4 -> F3C1_4
+			F3C1_4 [label="(3,1)" fillcolor="#f39800"]
+			F3C1_4 -> F3C2_4
+			F3C2_4 [label="(3,2)" fillcolor="#f39800"]
+			F3C2_4 -> F3C3_4
+			F3C3_4 [label="(3,3)" fillcolor="#f39800"]
+			F3C3_4 -> F3C4_4
+			F3C4_4 [label="(3,4)" fillcolor="#f39800"]
+			F3C4_4 -> F3C5_4
+			F3C5_4 [label="(3,5)" fillcolor="#f39800"]
+			F3C5_4 -> F3C6_4
+			F3C6_4 [label="(3,6)" fillcolor="#f39800"]
+			F3C6_4 -> F3C7_4
+			F3C7_4 [label="(3,7)" fillcolor="#f39800"]
+			F3C7_4 -> F3C8_4
+			F3C8_4 [label="(3,8)" fillcolor="#f39800"]
+			F3C8_4 -> F3C9_4
+			F3C9_4 [label="(3,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F4C0_4 [label="(4,0)" fillcolor="#f39800"]
+			F4_4 -> F4C0_4
+			F4C0_4 -> F4C1_4
+			F4C1_4 [label="(4,1)" fillcolor="#f39800"]
+			F4C1_4 -> F4C2_4
+			F4C2_4 [label="(4,2)" fillcolor="#f39800"]
+			F4C2_4 -> F4C3_4
+			F4C3_4 [label="(4,3)" fillcolor="#f39800"]
+			F4C3_4 -> F4C4_4
+			F4C4_4 [label="(4,4)" fillcolor="#f39800"]
+			F4C4_4 -> F4C5_4
+			F4C5_4 [label="(4,5)" fillcolor="#f39800"]
+			F4C5_4 -> F4C6_4
+			F4C6_4 [label="(4,6)" fillcolor="#f39800"]
+			F4C6_4 -> F4C7_4
+			F4C7_4 [label="(4,7)" fillcolor="#f39800"]
+			F4C7_4 -> F4C8_4
+			F4C8_4 [label="(4,8)" fillcolor="#f39800"]
+			F4C8_4 -> F4C9_4
+			F4C9_4 [label="(4,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F5C0_4 [label="(5,0)" fillcolor="#f39800"]
+			F5_4 -> F5C0_4
+			F5C0_4 -> F5C1_4
+			F5C1_4 [label="(5,1)" fillcolor="#f39800"]
+			F5C1_4 -> F5C2_4
+			F5C2_4 [label="(5,2)" fillcolor="#f39800"]
+			F5C2_4 -> F5C3_4
+			F5C3_4 [label="(5,3)" fillcolor="#f39800"]
+			F5C3_4 -> F5C4_4
+			F5C4_4 [label="(5,4)" fillcolor="#f39800"]
+			F5C4_4 -> F5C5_4
+			F5C5_4 [label="(5,5)" fillcolor="#f39800"]
+			F5C5_4 -> F5C6_4
+			F5C6_4 [label="(5,6)" fillcolor="#f39800"]
+			F5C6_4 -> F5C7_4
+			F5C7_4 [label="(5,7)" fillcolor="#f39800"]
+			F5C7_4 -> F5C8_4
+			F5C8_4 [label="(5,8)" fillcolor="#f39800"]
+			F5C8_4 -> F5C9_4
+			F5C9_4 [label="(5,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F6C0_4 [label="(6,0)" fillcolor="#f39800"]
+			F6_4 -> F6C0_4
+			F6C0_4 -> F6C1_4
+			F6C1_4 [label="(6,1)" fillcolor="#f39800"]
+			F6C1_4 -> F6C2_4
+			F6C2_4 [label="(6,2)" fillcolor="#f39800"]
+			F6C2_4 -> F6C3_4
+			F6C3_4 [label="(6,3)" fillcolor="#f39800"]
+			F6C3_4 -> F6C4_4
+			F6C4_4 [label="(6,4)" fillcolor="#f39800"]
+			F6C4_4 -> F6C5_4
+			F6C5_4 [label="(6,5)" fillcolor="#f39800"]
+			F6C5_4 -> F6C6_4
+			F6C6_4 [label="(6,6)" fillcolor="#008af39"]
+			F6C6_4 -> F6C7_4
+			F6C7_4 [label="(6,7)" fillcolor="#008af39"]
+			F6C7_4 -> F6C8_4
+			F6C8_4 [label="(6,8)" fillcolor="#f39800"]
+			F6C8_4 -> F6C9_4
+			F6C9_4 [label="(6,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F7C0_4 [label="(7,0)" fillcolor="#f39800"]
+			F7_4 -> F7C0_4
+			F7C0_4 -> F7C1_4
+			F7C1_4 [label="(7,1)" fillcolor="#f39800"]
+			F7C1_4 -> F7C2_4
+			F7C2_4 [label="(7,2)" fillcolor="#f39800"]
+			F7C2_4 -> F7C3_4
+			F7C3_4 [label="(7,3)" fillcolor="#f39800"]
+			F7C3_4 -> F7C4_4
+			F7C4_4 [label="(7,4)" fillcolor="#f39800"]
+			F7C4_4 -> F7C5_4
+			F7C5_4 [label="(7,5)" fillcolor="#f39800"]
+			F7C5_4 -> F7C6_4
+			F7C6_4 [label="(7,6)" fillcolor="#008af39"]
+			F7C6_4 -> F7C7_4
+			F7C7_4 [label="(7,7)" fillcolor="#008af39"]
+			F7C7_4 -> F7C8_4
+			F7C8_4 [label="(7,8)" fillcolor="#f39800"]
+			F7C8_4 -> F7C9_4
+			F7C9_4 [label="(7,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F8C0_4 [label="(8,0)" fillcolor="#f39800"]
+			F8_4 -> F8C0_4
+			F8C0_4 -> F8C1_4
+			F8C1_4 [label="(8,1)" fillcolor="#f39800"]
+			F8C1_4 -> F8C2_4
+			F8C2_4 [label="(8,2)" fillcolor="#f39800"]
+			F8C2_4 -> F8C3_4
+			F8C3_4 [label="(8,3)" fillcolor="#f39800"]
+			F8C3_4 -> F8C4_4
+			F8C4_4 [label="(8,4)" fillcolor="#f39800"]
+			F8C4_4 -> F8C5_4
+			F8C5_4 [label="(8,5)" fillcolor="#f39800"]
+			F8C5_4 -> F8C6_4
+			F8C6_4 [label="(8,6)" fillcolor="#f39800"]
+			F8C6_4 -> F8C7_4
+			F8C7_4 [label="(8,7)" fillcolor="#f39800"]
+			F8C7_4 -> F8C8_4
+			F8C8_4 [label="(8,8)" fillcolor="#f39800"]
+			F8C8_4 -> F8C9_4
+			F8C9_4 [label="(8,9)" fillcolor="#f39800"]
+		}
+		{
+			rank=same
+			F9C0_4 [label="(9,0)" fillcolor="#f39800"]
+			F9_4 -> F9C0_4
+			F9C0_4 -> F9C1_4
+			F9C1_4 [label="(9,1)" fillcolor="#f39800"]
+			F9C1_4 -> F9C2_4
+			F9C2_4 [label="(9,2)" fillcolor="#f39800"]
+			F9C2_4 -> F9C3_4
+			F9C3_4 [label="(9,3)" fillcolor="#f39800"]
+			F9C3_4 -> F9C4_4
+			F9C4_4 [label="(9,4)" fillcolor="#f39800"]
+			F9C4_4 -> F9C5_4
+			F9C5_4 [label="(9,5)" fillcolor="#f39800"]
+			F9C5_4 -> F9C6_4
+			F9C6_4 [label="(9,6)" fillcolor="#f39800"]
+			F9C6_4 -> F9C7_4
+			F9C7_4 [label="(9,7)" fillcolor="#f39800"]
+			F9C7_4 -> F9C8_4
+			F9C8_4 [label="(9,8)" fillcolor="#f39800"]
+			F9C8_4 -> F9C9_4
+			F9C9_4 [label="(9,9)" fillcolor="#f39800"]
+		}
+		root_4 -> F0_4
+		root_4 -> C0_4
+	}
+}

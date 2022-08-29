@@ -1,10 +1,16 @@
-from cProfile import label
+# Graphviz libraries:
 import graphviz as gv
+
+# Classes
 from data.base.classes.Cell import Cell
+from data.base.classes.Index import Index
 from data.base.classes.Patient import Patient
-from data.simulation.DoubleLinkedList_X import DoubleLinkedList_X
+
+# Lists
+from data.base.nodes.NodeForDoublyList import NodeForDoublyList
 from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
 
+# Helpers
 from model.simulation.UploadInformation import UploadInformation
 
 
@@ -57,10 +63,10 @@ class GenerateGraphvizDoc:
 
             self.generate_rows(s, matrix_patient.get_size(), number_period)
             self.generate_cols(s, matrix_patient.get_size(), number_period)
+            self.generate_cells(s, matrix_patient, number_period)
 
             s.edge(f'root_{number_period}', f'F0_{number_period}')
             s.edge(f'root_{number_period}', f'C0_{number_period}')
-            # self.generate_cells(s, matrix_patient, number_period)
 
     def generate_rows(self, graph: gv.Digraph.subgraph, rows, number_period):
         # with graph
@@ -83,41 +89,55 @@ class GenerateGraphvizDoc:
                     m.edge(f'C{col}_{number_period}',
                            f'C{col + 1}_{number_period}')
 
-    def generate_cells(self, graph: gv.Digraph, cells: DoubleLinkedList_Y, number_period: int):
-        tmp = cells.get_head()
+    def generate_cells(self, graph: gv.Digraph.subgraph, matrix_of_cells: DoubleLinkedList_Y, number_period: int):
+        tmp: NodeForDoublyList = matrix_of_cells.get_head()
         while tmp is not None:
-            # Agarrae el index node junto con el doubly linked list x
-            self.generate_cell(graph, tmp.get_body().list_rows, number_period)
+            # Get the row with the cells and generate the nodes
+            self.generate_cell(graph, tmp.get_body(), number_period)
             tmp = tmp.get_next()
 
-    def generate_cell(self, graph: gv.Digraph, cell: DoubleLinkedList_X, number_period: int):
-        tmp = cell.get_head()
-        while tmp is not None:
-            self.generate_cell_node(
-                graph, tmp.get_body(), number_period, cell.get_size())
-            tmp = tmp.get_next()
-
-    def generate_cell_node(self, graph: gv.Digraph, cell: Cell, number_period: int, list_size: int):
+    def generate_cell(self, graph: gv.Digraph.subgraph, index_node: Index, number_period: int):
+        index = index_node.get_pos_x()
+        matrix_size = index_node.get_eje_x().get_size()
         with graph.subgraph() as s:
             s.attr(rank='same')
+            for col in range(matrix_size):
+                cell: Cell = index_node.get_cell_by_column_position(col)
+
+                color = '#008af39' if cell.get_is_infected() == 1 else '#f39800'
+
+                s.node(f'F{index}C{col}_{number_period}',
+                       label=f'({index},{col})', fillcolor=color)
+                if col == 0:
+                    s.edge(f'F{index}_{number_period}',
+                           f'F{index}C{col}_{number_period}')
+                    s.edge(f'F{index}C{col}_{number_period}',
+                           f'F{index}C{col+1}_{number_period}')
+                if col < matrix_size-1 and col > 0:
+                    s.edge(f'F{index}C{col}_{number_period}',
+                           f'F{index}C{col+1}_{number_period}')
+
+    def generate_cell_node(self, graph: gv.Digraph.subgraph, cell: Cell, number_period: int, list_size: int):
+
+        with graph.subgraph() as s:
+            # s.attr(rank='same')
             # Get the row and col of the cell
             get_pos_x = cell.get_pos_x()
             get_pos_y = cell.get_pos_y()
 
-            # Create the node with the position of the cell
-            row_number_of_matrix = f'F{get_pos_x}_{number_period}'
+            # Create a name to display in the graph
             label_position_for_cell = f'({get_pos_x},{get_pos_y})'
 
             # Create the name of the node with the position of the cell
             position_in_matrix_of_cell = f'C{get_pos_y}F{get_pos_x}_{number_period}'
             color = '#008af39' if cell.get_is_infected() == 1 else '#f39800'
+
+            # Create the node with the position of the cell
             s.node(position_in_matrix_of_cell,
                    label=label_position_for_cell, fillcolor=color)
-            if get_pos_y == 0:
-                s.node(row_number_of_matrix)
-                s.edge(row_number_of_matrix, position_in_matrix_of_cell)
-            elif get_pos_y < list_size - 1 and get_pos_y > 0:
-                prev_position_in_matrix_of_cell = f'C{get_pos_y}F{get_pos_x - 1}_{number_period}'
-                s.node(prev_position_in_matrix_of_cell)
-                s.edge(position_in_matrix_of_cell,
-                       prev_position_in_matrix_of_cell)
+            # Create the edge with the root of the cell
+            s.edge(f'root_{number_period}', position_in_matrix_of_cell)
+            # Create the edge with the previous cell
+            if get_pos_x > 0:
+                previous_cell = f'C{get_pos_y}F{get_pos_x - 1}_{number_period}'
+                s.edge(position_in_matrix_of_cell, previous_cell)

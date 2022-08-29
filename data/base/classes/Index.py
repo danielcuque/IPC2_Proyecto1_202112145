@@ -21,5 +21,5 @@ class Index:
     def show_row(self):
         self.list_rows.show_row()
 
-    def get_cell_by_column_position(self, pos_x):
-        return self.list_rows.get_cell_by_column_position(pos_x)
+    def get_cell_by_column_position(self, pos_y):
+        return self.list_rows.get_cell_by_column_position(pos_y)
