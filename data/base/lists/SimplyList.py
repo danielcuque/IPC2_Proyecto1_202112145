@@ -1,14 +1,14 @@
-from ..nodes.NodeForSimpleList import NodeForSimpleList
+from ..nodes.NodeForSimplyList import NodeForSimplyList
 
 
-class SimpleList:
+class SimplyList:
     def __init__(self):
         self.head = None
         self.tail = None
         self.size = 0
 
     def insert_node_at_end(self, body):
-        new_node = NodeForSimpleList(body)
+        new_node = NodeForSimplyList(body)
         self.size = + 1
         if self.head is None:
             self.head = new_node

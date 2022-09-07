@@ -11,7 +11,7 @@ class DoublyList:
             new_node = NodeForDoublyList(body)
             self.size += 1
             self.head = new_node
-            return
+            return new_node
 
         tmp = self.head
         while tmp.next is not None:
@@ -20,6 +20,7 @@ class DoublyList:
         self.size += 1
         tmp.next = new_node
         new_node.prev = tmp
+        return new_node
 
     def get_size(self):
         return self.size

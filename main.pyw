@@ -1,5 +1,7 @@
 from tkinter import filedialog, messagebox
 import customtkinter as ctk
+from model.helpers.VerifyMatrix import VerifyMatrix
+from model.simulation.GenerateReport import GenerateReport
 
 # Data
 from model.simulation.UploadInformation import UploadInformation
@@ -21,8 +23,8 @@ ctk.set_default_color_theme("blue")
 class App(ctk.CTk):
 
     # Size of the window
-    APP_WIDTH: int = 1000
-    APP_HEIGHT: int = 800
+    APP_WIDTH: int = 1096
+    APP_HEIGHT: int = 700
 
     def __init__(self):
         super().__init__()
@@ -51,7 +53,7 @@ class App(ctk.CTk):
         self.side_menu.grid_rowconfigure(0, minsize=10)
         self.side_menu.grid_rowconfigure(5, weight=1)
         self.side_menu.grid_rowconfigure(8, minsize=20)
-
+        self.side_menu.grid_rowconfigure(11, minsize=10)
         # Create widgets
         self.upload_file_button = ctk.CTkButton(
             self.side_menu, text="Cargar archivo",
@@ -62,6 +64,11 @@ class App(ctk.CTk):
         # Components
         self.side_title = ctk.CTkLabel(self.side_menu, text="Simulaciones de:")
         self.side_title.grid(row=1, column=0, pady=10, padx=10)
+
+        self.report_button = ctk.CTkButton(
+            self.side_menu, text="Reporte", command=self.create_report)
+        self.report_button.grid(
+            row=11, column=0, sticky="nsew", padx=10, pady=20)
 
         ''' ====== Simulation frame ====== '''
         self.simulation_frame = ctk.CTkLabel(master=self,
@@ -76,7 +83,7 @@ class App(ctk.CTk):
 
     def upload_files(self):
         file_route = filedialog.askopenfilename(
-            initialdir="/Desktop", title="Select file",
+            initialdir="/", title="Select file",
             filetypes=(("XML", "*.xml"), ("all files", "*.*")))
         is_correct = UploadInformation().xPath(file_route)
         if is_correct:
@@ -114,6 +121,22 @@ class App(ctk.CTk):
                 self, patient_data)
             self.simulation_frame.grid(
                 row=0, column=1, sticky="nswe", padx=10, pady=10)
+
+    @staticmethod
+    def create_report():
+        if UploadInformation().patients_list.get_head() is not None:
+            VerifyMatrix().create_simulation_to_all_patients()
+            generate_report = GenerateReport()
+            create_new_report = generate_report.generate_report()
+            if create_new_report:
+                messagebox.showinfo(
+                    "Información", "Reporte creado correctamente")
+            else:
+                messagebox.showerror(
+                    "Error", "No se pudo crear el reporte, por favor intenta de nuevo")
+        else:
+            messagebox.showerror(
+                "Error", "No hay patientes cargados, por favor carga uno")
 
 
 if __name__ == "__main__":

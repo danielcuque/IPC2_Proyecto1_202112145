@@ -1,20 +1,25 @@
+# GUI Libraries
+from copy import copy
 import customtkinter as ctk
 from tkinter import messagebox
-from data.base.classes.Cell import Cell
+
+# Classes and nodes
 from data.base.classes.Patient import Patient
-from data.historial.ListPatientHistorial import ListPatientHistorial
-from data.simulation.DoubleLinkedList_Y import DoubleLinkedList_Y
+from data.base.classes.Cell import Cell
+from data.base.nodes.NodeForDoublyList import NodeForDoublyList
+
+# Helpers
 from model.helpers.VerifyMatrix import VerifyMatrix
 
 
 class SimulationFrame(ctk.CTkFrame):
-    current_period = 0
 
     def __init__(self, master, patient):
         super().__init__()
         self.master = master
         self.patient: Patient = patient
 
+        self.current_period = 0
         self.grid_rowconfigure((0, 1, 2, 3, 4, 5), weight=0)
         self.grid_rowconfigure(6, weight=1)
         self.grid_columnconfigure((0, 1), weight=1)
@@ -23,6 +28,9 @@ class SimulationFrame(ctk.CTkFrame):
     def create_simulation_frame(self):
 
         # Labels
+        if self.patient.get_historial().get_historial_size() > 0:
+            self.patient.set_matrix(
+                self.patient.get_historial().get_head())
         self.label_name = ctk.CTkLabel(master=self,
                                        text=f'Paciente: {self.patient.name}',
                                        height=30,
@@ -31,7 +39,7 @@ class SimulationFrame(ctk.CTkFrame):
                                        fg_color=("white", "gray38"),
                                        )
         self.label_name.grid(
-            column=0, row=0, sticky="nswe", padx=15, pady=15)
+            column=0, row=0, sticky="nswe", padx=15, pady=(15, 0))
 
         self.label_age = ctk.CTkLabel(master=self,
                                       text=f'Edad: {self.patient.age}',
@@ -41,7 +49,7 @@ class SimulationFrame(ctk.CTkFrame):
                                       fg_color=("white", "gray38"),
                                       )
         self.label_age.grid(
-            column=0, row=1, sticky="nswe", padx=15, pady=15)
+            column=0, row=1, sticky="nswe", padx=15, pady=(15, 0))
 
         self.label_rest_periods = ctk.CTkLabel(master=self,
                                                text=f'Periodos restantes: {self.patient.periods}',
@@ -50,7 +58,7 @@ class SimulationFrame(ctk.CTkFrame):
                                                text_font=("Roboto Medium", -16), text_color="white",
                                                fg_color=("white", "gray38"))
         self.label_rest_periods.grid(
-            column=0, row=2, sticky="nswe", padx=15, pady=15)
+            column=0, row=2, sticky="nswe", padx=15, pady=(15, 0))
 
         self.label_current_period = ctk.CTkLabel(master=self,
                                                  text=f'Periodo actual: {self.current_period}',
@@ -59,7 +67,7 @@ class SimulationFrame(ctk.CTkFrame):
                                                  text_font=("Roboto Medium", -16), text_color="white",
                                                  fg_color=("white", "gray38"))
         self.label_current_period.grid(
-            column=0, row=3, sticky="nswe", padx=15, pady=15)
+            column=0, row=3, sticky="nswe", padx=15, pady=(15, 0))
 
         self.label_infected_cells = ctk.CTkLabel(master=self,
                                                  text=f'Celdas infectadas: {self.patient.get_infected_cells()}',
@@ -68,7 +76,7 @@ class SimulationFrame(ctk.CTkFrame):
                                                  text_font=("Roboto Medium", -16), text_color="white",
                                                  fg_color=("white", "gray38"))
         self.label_infected_cells.grid(
-            column=0, row=4, sticky="nswe", padx=15, pady=15)
+            column=0, row=4, sticky="nswe", padx=15, pady=(15, 0))
 
         self.healthy_cells = ctk.CTkLabel(master=self,
                                           text=f'Celdas sanas: {self.patient.get_healthy_cells()}',
@@ -77,39 +85,66 @@ class SimulationFrame(ctk.CTkFrame):
                                           text_font=("Roboto Medium", -16), text_color="white",
                                           fg_color=("white", "gray38"))
         self.healthy_cells.grid(
-            column=0, row=5, sticky="nswe", padx=15, pady=15)
+            column=0, row=5, sticky="nswe", padx=15, pady=(15, 0))
 
         # Buttons
         self.simuate_prev_period_button = ctk.CTkButton(master=self,
                                                         text="Período anterior",
-                                                        command=self.simulate_prev_period)
+                                                        command=self.display_prev_period)
         self.simuate_prev_period_button.grid(
-            column=1, row=0, sticky="nswe", padx=15, pady=15)
+            column=1, row=0, sticky="nswe", padx=15, pady=(15, 0))
 
         self.simulate_all_button = ctk.CTkButton(master=self,
-                                                 text="Simular todo",
-                                                 command=self.simulate_all)
+                                                 text="Ir al estado final",
+                                                 command=self.simulate_all_periods)
         self.simulate_all_button.grid(
-            column=1, row=1, sticky="nswe", padx=15, pady=15)
+            column=1, row=1, sticky="nswe", padx=15, pady=(15, 0))
 
         self.simulate_next_period_button = ctk.CTkButton(master=self,
                                                          text="Siguiente período",
                                                          command=self.simulate_next_period)
         self.simulate_next_period_button.grid(
-            column=1, row=2, sticky="nswe", padx=15, pady=15)
+            column=1, row=2, sticky="nswe", padx=15, pady=(15, 0))
+
+        self.label_illness = ctk.CTkLabel(master=self,
+                                          text=f'Gravedad: {self.patient.disease_severity}',
+                                          height=30,
+                                          corner_radius=6,
+                                          text_font=("Roboto Medium", -16), text_color="white",
+                                          fg_color=("white", "gray38"))
+        self.label_illness.grid(
+            column=1, row=3, sticky="nswe", padx=15, pady=(15, 0))
+
+        self.label_period_number = ctk.CTkLabel(master=self,
+                                                text=f'N: {self.patient.period_number}',
+                                                height=30,
+                                                corner_radius=6,
+                                                text_font=("Roboto Medium", -16), text_color="white",
+                                                fg_color=("white", "gray38"))
+        self.label_period_number.grid(
+            column=1, row=4, sticky="nswe", padx=15, pady=(15, 0))
+
+        self.label_period_span = ctk.CTkLabel(master=self,
+                                              text=f'N1: {self.patient.period_span}',
+                                              height=30,
+                                              corner_radius=6,
+                                              text_font=("Roboto Medium", -16), text_color="white",
+                                              fg_color=("white", "gray38"))
+        self.label_period_span.grid(
+            column=1, row=5, sticky="nswe", padx=15, pady=(15, 0))
 
         # Frame to display matrix
         self.frame_matrix = ctk.CTkFrame(master=self)
-        self.display_matrix(self.patient.get_matrix())
+        self.display_matrix(self.patient.get_node())
         self.frame_matrix.grid(
-            column=0, row=6, columnspan=2, padx=15, pady=15)
+            column=0, row=6, columnspan=2, padx=15, pady=(15, 0))
 
-    def display_matrix(self, matrix: DoubleLinkedList_Y):
+    def display_matrix(self, matrix: NodeForDoublyList):
         color = "gray38"
         txt_color = "white"
-        for r in range(matrix.get_size()):
-            for c in range(matrix.get_size()):
-                cell: Cell = matrix.get_cell_by_row_number(r, c)
+        for r in range(matrix.get_body().get_size()):
+            for c in range(matrix.get_body().get_size()):
+                cell: Cell = matrix.get_body().get_cell_by_row_number(r, c)
                 if cell.is_infected == 1:
                     color = "#ebdbb0"
                     txt_color = "black"
@@ -121,89 +156,78 @@ class SimulationFrame(ctk.CTkFrame):
                                                  corner_radius=6,
                                                  width=10,
                                                  height=10,
-                                                 text_font=("Roboto Medium", -15), text_color=txt_color,
+                                                 text_font=("Roboto Medium", -14), text_color=txt_color,
                                                  bg_color=color)
                 self.label_matrix.grid(
-                    column=c, row=r, padx=2, pady=2)
+                    column=c, row=r, padx=2, pady=0.5)
 
-    def simulate_all(self):
-        print("a")
-
-    def simulate_next_period(self):
+    def simulate_all_periods(self):
         if self.patient.get_periods() > 0:
+            while self.patient.periods > 0:
+                self.get_next_period()
+        else:
+            while self.patient.matrix.get_next() is not None:
+                self.simulate_existing_period()
+        self.display_information()
+
+    def get_next_period(self):
+
+        if self.patient.periods > 0 or self.current_period < self.patient.get_total_periods():
             patient_historial = self.patient.get_historial()
-            # Al principio el historial estará vacío
-            if patient_historial.get_historial_size() == 0:
-                patient_historial.insert_in_emptylist(
-                    self.patient.get_matrix())
-
-            # Si el periodo actual es menor que el tamaño del historial, entonces se crea una nueva matriz
-            historial_size = patient_historial.get_historial_size()
-
             # Si el periodo actual es igual al tamaño de la matriz, significa que el siguiente periodo va a ser nuevo
+            if patient_historial.get_size() == 0:
+                patient_historial.insert_new_period(self.patient.get_matrix())
+
+            historial_size = patient_historial.get_size()
+
             if self.current_period == (historial_size - 1):
-                self.simulate_new_period(patient_historial)
+                VerifyMatrix().create_new_period(self.patient)
+                self.current_period += 1
 
             elif self.current_period < (historial_size - 1):
                 # Si el periodo actual es menor que el tamaño del historial, significa que la matriz existe
-                self.simulate_existing_period(patient_historial)
-
-            # Restamos el número de períodos restantes
-            self.patient.set_periods(self.patient.get_periods() - 1)
-
-            # Mostramos la matriz actual
-            self.current_period += 1
-            self.display_information()
-
+                self.simulate_existing_period()
         else:
             messagebox.showerror("Error", "No hay períodos para simular")
 
-    def simulate_prev_period(self):
-        # Si el periodo actual es diferente de 0, significa que no es el estado inicial
-        if self.current_period > -1:
-            patient_historial = self.patient.get_historial()
-            # Obtememos la matriz dependiendo del periodo anterior
-            prev_matrix = patient_historial.get_node_by_index(
-                self.current_period-1).get_matrix()
+    def simulate_next_period(self):
+        self.get_next_period()
+        self.display_information()
 
+    def display_prev_period(self):
+        # Si el periodo actual es diferente de 0, significa que no es el estado inicial
+        if self.current_period-1 == 0:
+            self.patient.set_matrix(
+                self.patient.get_historial().get_head())
             # Actualizamos el periodo actual
             self.current_period -= 1
-            self.patient.set_matrix(prev_matrix)
             self.display_information()
-
-            # Mostramos la matriz
-            self.display_matrix(self.patient.get_matrix())
-
+        elif self.current_period-1 > 0:
+            self.patient.set_matrix(self.patient.matrix.get_prev())
+            # Actualizamos el periodo actual
+            self.current_period -= 1
+            self.display_information()
         else:
             messagebox.showerror("Error", "No hay períodos para simular")
 
+    def simulate_existing_period(self):
+        next_matrix = self.patient.matrix.get_next()
+        self.patient.set_matrix(next_matrix)
+        self.current_period += 1
+
     def display_information(self):
-        self.display_matrix(self.patient.get_matrix())
+        self.display_matrix(self.patient.get_node())
         self.label_rest_periods.configure(
             text=f'Periodos restantes: {self.patient.get_periods()}')
         self.label_infected_cells.configure(
             text=f'Celdas infectadas: {self.patient.get_infected_cells()}')
         self.healthy_cells.configure(
             text=f'Celdas sanas: {self.patient.get_healthy_cells()}')
-
         self.label_current_period.configure(
             text=f'Periodo actual: {self.current_period}')
-
-    def simulate_new_period(self, patient_historial: ListPatientHistorial):
-        compare_matrix = VerifyMatrix()
-        # Creamos una nueva lista para el siguiente periodo y la llenamos
-        new_matrix = DoubleLinkedList_Y()
-        for pos_x in range(self.patient.get_size()):
-            new_matrix.insert_new_column(pos_x, self.patient.get_size())
-        # Después comparamos la matriz que está a la cabeza del historial con la matriz que acabamos de crear
-        compare_matrix.verify_matrix(
-            self.patient.get_matrix(), new_matrix)
-        # Actualizamos la matriz del paciente con la matriz que acabamos de crear
-        self.patient.set_matrix(new_matrix)
-        patient_historial.insert_node_at_end(new_matrix)
-
-    def simulate_existing_period(self, patient_historial: ListPatientHistorial):
-        next_matrix = patient_historial.get_node_by_index(
-            self.current_period+1).get_matrix()
-        self.patient.set_matrix(next_matrix)
-
+        self.label_period_number.configure(
+            text=f'N: {self.patient.period_number}')
+        self.label_period_span.configure(
+            text=f'N1: {self.patient.period_span}')
+        self.label_illness.configure(
+            text=f'Enfermedad: {self.patient.disease_severity}')

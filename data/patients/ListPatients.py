@@ -1,14 +1,14 @@
 from curses.panel import new_panel
 from ..base.classes.Patient import Patient
-from data.base.lists.SimpleList import SimpleList
+from data.base.lists.SimplyList import SimplyList
 
 
-class ListPatients(SimpleList):
+class ListPatients(SimplyList):
     def __init__(self):
         super().__init__()
 
-    def insert_patient_at_end(self, name, age, size, periods):
-        new_patient = Patient(name, age, size, periods)
+    def insert_patient_at_end(self, name, age, size, periods, total_periods):
+        new_patient = Patient(name, age, size, periods, total_periods)
         self.insert_node_at_end(new_patient)
         new_patient.fill_columns(size)
 

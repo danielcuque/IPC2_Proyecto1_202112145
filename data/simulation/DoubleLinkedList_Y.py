@@ -4,7 +4,6 @@ from ..base.classes.Index import Index
 
 # Lists and Nodes
 from ..base.lists.DoublyList import DoublyList
-from ..base.lists.SimpleList import SimpleList
 
 
 from ..base.nodes.NodeForDoublyList import NodeForDoublyList
@@ -14,16 +13,19 @@ class DoubleLinkedList_Y(DoublyList):
     def __init__(self):
         super().__init__()
 
+    # Insertamos una fila en la lista
     def insert_new_column(self, pos_x, size):
         new_index = Index(pos_x)
         self.insert_node_at_end(new_index)
         new_index.insert_new_row(size)
 
+    # Obtenemos la célula en la posición (x,y) y le cambiamos el estado de infección
     def change_cell_state(self, pos_x, pos_y, is_infected):
         cell: Cell = self.get_cell_by_row_number(pos_x, pos_y)
         if cell is not None:
             cell.set_is_infected(is_infected)
 
+    # Obtenemos la célula en la posición (x,y)
     def get_cell_by_row_number(self, pos_x, pos_y):
         tmp: NodeForDoublyList = self.head
         while tmp is not None:
@@ -32,21 +34,7 @@ class DoubleLinkedList_Y(DoublyList):
             tmp = tmp.get_next()
         return None
 
-    # def set_infected_cells(self, matrix):
-    #     for row in range(self.size):
-    #         for col in range(self.size):
-    #             cell: Cell = self.get_cell_by_row_number(row, col)
-    #             count = self.get_neighbors_cell_state(
-    #                 cell.get_pos_x(), cell.get_pos_y())
-    #             if cell.get_is_infected() == 0:
-    #                 if count == 3:
-    #                     cell: Cell = matrix.get_cell_by_row_number(row, col)
-    #                     cell.set_is_infected(1)
-    #             if cell.get_is_infected() == 1:
-    #                 if count == 2 or count == 3:
-    #                     cell: Cell = matrix.get_cell_by_row_number(row, col)
-    #                     cell.set_is_infected(1)
-
+    # Obtenemos el número de células infectadas
     def get_cells_infected(self):
         cells_infected = 0
         for row in range(self.size):
@@ -56,10 +44,12 @@ class DoubleLinkedList_Y(DoublyList):
                     cells_infected += 1
         return cells_infected
 
+    # Obtenemos el número de células sanas
     def get_healthy_cells(self):
         total_cells = self.size * self.size
         return total_cells - self.get_cells_infected()
 
+    # Obtenemos el número de células infectadas
     def get_neighbors_cell_state(self, pos_x, pos_y):
         count = 0
         for i in range(pos_x - 1, pos_x + 2):
@@ -73,6 +63,7 @@ class DoubleLinkedList_Y(DoublyList):
                             count += 1
         return count
 
+    # Mostramos la matriz en consola
     def show_matrix(self):
         tmp = self.head
         while tmp is not None:
